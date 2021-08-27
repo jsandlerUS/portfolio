@@ -4,7 +4,6 @@ import Projects from "./components/Projects/projects";
 import Bio from "./components/Bio/bio";
 import Download from "./components/download";
 import Footer from "./components/Footer/footer";
-import iframeWindow from './components/Reusable/iframeWindow';
 
 
 const App = () => (
@@ -16,7 +15,6 @@ const App = () => (
       <Route exact path='/download' component={Download}/>
     </Switch>
     <Footer />
-    <Route path='/iframe-Window/' component={iframeWindow}/>
 </Router>
   );
 

@@ -55,7 +55,7 @@ export const projects = [
         id: 1,
         name: 'My Ayurveda Clinic',
         techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
-        viewLink: 'https://github.com/jsandleraol/MyAyurvedaClinic.com',
+        viewLink: 'http://jsandlerus.github.io/myayurvedaclinic',
         description: 'Online booking system, live video chat, e-commerce, and an advanced search engine for products, illnesses, and professionals. Uses HIPPA complain APIs for tracking of Medical Records and video chat service.',
         github:'https://github.com/jsandleraol/MyAyurvedaClinic.com',
         team: 1,
