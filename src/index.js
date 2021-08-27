@@ -5,17 +5,20 @@ import App from './App';
 import store from './components/redux/store'
 import { Provider } from 'react-redux'
 import { initializeAllRequests } from './index-init'
+import { HashRouter } from 'react-router-dom';
 
 // import reportWebVitals from './reportWebVitals';
 
 initializeAllRequests()
 
 ReactDOM.render(
-  // <React.StrictMode>
+  <React.StrictMode>
+    <HashRouter>
     <Provider store={store}>
       <App />
     </Provider>
-  // </React.StrictMode>
+    </HashRouter>
+  </React.StrictMode>
   ,
   document.getElementById('root')
 )
