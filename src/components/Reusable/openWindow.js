@@ -6,9 +6,7 @@ export const openWindow = (URL) => {
         'iframeWindow',
         "width=1000, height=1000"
     )
-    
 
-    
     return (
         <div>
             <iframe 
