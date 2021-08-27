@@ -1,0 +1,50 @@
+.filter{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    font-size: large;
+    position: relative;
+    border-bottom: 0.5px solid var(--border);
+}
+
+.filterTitle{
+    padding-left: 50px;
+}
+.filterOption{
+    display: flex;
+    align-items: center;
+    padding: 7px 12px;
+    color: var(--navLinkText);
+    position: relative;
+}
+.filterOption:hover{
+    background: var(--hoverNavLinks);
+    cursor: pointer;
+}
+
+.dropdown{
+    position: absolute;
+    top: 38px;
+    right: 0;
+    border-radius: 3px;
+    margin-left: 22px;
+    border: 1px solid var(--border);
+}
+.dropdownItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 10px;
+    color: var(--navLinkText);
+}
+
+.dropdownItem > svg{
+    margin-left: auto;
+    padding-left: 15px;
+}
+
+.dropdownItem:hover{
+    background: var(--hoverNavLinks);
+    cursor: pointer;
+}

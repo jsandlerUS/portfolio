@@ -1,0 +1,39 @@
+:root {
+--hoverNavLinks: lightblue;
+--navLinkText: rgb(41, 122, 175);
+
+--border: lightblue;
+--transparentBlack: rgba(0, 0, 0, 0.705);
+--whiteText: white;
+--blackText: black;
+
+
+--awards: gold
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a{text-decoration: none;}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+@import './components/Navbar/navbar.css';
+@import './components/Projects/projects.css';
+@import './components/Projects/Filter/filter.css';
+@import './components/Projects/Results/results.css';
+@import './components/Reusable/testimonial.css';
+
+
+@import './components/Bio/bio.css';
+@import './components/Footer/footer.css';

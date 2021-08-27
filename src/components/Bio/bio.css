@@ -1,0 +1,71 @@
+.bioContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.bio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bio >img{
+    filter: drop-shadow(0 0 0.70rem var(--border));
+}
+
+.bioDescription{
+    margin-left: 30px;
+    max-width: 500px;
+}
+.bioDescription > h1, .bioDescription > h3{
+    text-align: center;
+    color: var(--navLinkText);
+}
+
+.pageDivider{
+    width: 100%;
+    max-width: 960px;
+    display: flex;
+    align-items: center;
+}
+
+.moreInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bioTitle{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.awards, .interests{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.bioTitle > svg{
+    width: 40px;
+    height: 40px;
+    color: var(--awards);
+}
+.interestIcon > svg{
+    color: var(--navLinkText);
+}
+
+.bioText{
+    display: flex;
+    align-items: center;
+    /* padding-left: 30px; */
+}
+
+.bioText > img{
+    height: 20px;
+}
