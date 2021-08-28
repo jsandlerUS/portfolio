@@ -13,11 +13,11 @@ initializeAllRequests()
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
+    {/* <HashRouter> */}
     <Provider store={store}>
       <App />
     </Provider>
-    </HashRouter>
+    {/* </HashRouter> */}
   </React.StrictMode>
   ,
   document.getElementById('root')
