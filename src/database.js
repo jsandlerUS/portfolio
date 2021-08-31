@@ -71,4 +71,14 @@ export const projects = [
         team: 1,
         image: SusanaAyurveda,
     },
+    {
+        id: 3,
+        name: 'Wholesale Portal',
+        techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
+        viewLink: 'http://jsandlerus.github.io/wholesale-portal',
+        description: 'Developed an e-commerce platform with an administrative area for stock sales and product management. Integrations: Google Sign-in, goCardless API for payments.',
+        github:'https://github.com/jsandlerus/wholesale-portal',
+        team: 5,
+        image: SusanaAyurveda,
+    },
 ];
