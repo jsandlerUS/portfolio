@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-const testimonials = (state = [], action) => {
+const testimonials = (state = [], action = []) => {
   switch (action.type) {
     case 'SET_TESTIMONIALS':
       return action.payload;
@@ -9,7 +9,7 @@ const testimonials = (state = [], action) => {
   }
 }
 
-const filterSelection = (state = [], action) => {
+const filterSelection = (state = [], action = []) => {
   switch (action.type) {
     case 'ADD_FILTER':
       return ([...new Set([...state, action.selectedFilter])])
@@ -20,7 +20,16 @@ const filterSelection = (state = [], action) => {
   }
 }
 
-const projects = (state = [], action) => {
+const dataFlow = (state = [], action = []) => {
+  switch (action.type) {
+    case 'SET_DATAFLOW':
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
+const projects = (state = [], action = []) => {
   switch (action.type) {
     case 'SET_PROJECTS':
       return action.payload;
@@ -33,4 +42,5 @@ export default combineReducers({
   testimonials,
   filterSelection,
   projects,
+  dataFlow
 })

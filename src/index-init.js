@@ -1,15 +1,11 @@
 import store from './components/redux/store'
-import { testimonials, projects} from './database'
+import {dataFlow} from './database'
 
 export const initializeAllRequests = async () => {
-     await getTestimonials()
-     await getProjects()
+     await setDataFlow()
 }
 
-const getTestimonials = () => {
-    store.dispatch({ type: 'SET_TESTIMONIALS', payload: testimonials })
+const setDataFlow = () => {
+    store.dispatch({ type: 'SET_DATAFLOW', payload: dataFlow })
 }
 
-const getProjects = () => {
-    store.dispatch({ type: 'SET_PROJECTS', payload: projects })
-}
