@@ -8,7 +8,6 @@ const Home = () => {
   const ref = useRef();
 
   const showWindow = () => {
-    console.log("triggered hidden column in parent");
     setIsWindowOpen(!isWindowOpen);
   };
 
@@ -19,12 +18,12 @@ const Home = () => {
       <div className="home-background">
         {/* <FireflyCanvas/> */}
         <div className="logo">
+        <PieDisplay ref={ref} showWindow={() => showWindow()} />
           <div>
             JS <br />
             DESIGNS
           </div>
           <RoundFog />
-          <PieDisplay ref={ref} showWindow={() => showWindow()} />
         </div>
       </div>
     </React.Fragment>

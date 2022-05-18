@@ -16,7 +16,64 @@ Contact -> Action
 */
 export const dataFlow = [
     {
-        name: 'Professional Experience',
+        name: 'Contact',
+    },
+    {
+        name: 'About',
+    },
+    {
+        name: 'Projects',
+        items: [
+            {
+                name: "My Ayurveda\nClinic",
+                techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
+                viewLink: 'http://jsandlerus.github.io/myayurvedaclinic',
+                description: 'Online booking system, live video chat, e-commerce, and an advanced search engine for products, illnesses, and professionals. Uses HIPPA complain APIs for tracking of Medical Records and video chat service.',
+                github:'https://github.com/jsandleraol/MyAyurvedaClinic.com',
+                team: 1,
+                image: MyAyurvedaClinic,
+            },
+            {
+                name: 'Egipt\nChiropractic',
+                techStack: ['Wix'],
+                viewLink: 'https://viperayurveda.wixsite.com/egyptchiropractic',
+                description: '',
+                github:'https://viperayurveda.wixsite.com/egyptchiropractic',
+                team: 5,
+                image: EgyptChiropractic,
+            },
+            {
+                id: 2,
+                name: 'Susana\nAyurveda',
+                techStack: ['Wix'],
+                viewLink: 'https://www.susanaayurveda.com/',
+                description: '',
+                github:'https://www.susanaayurveda.com/',
+                team: 1,
+                image: SusanaAyurveda,
+            },
+            {
+                name: 'Wholesale\nPortal',
+                techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
+                viewLink: 'http://jsandlerus.github.io/wholesale-portal',
+                description: 'Developed an e-commerce platform with an administrative area for stock sales and product management. Integrations: Google Sign-in, goCardless API for payments.',
+                github:'https://github.com/jsandlerus/wholesale-portal',
+                team: 5,
+                image: SusanaAyurveda,
+            },
+            {
+                name: 'Test',
+                techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
+                viewLink: 'http://jsandlerus.github.io/wholesale-portal',
+                description: 'Developed an e-commerce platform with an administrative area for stock sales and product management. Integrations: Google Sign-in, goCardless API for payments.',
+                github:'https://github.com/jsandlerus/wholesale-portal',
+                team: 5,
+                image: SusanaAyurveda,
+            },
+        ]
+    },
+    {
+        name: "Professional\nExperience",
         items: [
             {
             name: 'ECSITE',
@@ -35,57 +92,18 @@ export const dataFlow = [
             github:'https://github.com/jsandlerus/wholesale-portal',
             team: 5,
             image: SusanaAyurveda,
+        },
+        {
+            name: 'test',
+            techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
+            viewLink: 'http://jsandlerus.github.io/wholesale-portal',
+            description: 'Front End Team Lead',
+            github:'https://github.com/jsandlerus/wholesale-portal',
+            team: 5,
+            image: SusanaAyurveda,
         }
     ]
     },
-    {
-        name: 'Contact',
-    },
-    {
-        name: 'About',
-    },
-    {
-        name: 'Projects',
-        items: [
-            {
-                name: 'My Ayurveda Clinic',
-                techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
-                viewLink: 'http://jsandlerus.github.io/myayurvedaclinic',
-                description: 'Online booking system, live video chat, e-commerce, and an advanced search engine for products, illnesses, and professionals. Uses HIPPA complain APIs for tracking of Medical Records and video chat service.',
-                github:'https://github.com/jsandleraol/MyAyurvedaClinic.com',
-                team: 1,
-                image: MyAyurvedaClinic,
-            },
-            {
-                name: 'Egipt Chiropractic',
-                techStack: ['Wix'],
-                viewLink: 'https://viperayurveda.wixsite.com/egyptchiropractic',
-                description: '',
-                github:'https://viperayurveda.wixsite.com/egyptchiropractic',
-                team: 5,
-                image: EgyptChiropractic,
-            },
-            {
-                id: 2,
-                name: 'Susana Ayurveda',
-                techStack: ['Wix'],
-                viewLink: 'https://www.susanaayurveda.com/',
-                description: '',
-                github:'https://www.susanaayurveda.com/',
-                team: 1,
-                image: SusanaAyurveda,
-            },
-            {
-                name: 'Wholesale Portal',
-                techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
-                viewLink: 'http://jsandlerus.github.io/wholesale-portal',
-                description: 'Developed an e-commerce platform with an administrative area for stock sales and product management. Integrations: Google Sign-in, goCardless API for payments.',
-                github:'https://github.com/jsandlerus/wholesale-portal',
-                team: 5,
-                image: SusanaAyurveda,
-            },
-        ]
-    }
 ];
 
 

@@ -18,6 +18,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 a{text-decoration: none;}
+pre{
+  font-family: 'Cinzel', serif;
+  margin:0;
+  border: 0; background-color: transparent;
+}
 
 
 

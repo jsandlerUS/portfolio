@@ -17,28 +17,43 @@ const PieDisplay = forwardRef(({ showWindow }, ref) => {
     setDisplay(search[0].items);
   };
 
-  console.log(display);
+  const getPieStyle = (index) => {
+    let pieButtonStyle = {
+      transform: "",
+    };
+    const rotX = (360 / display.length) * index;
+    console.log(rotX, index);
+    pieButtonStyle.transform = `rotate(${rotX}deg) skewY(0deg)`;
+    return pieButtonStyle;
+  };
 
-  //apply math, divide 360 / items.length()
-  //assign that value in equal increasing proportions to each element
-  //set the skewY value based on this.
-  let pieButtonStyle = {
-    transform: 'rotate(0deg) skewY(-60deg)'
-  }
+  const getPieTextStyle = (index) => {
+    let pieButtonStyle = {
+      transform: "",
+    };
+    const rotX = 360 / display.length / 2;
+    console.log("text", rotX, index);
+    pieButtonStyle.transform = `rotate(${rotX}deg) skewY(0deg)`;
+    return pieButtonStyle;
+  };
 
+  let i = 0;
+  let j = 0;
   return (
     <div className="pie-parent">
       {display.map((elem) => (
         <div
           className="pie-button"
-          style={pieButtonStyle}
+          style={getPieStyle(i += 1)}
           key={elem.name}
           onClick={
             elem.items ? () => updateDisplay(elem.name) : () => showWindow()
           }
           ref={ref}
         >
-          {elem.name}
+          <pre className="pie-button--text" style={getPieTextStyle(j += 1)}>
+            {elem.name}
+          </pre>
         </div>
       ))}
     </div>
