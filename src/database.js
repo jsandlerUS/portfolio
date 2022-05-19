@@ -94,14 +94,14 @@ export const dataFlow = [
             image: SusanaAyurveda,
         },
         {
-            name: 'test',
+            name: 'Your\nCompany',
             techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
             viewLink: 'http://jsandlerus.github.io/wholesale-portal',
             description: 'Front End Team Lead',
             github:'https://github.com/jsandlerus/wholesale-portal',
             team: 5,
             image: SusanaAyurveda,
-        }
+        },
     ]
     },
 ];

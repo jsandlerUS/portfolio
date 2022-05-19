@@ -29,6 +29,7 @@
     filter: url('#fog-filter');
     position: absolute;
     z-index: 100;
+    overflow: hidden;
 }
 
 .round-fog>div {
@@ -38,6 +39,8 @@
     border: 10px solid var(--white);
     border-radius: 50rem;
     filter: blur(6px) contrast(160%);
+    background-color: transparent;
+    overflow: hidden;
 }
 
 .firefly {
@@ -49,9 +52,10 @@
     box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
     padding: 0;
     margin: 1em auto;
-    width: 225%;
-    height: 225%;
+    width: 20em;
+    height: 20em;
     border-radius: 50%;
+    list-style: none;
     overflow: hidden;
 }
 
@@ -63,7 +67,7 @@
     width: 50%;
     height: 50%;
     transform-origin: 0% 100%;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .pie-button--text {
@@ -72,24 +76,13 @@
     width: 200%;
     height: 200%;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 60px;
   }
 
 .pie-button:hover {
-    background-color: grey;
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
     cursor: pointer;
 }
 
-/* .pie-button:nth-child(1) {
-    background-color: red;
-}
-.pie-button:nth-child(2) {
-    background-color: blue;
-}
-.pie-button:nth-child(3) {
-    background-color: yellow;
-}
-.pie-button:nth-child(4) {
-    background-color: green;
-} */
+
 

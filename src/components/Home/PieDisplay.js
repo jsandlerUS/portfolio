@@ -22,27 +22,35 @@ const PieDisplay = forwardRef(({ showWindow }, ref) => {
       transform: "",
     };
     const rotX = (360 / display.length) * index;
-    console.log(rotX, index);
-    pieButtonStyle.transform = `rotate(${rotX}deg) skewY(0deg)`;
+    if (display.length === 3) pieButtonStyle.transform = `rotate(${rotX}deg) skewY(30deg) scale(1.2)`;
+    else if (display.length === 4) pieButtonStyle.transform = `rotate(${rotX}deg) skewY(0deg)`;
+    else if (display.length === 5) pieButtonStyle.transform = `rotate(${rotX}deg) skewY(-15deg)`;
+    else if (display.length > 5) {
+      const skewY = (5 * display.length) * -1
+      pieButtonStyle.transform = `rotate(${rotX}deg) skewY(${skewY}deg)`;}
     return pieButtonStyle;
   };
 
-  const getPieTextStyle = (index) => {
+  const getPieTextStyle = () => {
     let pieButtonStyle = {
       transform: "",
     };
-    const rotX = 360 / display.length / 2;
-    console.log("text", rotX, index);
-    pieButtonStyle.transform = `rotate(${rotX}deg) skewY(0deg)`;
+    if (display.length === 3) pieButtonStyle.transform = `skewY(-30deg) rotate(55deg) scale(0.8)`;
+    else if (display.length === 4) pieButtonStyle.transform = `skewY(0deg) rotate(45deg)`;
+    else if (display.length === 5) pieButtonStyle.transform = `skewY(15deg) rotate(35deg)`;
+    else if (display.length > 5) {
+      const skewY = (5 * display.length)
+      const rotX = 30 / (skewY / 30);
+      pieButtonStyle.transform = `skewY(${skewY}deg) rotate(${rotX}deg)`;
+    }
     return pieButtonStyle;
   };
 
   let i = 0;
-  let j = 0;
   return (
-    <div className="pie-parent">
+    <ul className="pie-parent">
       {display.map((elem) => (
-        <div
+        <li
           className="pie-button"
           style={getPieStyle(i += 1)}
           key={elem.name}
@@ -51,12 +59,12 @@ const PieDisplay = forwardRef(({ showWindow }, ref) => {
           }
           ref={ref}
         >
-          <pre className="pie-button--text" style={getPieTextStyle(j += 1)}>
+          <pre className="pie-button--text" style={getPieTextStyle()}>
             {elem.name}
           </pre>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 });
 

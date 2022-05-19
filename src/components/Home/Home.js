@@ -18,12 +18,13 @@ const Home = () => {
       <div className="home-background">
         {/* <FireflyCanvas/> */}
         <div className="logo">
-        <PieDisplay ref={ref} showWindow={() => showWindow()} />
           <div>
             JS <br />
             DESIGNS
           </div>
           <RoundFog />
+          <PieDisplay ref={ref} showWindow={() => showWindow()} />
+
         </div>
       </div>
     </React.Fragment>
