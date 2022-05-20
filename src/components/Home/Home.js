@@ -22,9 +22,9 @@ const Home = () => {
             JS <br />
             DESIGNS
           </div>
-          <RoundFog />
+          {/* filter out the inside of the pie from the logo display, maybe move this outside the logo div? */}
           <PieDisplay ref={ref} showWindow={() => showWindow()} />
-
+          <RoundFog />
         </div>
       </div>
     </React.Fragment>

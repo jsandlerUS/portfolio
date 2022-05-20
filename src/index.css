@@ -6,9 +6,11 @@
 --transparentBlack: rgba(0, 0, 0, 0.705);
 --white: white;
 --blackText: black;
+--rotX: 0deg;
+--skewY: 0deg;
+--scale:1;
 
-
---awards: gold
+--awards: gold;
 }
 
 body {

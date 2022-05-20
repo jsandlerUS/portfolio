@@ -16,6 +16,39 @@ Contact -> Action
 */
 export const dataFlow = [
     {
+        name: "Professional\nExperience",
+        items: [
+            {
+            name: 'ECSITE',
+            techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
+            viewLink: 'http://jsandlerus.github.io/wholesale-portal',
+            description: 'Automation Framework',
+            github:'https://github.com/jsandlerus/wholesale-portal',
+            team: 5,
+            image: SusanaAyurveda,
+        },
+        {
+            name: 'Your\nCompany',
+            techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
+            viewLink: 'http://jsandlerus.github.io/wholesale-portal',
+            description: 'Front End Team Lead',
+            github:'https://github.com/jsandlerus/wholesale-portal',
+            team: 5,
+            image: SusanaAyurveda,
+        },
+        {
+            name: 'Armada',
+            techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
+            viewLink: 'http://jsandlerus.github.io/wholesale-portal',
+            description: 'Front End Team Lead',
+            github:'https://github.com/jsandlerus/wholesale-portal',
+            team: 5,
+            image: SusanaAyurveda,
+        },
+
+    ]
+    },
+    {
         name: 'Contact',
     },
     {
@@ -72,38 +105,7 @@ export const dataFlow = [
             },
         ]
     },
-    {
-        name: "Professional\nExperience",
-        items: [
-            {
-            name: 'ECSITE',
-            techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
-            viewLink: 'http://jsandlerus.github.io/wholesale-portal',
-            description: 'Automation Framework',
-            github:'https://github.com/jsandlerus/wholesale-portal',
-            team: 5,
-            image: SusanaAyurveda,
-        },
-        {
-            name: 'Armada',
-            techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
-            viewLink: 'http://jsandlerus.github.io/wholesale-portal',
-            description: 'Front End Team Lead',
-            github:'https://github.com/jsandlerus/wholesale-portal',
-            team: 5,
-            image: SusanaAyurveda,
-        },
-        {
-            name: 'Your\nCompany',
-            techStack: ['JavaScript', 'Redux', 'React', 'Nodejs', 'Expressjs', 'HTTPS', 'OAuth 2.0'],
-            viewLink: 'http://jsandlerus.github.io/wholesale-portal',
-            description: 'Front End Team Lead',
-            github:'https://github.com/jsandlerus/wholesale-portal',
-            team: 5,
-            image: SusanaAyurveda,
-        },
-    ]
-    },
+    
 ];
 
 

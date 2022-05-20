@@ -29,7 +29,6 @@
     filter: url('#fog-filter');
     position: absolute;
     z-index: 100;
-    overflow: hidden;
 }
 
 .round-fog>div {
@@ -67,6 +66,8 @@
     width: 50%;
     height: 50%;
     transform-origin: 0% 100%;
+    animation: open-pie 5s cubic-bezier(0.4, 0.0, 0.2, 1);
+    animation-fill-mode: forwards; 
     /* z-index: 2; */
 }
 
@@ -77,6 +78,8 @@
     height: 200%;
     text-align: center;
     padding-top: 60px;
+    animation: open-pie-text 5s cubic-bezier(0.4, 0.0, 0.2, 1);
+    animation-fill-mode: forwards; 
   }
 
 .pie-button:hover {
@@ -85,4 +88,40 @@
 }
 
 
+  @keyframes open-pie{
+    0%{transform: rotate(-75deg) skewY(var(--skewY)) scale(var(--scale));
+        box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);}
+    30%,
+    70%,
+    100% {
+      transform: rotate(var(--rotX)) skewY(var(--skewY)) scale(var(--scale));
+    }
+}
 
+@keyframes close-pie{
+    0%{transform: rotate(var(--rotX)) skewY(var(--skewY)) scale(var(--scale))}
+    30%,
+    70%,
+    100% {
+      transform: rotate(0deg) skewY(var(--skewY)) scale(var(--scale));
+    }
+}
+
+@keyframes open-pie-text{
+    0%{transform: skewY(var(--skewY)) rotate(var(--rotX)) scale(var(--scale));
+        box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);}
+    30%,
+    70%,
+    100% {
+      transform: skewY(var(--skewY)) rotate(var(--rotX)) scale(var(--scale));
+    }
+}
+
+@keyframes close-pie-text{
+    0%{transform: skewY(var(--skewY)) rotate(var(--rotX)) scale(var(--scale))}
+    30%,
+    70%,
+    100% {
+      transform: skewY(var(--skewY)) rotate(var(--rotX)) scale(var(--scale));
+    }
+}
