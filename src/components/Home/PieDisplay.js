@@ -1,27 +1,13 @@
-import React, { useState, forwardRef } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 
-const PieDisplay = forwardRef(({ showWindow }, ref) => {
-  const dataFlow = useSelector((state) => state.dataFlow);
-  const [display, setDisplay] = useState(dataFlow.map((item) => item));
-
-  const updateDisplay = (elem) => {
-    let search = null;
-    search = dataFlow
-      .map((item) => (item.name === elem ? item : null))
-      .filter((value) => value !== null);
-    if (search == null)
-      dataFlow.map((item) => {
-        return item.items.map((item2) => item2.name === elem);
-      });
-    setDisplay(search[0].items);
-  };
+const PieDisplay = ({ showWindow, display, updateDisplay }) => {
 
   const getPieStyle = (index) => {
     let pieButtonStyle = {
       "--rotX":"",
       "--skewY":"",
-      "--scale":"1"
+      "--scale":"1",
+      "--rotY":"",
     };
     const rotX = (360 / display.length) * index;
     const skewY = (5 * display.length) * -1
@@ -43,13 +29,15 @@ const PieDisplay = forwardRef(({ showWindow }, ref) => {
     let pieButtonStyle = {
       "--rotX":"",
       "--skewY":"",
-      "--scale":"1"
+      "--scale":"1",
+      "--rotY":"",
+      "--index":`${Math.random() * 10}`,
     };
     //invert/flip text for elements that are over 180 deg.
     const skewY = (5 * display.length)
     const rotX = 30 / (skewY / 30);
     if (display.length === 3) {
-      pieButtonStyle["--rotX"] = `55deg`
+      pieButtonStyle["--rotX"] = `60deg`
       pieButtonStyle["--skewY"] = `-30deg`
       pieButtonStyle["--scale"] = `0.8`
     }
@@ -78,9 +66,8 @@ const PieDisplay = forwardRef(({ showWindow }, ref) => {
           style={getPieStyle(i += 1)}
           key={elem.name}
           onClick={
-            elem.items ? () => updateDisplay(elem.name) : () => showWindow()
+            elem.items ? () => updateDisplay(elem.name) : () => showWindow(elem)
           }
-          ref={ref}
         >
           <pre className="pie-button--text" style={getPieTextStyle()}>
             {elem.name}
@@ -89,6 +76,6 @@ const PieDisplay = forwardRef(({ showWindow }, ref) => {
       ))}
     </div>
   );
-});
+};
 
 export default PieDisplay;

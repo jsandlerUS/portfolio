@@ -29,10 +29,13 @@ const dataFlow = (state = [], action = []) => {
   }
 }
 
-const projects = (state = [], action = []) => {
+
+const breadCrumbs = (state = ['Home'], action = []) => {
   switch (action.type) {
-    case 'SET_PROJECTS':
-      return action.payload;
+    case 'UPDATE_CRUMBS':
+      return ([...new Set([...state, action.crumb])])
+    case 'DELETE_CRUMBS':
+      return state.slice(0, state.indexOf(action.crumb))
     default:
       return state;
   }
@@ -41,6 +44,6 @@ const projects = (state = [], action = []) => {
 export default combineReducers({
   testimonials,
   filterSelection,
-  projects,
-  dataFlow
+  dataFlow,
+  breadCrumbs
 })
