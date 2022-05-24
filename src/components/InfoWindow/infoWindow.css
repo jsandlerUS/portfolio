@@ -1,0 +1,258 @@
+.infoWindow {
+    position: absolute;
+    top: 0;
+    right: -30%;
+    width: 30%;
+    height: 100%;
+    background-color: rgba(28, 28, 28, 0.4);
+    backdrop-filter: blur(5px);
+    animation: slideInFromRight 2s ease-in-out;
+    animation-fill-mode: forwards;
+    z-index: 11;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        right: -30%;
+    }
+
+    100% {
+        right: 0%;
+    }
+}
+
+.infoWindow-wrapper {
+    position: relative;
+    height: calc(100% - 40px);
+    width: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.infoWindow-image {
+    width: 100%;
+    height: auto;
+    /* max-height: 40%; */
+}
+
+.infoWindow-techStack {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.infoWindow-techStack>div {
+    margin: 4px 8px;
+}
+
+.infoWindow-techStack .infoWindow-description {
+    font-size: 1.2em;
+    width: 100%;
+}
+
+.infoWindow-description {
+    padding-top: 10px;
+    height: 100%;
+    position: relative;
+}
+
+.infoWindow-description>svg {
+    top: 8px;
+    right: 8px;
+    height: 25px;
+    width: 25px;
+}
+
+
+.infoWindow-description>svg:hover {
+    cursor: pointer;
+    border-radius: 50rem;
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
+}
+
+
+.infoWindow-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+}
+
+.infoWindow-button>div>svg {
+    position: relative !important;
+    margin: 0 4px;
+}
+
+.infoWindow-button>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 40px;
+}
+
+.contact-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.contact-title {
+    position: relative;
+    width: 100%;
+    top: 40%;
+    font-size: 3em;
+    animation: slideToTop 4s ease-in-out;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideToTop {
+    0% {
+        top: 40%;
+        position: relative;
+    }
+
+    100% {
+        top: 0;
+        position: relative;
+    }
+}
+
+.contact-title__t1 {
+    position: relative;
+    right: -10%;
+    opacity: 0%;
+    animation: slideFromRight 4s ease-in-out;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideFromRight {
+    0% {
+        right: -10%;
+        opacity: 0%;
+    }
+
+    30% {
+        opacity: 100%;
+    }
+
+    70%,
+    100% {
+        right: 0;
+        opacity: 100%;
+    }
+}
+
+.contact-title__t2 {
+    position: relative;
+    opacity: 0%;
+    left: -10%;
+    animation: slideFromLeft 4s ease-in-out;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideFromLeft {
+    0% {
+        left: -10%;
+        opacity: 0%;
+    }
+
+    30% {
+        opacity: 100%;
+    }
+
+    70%,
+    100% {
+        left: 10%;
+        opacity: 100%;
+    }
+}
+
+.contact-form {
+    opacity: 0%;
+    height: 100%;
+    animation: fadeInFromBack 5s ease-in-out;
+    animation-delay: 9s;
+    animation-fill-mode: forwards;
+    z-index: 1;
+}
+
+.contact-form>form {
+    /* height: 100%; */
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-info__phone,
+.contact-info__social {
+    display: flex;
+    align-items: center;
+    font-size: 1.3em;
+}
+
+.contact-info__phone>svg,
+.contact-info__social>a>svg {
+    position: relative !important;
+    width: 30px;
+    height: 30px;
+    margin: 0 6px
+}
+
+
+
+.contact-info__social>a>svg:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+.contact-reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    opacity: 0%;
+    animation: fadeInFromBack 5s ease-in-out;
+    animation-delay: 9s;
+    animation-fill-mode: forwards;
+}
+
+.contact-reviews__background {
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+.contact-reviews__left-svg {
+    transform: scale(-1, 1);
+    top: 10px;
+    left: 10px;
+    width: 50px !important;
+    height: 50px !important;
+    color: rgba(255, 255, 255, .4);
+}
+
+.contact-reviews__right-svg {
+    bottom: 10px;
+    right: 10px;
+    width: 50px !important;
+    height: 50px !important;
+    color: rgba(255, 255, 255, .4);
+}
+
+.contact-reviews__background>pre {
+    text-align: right;
+}

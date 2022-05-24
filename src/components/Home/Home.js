@@ -5,7 +5,7 @@ import PieDisplay from "./PieDisplay";
 import MaxWindow from "./MaxWindow";
 import TurbulentWater from "./TurbulentWater";
 import Fog from "./Fog";
-import InfoWindow from "./InfoWindow";
+import InfoWindow from "../InfoWindow/InfoWindow";
 import BreadCrumbs from "./BreadCrumbs";
 import MusicPlay from "./MusicPlay";
 // import ClickAwayListener from '@mui/base/ClickAwayListener';

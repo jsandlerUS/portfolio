@@ -1,12 +1,11 @@
 import MyAyurvedaClinic from "./resources/MyAyurvedaClinic.png";
 import EgyptChiropractic from "./resources/EgyptChiropractic.png";
 import SusanaAyurveda from "./resources/SusanaAyurveda.png";
-import JonathanImage from "./resources/JonathanImage.png";
-
+import JonathanImage from "./resources/face1.png";
+import slicedFace from "./resources/sliced face.png";
 
 import AldoImage from "./resources/AldoOva.png";
 import WendyImage from "./resources/WendySanchez.png";
-
 
 export const dataFlow = [
   {
@@ -64,6 +63,24 @@ export const dataFlow = [
       },
       {
         name: "Contact",
+        image: slicedFace,
+        reviews: [
+          {
+            name: "Brent Smith\nSenior Software Engineer",
+            review:
+              "“Working with Jonathan has been one of the best experience in my life. His professionalism and coding skills helped us move out from a very difficult problem the company was facing”",
+          },
+        ],
+        socialMedia: {
+          facebook: "https://www.facebook.com/jonathan.sandler.aol/" ,
+          twitter: "https://twitter.com/AolSandler" ,
+          linkedin: "https://www.linkedin.com/in/jsandler-us/" ,
+          github: "https://github.com/jsandlerus" ,
+        },
+        contact: {
+          phone: "+1 510 938 2813" ,
+          email: "jsandler.aol@gmail.com" ,
+        },
       },
       {
         name: "About",

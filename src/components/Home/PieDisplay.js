@@ -58,6 +58,8 @@ const PieDisplay = ({ showWindow, display, updateDisplay }) => {
   };
 
   let i = -1;
+
+  //UPDATE CODE FROM STACKOVERFLOW
   return (
     <div className="pie-parent">
       {display.map((elem) => (
