@@ -3,10 +3,12 @@
 --navLinkText: #297aaf;
 
 --border: #add8e6;
---transparentBlack: #000000b4;
+--transparentBlack: #000000b0;;
 --white: #ffffff;
 --black: #000000;
 --blackText: #000000;
+--red: #d00a0a;
+--disabledButton: rgba(255, 255, 255, 0.6);
 
 --rotY: 0deg;
 --rotX: 0deg;

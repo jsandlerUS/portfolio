@@ -105,8 +105,8 @@
     width: 100%;
     top: 40%;
     font-size: 3em;
-    animation: slideToTop 4s ease-in-out;
-    animation-delay: 6s;
+    animation: slideToTop 3s ease-in-out;
+    animation-delay: 5s;
     animation-fill-mode: forwards;
 }
 
@@ -127,7 +127,7 @@
     right: -10%;
     opacity: 0%;
     animation: slideFromRight 4s ease-in-out;
-    animation-delay: 3s;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
 }
 
@@ -137,11 +137,13 @@
         opacity: 0%;
     }
 
-    30% {
+    22% {
         opacity: 100%;
     }
 
-    70%,
+    44%,
+    66%,
+    88%,
     100% {
         right: 0;
         opacity: 100%;
@@ -152,22 +154,25 @@
     position: relative;
     opacity: 0%;
     left: -10%;
-    animation: slideFromLeft 4s ease-in-out;
-    animation-delay: 3s;
+    animation: slideFromLeft 4s ease;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
 }
 
 @keyframes slideFromLeft {
     0% {
-        left: -10%;
+        left: 0%;
         opacity: 0%;
     }
 
-    30% {
+    22% {
         opacity: 100%;
     }
 
-    70%,
+    44%,
+    66%,
+    88%,
+
     100% {
         left: 10%;
         opacity: 100%;
@@ -177,20 +182,133 @@
 .contact-form {
     opacity: 0%;
     height: 100%;
-    animation: fadeInFromBack 5s ease-in-out;
+    margin-top: 20px;
+    animation: fadeInFromBack 5s ease;
     animation-delay: 9s;
     animation-fill-mode: forwards;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     z-index: 1;
+    caret-color: var(--white);
 }
 
-.contact-form>form {
-    /* height: 100%; */
+.contact-form-notification {
+    position: absolute;
+    background-color: var(--transparentBlack);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    font-size: 2em;
+    z-index: 1;
+    border-radius: 5px;
 }
+
+.contact-form-notification__exit{
+    border-radius: 3px;
+    background-color: var(--white);
+    padding: 8px;
+    margin-top: 6px;
+    cursor: pointer;
+    color: var(--black);
+}
+
+.contact-form>span {
+    font-size: 1.2em;
+    caret-color:transparent;
+}
+
+.contact-form>div>input,
+.contact-form>textarea {
+    color: var(--white);
+    font-size: 1.2em;
+    font-family: 'Cinzel', serif;
+}
+
+.contact-form>div>input:focus,
+.contact-form>textarea:focus {
+    outline: none;
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
+
+}
+
+.contact-form-input-container {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    margin: 6px 0;
+    justify-content: space-between;
+}
+
+.contact-form-input, .contact-form-input__error{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 50%;
+    padding: 10px;
+    background-color: rgb(255, 255, 255, 0.1);
+    border: 1px solid var(--white);
+    color: white;
+    border-radius: 3px;
+}
+
+.contact-form-input:hover, .contact-form-input__error:hover{
+    animation: expandInput 1s ease;
+    animation-fill-mode: forwards;
+}
+
+.contact-form-input__error{
+    border: 1px solid var(--red);
+}
+
+@keyframes expandInput {
+    0% {
+        width: 50%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+.contact-form-textarea {
+    height: 100%;
+    padding: 7px;
+    background-color: rgb(255, 255, 255, 0.1);
+    border: 1px solid var(--white);
+    border-radius: 3px;
+}
+
+.contact-form-send-icon__active, .contact-form-send-icon__inactive {
+    width: 40px !important;
+    height: 40px !important;
+    bottom: 5px;
+    right: 5px;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.contact-form-send-icon__inactive {
+    pointer-events: none;
+    color: var(--disabledButton);
+}
+
+
 
 .contact-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    opacity: 0%;
+    margin-top: 15px;
+    animation: fadeInFromBack 5s ease;
+    animation-delay: 9s;
+    animation-fill-mode: forwards;
 }
 
 .contact-info__phone,
@@ -232,7 +350,7 @@
     border-radius: 10px;
     width: 100%;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: var(--transparentBlack);
     backdrop-filter: blur(5px);
 }
 
