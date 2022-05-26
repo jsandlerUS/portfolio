@@ -4,21 +4,21 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 
-const ProjectDisplay = ({display}) =>{
-    // const onEnd = () => setIsVoicePlaying(false)
-const { speak, cancel, speaking, supported, voices } = useSpeechSynthesis({
-  // onEnd,
-});
+const ProjectDisplay = ({ display }) => {
+  // const onEnd = () => setIsVoicePlaying(false)
+  const { speak, cancel, speaking, supported, voices } = useSpeechSynthesis({
+    // onEnd,
+  });
 
-const voice = voices[11];
+  const voice = voices[11];
 
-const text = "Hello, this is a test";
+  const text = "Hello, this is a test";
 
-const displayPrevious = () => {}
-const displayNext = () => {}
+  const displayPrevious = () => {};
+  const displayNext = () => {};
 
-  return(
-      <div className="infoWindow-wrapper">
+  return (
+    <div className="infoWindow-wrapper">
       <img
         src={display.image}
         className="infoWindow-image"
@@ -41,16 +41,16 @@ const displayNext = () => {}
       </div>
       <div className="infoWindow-button">
         <div>
-          <ArrowBackIcon onClick={displayPrevious}/>
+          <ArrowBackIcon onClick={displayPrevious} />
           {"Previous"}
         </div>
         <div>
           {"Next"}
-          <ArrowForwardIcon onClick={displayNext}/>
+          <ArrowForwardIcon onClick={displayNext} />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectDisplay
+export default ProjectDisplay;

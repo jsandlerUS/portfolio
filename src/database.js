@@ -85,7 +85,7 @@ export const dataFlow = [
       {
         name: "About",
         image: JonathanImage,
-        description: "Front End Team Lead",
+        description: "I learned I could put together my attention to detail, teamwork, perseverance, and inquisitiveness to solve specific problems while learning new skills. Out of everything, I have never felt so empowered by working with others. Either at work or the Bootcamp, teamwork has helped me to be a better person and a better coder. I have learned to receive feedback and feel humbled in the process.\n \nToday, I feel I have an endless pool of resources, communities, and technologies that I can use to create, and build anything. I feel limitless. To me, Software Engineering is not a profession, it's my life purpose.\n \nCurrently, I am teaching my wife how to code as she has also felt empowered by all the benefits my life has had with Software Engineering. At the same time, a friend and I are developing a platform to help Latin-American communities learn how to code. We are targeting South and Central American people, as they struggle the most to get a good education in technology. We hope this project will empower our communities and somehow allow them to contribute in the years to come.",
         techStack: [
           "JavaScript",
           "Redux",

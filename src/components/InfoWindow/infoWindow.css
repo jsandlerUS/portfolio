@@ -33,7 +33,6 @@
 .infoWindow-image {
     width: 100%;
     height: auto;
-    /* max-height: 40%; */
 }
 
 .infoWindow-techStack {
@@ -210,7 +209,7 @@
     border-radius: 5px;
 }
 
-.contact-form-notification__exit{
+.contact-form-notification__exit {
     border-radius: 3px;
     background-color: var(--white);
     padding: 8px;
@@ -221,7 +220,7 @@
 
 .contact-form>span {
     font-size: 1.2em;
-    caret-color:transparent;
+    caret-color: transparent;
 }
 
 .contact-form>div>input,
@@ -246,7 +245,8 @@
     justify-content: space-between;
 }
 
-.contact-form-input, .contact-form-input__error{
+.contact-form-input,
+.contact-form-input__error {
     overflow: hidden;
     white-space: nowrap;
     width: 50%;
@@ -257,12 +257,13 @@
     border-radius: 3px;
 }
 
-.contact-form-input:hover, .contact-form-input__error:hover{
+.contact-form-input:hover,
+.contact-form-input__error:hover {
     animation: expandInput 1s ease;
     animation-fill-mode: forwards;
 }
 
-.contact-form-input__error{
+.contact-form-input__error {
     border: 1px solid var(--red);
 }
 
@@ -284,7 +285,8 @@
     border-radius: 3px;
 }
 
-.contact-form-send-icon__active, .contact-form-send-icon__inactive {
+.contact-form-send-icon__active,
+.contact-form-send-icon__inactive {
     width: 40px !important;
     height: 40px !important;
     bottom: 5px;
@@ -373,4 +375,36 @@
 
 .contact-reviews__background>pre {
     text-align: right;
+}
+
+.about-wrapper {
+    position: relative;
+    height: calc(100% - 40px);
+    width: calc(100% - 40px);
+    padding: 20px;
+}
+
+.about-wrapper>svg {
+    top: 20px;
+    right: 20px
+}
+
+.about-title {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.about-image {
+    width: 50%;
+    float: left;
+    margin: 8px 8px 8px 0;
+}
+
+.about-description {
+    font-size: 1em;
+    text-align: justify;
+    float: none;
+    font-family: "Helvetica", 'Arial';
+    white-space: pre-wrap;
 }

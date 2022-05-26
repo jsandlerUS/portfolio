@@ -29,4 +29,4 @@ const TurbulentWater = () => {
   );
 };
 
-export default TurbulentWater
+export default TurbulentWater;

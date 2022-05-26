@@ -17,19 +17,20 @@
     width: 100vw;
     background-image: url("../../resources/black-forest.jpg");
     background-size: cover;
-  }
-  
-  .swamp .swamp-water {
+}
+
+.swamp .swamp-water {
     position: absolute;
     background-image: url("../../resources/swamp-water.png");
     background-size: cover;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     filter: url("#turbulence");
-  }
-.swamp-darkness{
+}
+
+.swamp-darkness {
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -37,14 +38,28 @@
 }
 
 @keyframes day-and-night {
-    0% { background-color: rgba(28, 28, 28, 0.0) }
-    25% { background-color: rgba(28, 28, 28, 0.3) }
-    50% { background-color: rgba(28, 28, 28, 0.65) }
-    75% { background-color: rgba(28, 28, 28, 0.3) }
-    100% { background-color: rgba(28, 28, 28, 0.0) }
+    0% {
+        background-color: rgba(28, 28, 28, 0.0)
+    }
+
+    25% {
+        background-color: rgba(28, 28, 28, 0.3)
+    }
+
+    50% {
+        background-color: rgba(28, 28, 28, 0.65)
+    }
+
+    75% {
+        background-color: rgba(28, 28, 28, 0.3)
+    }
+
+    100% {
+        background-color: rgba(28, 28, 28, 0.0)
+    }
 }
 
-svg{
+svg {
     position: absolute;
 }
 
@@ -53,7 +68,7 @@ svg{
 
 
 
-.maxWindow{
+.maxWindow {
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -66,7 +81,7 @@ svg{
 }
 
 
-.maxWindow-alert{
+.maxWindow-alert {
     position: relative;
     width: 30em;
     height: 15em;
@@ -79,27 +94,27 @@ svg{
     z-index: 10;
 }
 
-.maxWindow-title{
+.maxWindow-title {
     position: absolute;
     top: 0;
     font-size: 40px;
     text-align: center;
     padding-bottom: 20px;
     animation: fadeInFromTop 8s ease-in-out;
-    animation-fill-mode: forwards; 
+    animation-fill-mode: forwards;
 }
 
 
-.maxWindow-text{
+.maxWindow-text {
     margin-top: 12%;
     padding-bottom: 20px;
     animation: fadeInFromBack 8s ease-in-out;
     animation-delay: 2s;
-    animation-fill-mode: forwards; 
+    animation-fill-mode: forwards;
     opacity: 0%;
 }
 
-.maxWindow-button{
+.maxWindow-button {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -108,35 +123,51 @@ svg{
     padding: 10px 20px;
     animation: fadeInFromBack 8s ease-in-out;
     animation-delay: 3s;
-    animation-fill-mode: forwards; 
+    animation-fill-mode: forwards;
     opacity: 0%;
+    pointer-events: none;
+    cursor: none;
 }
 
-.maxWindow-button > div{
+.maxWindow-button>div {
     padding: 15px 30px;
     box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
 }
 
-.maxWindow-button > div:hover{
+.maxWindow-button>div:hover {
     background-color: var(--white);
     color: var(--black);
     cursor: pointer;
 }
 
-@keyframes fadeInFromTop{
-    0%{opacity: 0%; top: 0%}
+@keyframes fadeInFromTop {
+    0% {
+        opacity: 0%;
+        top: 0%;
+    }
+
     30%,
     70%,
     90%,
-    100%{opacity: 100%; top: 5%}
+    100% {
+        opacity: 100%;
+        top: 5%
+    }
 }
 
-@keyframes fadeInFromBack{
-    0%{opacity: 0%;}
+@keyframes fadeInFromBack {
+    0% {
+        opacity: 0%;
+    }
+
     30%,
     70%,
     90%,
-    100%{opacity: 100%;}
+    100% {
+        opacity: 100%;
+        pointer-events: all;
+        cursor: pointer;
+    }
 }
 
 
@@ -224,34 +255,40 @@ svg{
     animation-delay: 1s;
     animation-fill-mode: forwards;
     opacity: 0%;
-  }
+}
 
 .pie-button:hover {
     box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
     background-color: rgba(255, 255, 255, .15);
-	backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     cursor: pointer;
 }
 
 
-  @keyframes open-pie{
-    0%{transform: rotate(-75deg) skewY(var(--skewY)) scale(var(--scale));
+@keyframes open-pie {
+    0% {
+        transform: rotate(-75deg) skewY(var(--skewY)) scale(var(--scale));
         pointer-events: none;
-        box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.1) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.1);}
+        box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.1) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.1);
+    }
+
     30%,
     70%,
     100% {
-      transform: rotate(var(--rotX)) skewY(var(--skewY)) scale(var(--scale));
+        transform: rotate(var(--rotX)) skewY(var(--skewY)) scale(var(--scale));
     }
 }
 
-@keyframes open-pie-text{
-    0%{transform: skewY(var(--skewY)) rotate(var(--rotX)) scale(var(--scale)) rotateY(var(--rotY));
-        box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.1) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.1);}
+@keyframes open-pie-text {
+    0% {
+        transform: skewY(var(--skewY)) rotate(var(--rotX)) scale(var(--scale)) rotateY(var(--rotY));
+        box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.1) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.1);
+    }
+
     30%,
     70%,
     100% {
-      transform: skewY(var(--skewY)) rotate(var(--rotX)) scale(var(--scale));
+        transform: skewY(var(--skewY)) rotate(var(--rotX)) scale(var(--scale));
     }
 }
 
@@ -278,20 +315,20 @@ svg{
 
 
 
-.audioWrapper{
+.audioWrapper {
     position: absolute;
     top: 25px;
     left: 25px;
     z-index: 10;
 }
 
-.audioWrapper > svg{
+.audioWrapper>svg {
     width: 40px;
     height: 40px;
     border-radius: 50rem;
 }
 
-.audioWrapper > svg:hover{
+.audioWrapper>svg:hover {
     cursor: pointer;
     box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
 }
@@ -300,7 +337,7 @@ svg{
 
 
 
-.breadcrumbs{
+.breadcrumbs {
     position: absolute;
     display: flex;
     align-items: center;
@@ -309,11 +346,12 @@ svg{
     z-index: 10;
     font-size: 1.5em;
 }
-.breadcrumbs > div{margin: 0 6px;}
 
-.breadcrumbs > div:hover{
+.breadcrumbs>div {
+    margin: 0 6px;
+}
+
+.breadcrumbs>div:hover {
     text-decoration: 1px underline;
     cursor: pointer;
 }
-
-

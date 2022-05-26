@@ -3,9 +3,8 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-// import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import ForwardToInboxIcon from "@mui/icons-material/ForwardToInbox";
-import { send } from 'emailjs-com';
+import { send } from "emailjs-com";
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -13,8 +12,10 @@ import { Link } from "react-router-dom";
 const ContactDisplay = ({ display }) => {
   const [inputs, setInputs] = useState({});
   const [isSent, setIsSent] = useState(null);
-  const [sendIconStyle, setSendIconStyle] = useState("contact-form-send-icon__inactive")
-  const [emailStyle, setEmailStyle] = useState("contact-form-input")
+  const [sendIconStyle, setSendIconStyle] = useState(
+    "contact-form-send-icon__inactive"
+  );
+  const [emailStyle, setEmailStyle] = useState("contact-form-input");
 
   const { facebook, twitter, linkedin, github } = display.socialMedia;
   const { phone } = display.contact;
@@ -25,32 +26,33 @@ const ContactDisplay = ({ display }) => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  const valueCheck = () =>{
-    const isSearchValid = inputs.reply_to.search("@") !== -1 && inputs.reply_to.search(".com") !== -1
-    isSearchValid ? setEmailStyle("contact-form-input") : setEmailStyle("contact-form-input__error")
-    isSearchValid && inputs.from_name && inputs.message ? setSendIconStyle("contact-form-send-icon__active") : setSendIconStyle("contact-form-send-icon__inactive")
+  const valueCheck = () => {
+    const isSearchValid =
+      inputs.reply_to.search("@") !== -1 &&
+      inputs.reply_to.search(".com") !== -1;
+    isSearchValid
+      ? setEmailStyle("contact-form-input")
+      : setEmailStyle("contact-form-input__error");
+    isSearchValid && inputs.from_name && inputs.message
+      ? setSendIconStyle("contact-form-send-icon__active")
+      : setSendIconStyle("contact-form-send-icon__inactive");
+  };
 
-  }
-
-  useEffect(()=>{
-    if(inputs.reply_to) valueCheck()
-  },[inputs])
+  useEffect(() => {
+    if (inputs.reply_to) valueCheck();
+  }, [inputs]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    send(
-      'service_3606hpn',
-      'template_3r6vkvj',
-      inputs,
-      'UVrVBKZC9JNV8p9iS'
-    ).then((response) => {
-      setIsSent(true)
-      // console.log('SUCCESS!', response.status, response.text);
-    })
-    .catch((err) => {
-      setIsSent(false)
-      // console.log('FAILED...', err);
-    });
+    send("service_3606hpn", "template_3r6vkvj", inputs, "UVrVBKZC9JNV8p9iS")
+      .then((response) => {
+        setIsSent(true);
+        // console.log('SUCCESS!', response.status, response.text);
+      })
+      .catch((err) => {
+        setIsSent(false);
+        // console.log('FAILED...', err);
+      });
   };
 
   return (
@@ -60,78 +62,84 @@ const ContactDisplay = ({ display }) => {
         <div className="contact-title__t1">Interested</div>
         <div className="contact-title__t2">Working with me?</div>
       </div>
-        <form onSubmit={handleSubmit} className="contact-form">
-          {isSent !== null ? 
+      <form onSubmit={handleSubmit} className="contact-form">
+        {isSent !== null ? (
           <div className="contact-form-notification">
             {isSent ? "Email successfully sent" : null}
             {!isSent ? "An Error occur please try again" : null}
-            <div onClick={()=> setIsSent(null)} className="contact-form-notification__exit">Exit</div>
-          </div>  : null}
-          <span>Send me an email</span>
-          <div className="contact-form-input-container">
-            <input
-              type="text"
-              value={inputs.from_name || "Name"}
-              name="from_name"
-              onChange={handleChange}
-              className="contact-form-input"
-              onClick={e => {
-                e.target.focus();
-                e.target.select();
-              }}
-              style={{'marginRight':'8px'}}
-            />
-            <input
-              type="text"
-              value={inputs.reply_to || "Email"}
-              name="reply_to"
-              onChange={handleChange}
-              className={emailStyle}
-              onClick={e => {
-                e.target.focus();
-                e.target.select();
-              }}
-            />
+            <div
+              onClick={() => setIsSent(null)}
+              className="contact-form-notification__exit"
+            >
+              Exit
+            </div>
           </div>
-          <textarea
-            value={inputs.message || "Message"}
-            name="message"
+        ) : null}
+        <span>Send me an email</span>
+        <div className="contact-form-input-container">
+          <input
+            type="text"
+            value={inputs.from_name || "Name"}
+            name="from_name"
             onChange={handleChange}
-            className="contact-form-textarea"
-            onFocus={e => { e.target.select(); }}
+            className="contact-form-input"
+            onClick={(e) => {
+              e.target.focus();
+              e.target.select();
+            }}
+            style={{ marginRight: "8px" }}
           />
-          <ForwardToInboxIcon
-            type="submit"
-            onClick={handleSubmit}
-            className={sendIconStyle}
+          <input
+            type="text"
+            value={inputs.reply_to || "Email"}
+            name="reply_to"
+            onChange={handleChange}
+            className={emailStyle}
+            onClick={(e) => {
+              e.target.focus();
+              e.target.select();
+            }}
           />
-        </form>
-        <div className="contact-info">
-          <div className="contact-info__phone">
-            <PhoneIphoneIcon />
-            {phone}
-          </div>
-          <div className="contact-info__social">
-            <Link to={github}>
-              <GitHubIcon />
-            </Link>
-            <Link to={linkedin}>
-              <LinkedInIcon />
-            </Link>
-            <Link to={facebook}>
-              <FacebookIcon />
-            </Link>
-            <Link to={twitter}>
-              <TwitterIcon />
-            </Link>
-          </div>
         </div>
+        <textarea
+          value={inputs.message || "Message"}
+          name="message"
+          onChange={handleChange}
+          className="contact-form-textarea"
+          onFocus={(e) => {
+            e.target.select();
+          }}
+        />
+        <ForwardToInboxIcon
+          type="submit"
+          onClick={handleSubmit}
+          className={sendIconStyle}
+        />
+      </form>
+      <div className="contact-info">
+        <div className="contact-info__phone">
+          <PhoneIphoneIcon />
+          {phone}
+        </div>
+        <div className="contact-info__social">
+          <Link to={github}>
+            <GitHubIcon />
+          </Link>
+          <Link to={linkedin}>
+            <LinkedInIcon />
+          </Link>
+          <Link to={facebook}>
+            <FacebookIcon />
+          </Link>
+          <Link to={twitter}>
+            <TwitterIcon />
+          </Link>
+        </div>
+      </div>
       <div className="contact-reviews">
         <div className="contact-reviews__background">
-          {/* <FormatQuoteIcon className="contact-reviews__left-svg" /> */}
           <div>{display.reviews[0].review}</div>
           <pre>{display.reviews[0].name}</pre>
-          {/* <FormatQuoteIcon className="contact-reviews__right-svg" /> */}
         </div>
       </div>
     </div>
