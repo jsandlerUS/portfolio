@@ -40,12 +40,3 @@ pre{
 @import './components/Home/Home.css';
 @import './components/Home/fog.css';
 @import './components/InfoWindow/infoWindow.css';
-
-
-@import './components/Projects/projects.css';
-@import './components/Projects/Filter/filter.css';
-@import './components/Projects/Results/results.css';
-@import './components/Reusable/testimonial.css';
-
-
-@import './components/Bio/bio.css';

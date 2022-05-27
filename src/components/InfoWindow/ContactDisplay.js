@@ -4,6 +4,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import ForwardToInboxIcon from "@mui/icons-material/ForwardToInbox";
+import Testimonials from "./testimonials";
 import { send } from "emailjs-com";
 
 import React, { useState, useEffect } from "react";
@@ -136,12 +137,8 @@ const ContactDisplay = ({ display }) => {
           </Link>
         </div>
       </div>
-      <div className="contact-reviews">
-        <div className="contact-reviews__background">
-          <div>{display.reviews[0].review}</div>
-          <pre>{display.reviews[0].name}</pre>
-        </div>
-      </div>
+      <Testimonials/>
+
     </div>
   );
 };

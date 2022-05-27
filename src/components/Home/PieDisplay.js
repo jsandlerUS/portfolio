@@ -22,7 +22,7 @@ const PieDisplay = ({ showWindow, display, updateDisplay }) => {
     return pieButtonStyle;
   };
 
-  const getPieTextStyle = () => {
+  const getPieWrapperTextStyle = () => {
     let pieButtonStyle = {
       "--rotX": "",
       "--skewY": "",
@@ -47,6 +47,17 @@ const PieDisplay = ({ showWindow, display, updateDisplay }) => {
       pieButtonStyle["--rotX"] = `${rotX}deg`;
       pieButtonStyle["--skewY"] = `${skewY}deg`;
     }
+    return pieButtonStyle;
+  };
+
+  const getPieTextStyle = (index) => {
+    let pieButtonStyle = {
+      "--scale": "",
+      "marginRight":"0"
+    };
+    const rotX = (360 / display.length) * index;
+    pieButtonStyle["--scale"] = rotX >= 60 && rotX <= 210 ? "-1,-1" : "1";
+    if(display.length === 3) pieButtonStyle["marginRight"] = `60px`;
 
     return pieButtonStyle;
   };
@@ -65,9 +76,9 @@ const PieDisplay = ({ showWindow, display, updateDisplay }) => {
             elem.items ? () => updateDisplay(elem.name) : () => showWindow(elem)
           }
         >
-          <pre className="pie-button--text" style={getPieTextStyle()}>
-            {elem.name}
-          </pre>
+          <div className="pie-button-wrapper-text" style={getPieWrapperTextStyle()}>
+            <pre className="pie-button-text" style={getPieTextStyle((i))}>{elem.name}</pre>
+          </div>
         </div>
       ))}
     </div>

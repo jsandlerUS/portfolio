@@ -188,8 +188,16 @@ svg {
     height: 320px;
     padding: 20px;
     border-radius: 50rem;
+    /* cursor: pointer; */
     box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
 }
+.logo-text{z-index: 101;}
+
+.logo-text:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
+}
+
 
 .round-fog {
     display: flex;
@@ -244,17 +252,21 @@ svg {
     opacity: 0%;
 }
 
-.pie-button--text {
+.pie-button-wrapper-text {
     position: absolute;
     left: -100%;
     width: 200%;
     height: 200%;
-    text-align: center;
     padding-top: 60px;
     animation: open-pie-text 8s cubic-bezier(0.4, 0.0, 0.2, 1), fadeInFromBack 3s ease-in-out;
     animation-delay: 1s;
     animation-fill-mode: forwards;
     opacity: 0%;
+}
+
+.pie-button-text{
+    text-align: center;
+    transform: scale(var(--scale));
 }
 
 .pie-button:hover {

@@ -1,25 +1,5 @@
 import { combineReducers } from 'redux'
 
-const testimonials = (state = [], action = []) => {
-  switch (action.type) {
-    case 'SET_TESTIMONIALS':
-      return action.payload;
-    default:
-      return state;
-  }
-}
-
-const filterSelection = (state = [], action = []) => {
-  switch (action.type) {
-    case 'ADD_FILTER':
-      return ([...new Set([...state, action.selectedFilter])])
-    case 'REMOVE_FILTER':
-      return [...state.filter((filter, i) => i !== action.indexFilter)]
-    default:
-      return state;
-  }
-}
-
 const dataFlow = (state = [], action = []) => {
   switch (action.type) {
     case 'SET_DATAFLOW':
@@ -29,6 +9,14 @@ const dataFlow = (state = [], action = []) => {
   }
 }
 
+const testimonials = (state = [], action = []) => {
+  switch (action.type) {
+    case 'SET_TESTIMONIALS':
+      return action.payload;
+    default:
+      return state;
+  }
+}
 
 const breadCrumbs = (state = ['Home'], action = []) => {
   switch (action.type) {
@@ -41,9 +29,20 @@ const breadCrumbs = (state = ['Home'], action = []) => {
   }
 }
 
+// const filterSelection = (state = [], action = []) => {
+//   switch (action.type) {
+//     case 'ADD_FILTER':
+//       return ([...new Set([...state, action.selectedFilter])])
+//     case 'REMOVE_FILTER':
+//       return [...state.filter((filter, i) => i !== action.indexFilter)]
+//     default:
+//       return state;
+//   }
+// }
+
 export default combineReducers({
   testimonials,
-  filterSelection,
+  // filterSelection,
   dataFlow,
   breadCrumbs
 })

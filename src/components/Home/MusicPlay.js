@@ -36,10 +36,10 @@ const MusicPlay = () => {
   }, [audio]);
 
   const nextSong = (musicType) => {
-    console.log("run next song");
+    // console.log("run next song");
     if (musicType === "background") {
       const index = currentSong === audioList.length - 1 ? 0 : currentSong + 1;
-      console.log(index, currentSong, audioList[index]);
+      // console.log(index, currentSong, audioList[index]);
       const song = new Audio(audioList[index]);
       song.volume = 0.02;
       song.play();
@@ -49,7 +49,7 @@ const MusicPlay = () => {
         currentNatureSound === natureList.length - 1
           ? 0
           : currentNatureSound + 1;
-      console.log(index, currentNatureSound, natureList[index]);
+      // console.log(index, currentNatureSound, natureList[index]);
       const song = new Audio(natureList[index]);
       song.volume = 0.03;
       song.play();

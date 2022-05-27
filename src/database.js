@@ -4,8 +4,6 @@ import SusanaAyurveda from "./resources/SusanaAyurveda.png";
 import JonathanImage from "./resources/face1.png";
 import slicedFace from "./resources/sliced face.png";
 
-import AldoImage from "./resources/AldoOva.png";
-import WendyImage from "./resources/WendySanchez.png";
 
 export const dataFlow = [
   {
@@ -64,13 +62,6 @@ export const dataFlow = [
       {
         name: "Contact",
         image: slicedFace,
-        reviews: [
-          {
-            name: "Brent Smith\nSenior Software Engineer",
-            review:
-              "“Working with Jonathan has been one of the best experience in my life. His professionalism and coding skills helped us move out from a very difficult problem the company was facing”",
-          },
-        ],
         socialMedia: {
           facebook: "https://www.facebook.com/jonathan.sandler.aol/" ,
           twitter: "https://twitter.com/AolSandler" ,
@@ -168,35 +159,28 @@ export const dataFlow = [
 
 export const testimonials = [
   {
-    id: 0,
-    name: "Aldo Ova",
-    country: "Mexico",
+    name: "Brent Smith\nSenior Software Engineer",
+    review:
+      "“Working with Jonathan has been one of the best experience in my life. His professionalism and coding skills helped us move out from a very difficult problem the company was facing”",
+  },
+  {
+    name: "Matthew \nSenior Software Engineer",
     review:
       '"Thank you for this profound, restorative and revitalizing experience. I felt so comfortable and careful. You guys are the best!."',
-    image: AldoImage,
   },
   {
-    id: 1,
     name: "Wendy Sanchez",
-    country: "USA",
     review:
       '"I had several opportunities to receive excellent service from the technicians of this website. I liked how professional they are. I give my highest recommendation."',
-    image: WendyImage,
   },
   {
-    id: 2,
-    name: "Aldo Ova",
-    country: "Mexico",
+    name: "Micaela Roncaglia",
     review:
       '"Thank you for this profound, restorative and revitalizing experience. I felt so comfortable and careful. You guys are the best!."',
-    image: AldoImage,
   },
   {
-    id: 3,
-    name: "Wendy Sanchez",
-    country: "USA",
+    name: "Lara Sandler",
     review:
       '"I had several opportunities to receive excellent service from the technicians of this website. I liked how professional they are. I give my highest recommendation."',
-    image: WendyImage,
   },
 ];

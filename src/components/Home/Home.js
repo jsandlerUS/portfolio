@@ -11,14 +11,15 @@ import MusicPlay from "./MusicPlay";
 // import ClickAwayListener from '@mui/base/ClickAwayListener';
 
 import { useSelector, useDispatch } from "react-redux";
-import { getFlatArray } from "./functions";
+import { getFlatArray } from "../Reusable/functions";
 
 const getFullScreen = () => {
   return 1 >= window.outerHeight - window.innerHeight;
 };
 
 const Home = () => {
-  const { dataFlow } = useSelector((state) => state);
+  const { dataFlow, breadCrumbs } = useSelector((state) => state);
+  console.log(breadCrumbs)
   const [display, setDisplay] = useState(dataFlow[0].items.map((item) => item));
   const [isWindowOpen, setIsWindowOpen] = useState(false);
   const [currentDisplay, setCurrentDisplay] = useState([]);
@@ -27,6 +28,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const showWindow = (e) => {
+    // console.log(e)
     e.name === currentDisplay.name && isWindowOpen
       ? setIsWindowOpen(false)
       : setCurrentDisplay(e, setIsWindowOpen(true));
@@ -43,7 +45,12 @@ const Home = () => {
       .map((item) => (item.name === elem ? item : null))
       .filter((item) => item != null);
     const crumb = elem;
-    setDisplay(search[0].items, dispatch({ type: "UPDATE_CRUMBS", crumb }));
+    if(breadCrumbs.indexOf(elem) > -1){
+      dispatch({ type: "DELETE_CRUMBS", crumb })
+      setIsWindowOpen(false)
+    }
+    dispatch({ type: "UPDATE_CRUMBS", crumb })
+    setDisplay(search[0].items)
   };
 
   return (
@@ -53,12 +60,12 @@ const Home = () => {
       ) : (
         <div className="home-background">
           <MusicPlay />
-          <BreadCrumbs setDisplay={(e) => updateDisplay(e)} />
+          <BreadCrumbs setDisplay={(e) => updateDisplay(e)} breadCrumbs={breadCrumbs} />
           <Fog />
           <TurbulentWater />
           {/* <FireflyCanvas/> */}
           <div className="logo">
-            <div onClick={() => setDisplay(dataFlow.map((item) => item))}>
+            <div className="logo-text" onClick={() => updateDisplay("Home")}>
               JS <br />
               DESIGNS
             </div>
