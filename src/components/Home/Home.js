@@ -8,7 +8,7 @@ import Fog from "./Fog";
 import InfoWindow from "../InfoWindow/InfoWindow";
 import BreadCrumbs from "./BreadCrumbs";
 import MusicPlay from "./MusicPlay";
-// import ClickAwayListener from '@mui/base/ClickAwayListener';
+import ClickAwayListener from '@mui/base/ClickAwayListener';
 
 import { useSelector, useDispatch } from "react-redux";
 import { getFlatArray } from "../Reusable/functions";
@@ -19,7 +19,6 @@ const getFullScreen = () => {
 
 const Home = () => {
   const { dataFlow, breadCrumbs } = useSelector((state) => state);
-  console.log(breadCrumbs)
   const [display, setDisplay] = useState(dataFlow[0].items.map((item) => item));
   const [isWindowOpen, setIsWindowOpen] = useState(false);
   const [currentDisplay, setCurrentDisplay] = useState([]);
@@ -28,10 +27,10 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const showWindow = (e) => {
-    // console.log(e)
-    e.name === currentDisplay.name && isWindowOpen
-      ? setIsWindowOpen(false)
-      : setCurrentDisplay(e, setIsWindowOpen(true));
+    console.log(e, typeof e)
+    if (typeof e === 'boolean') setIsWindowOpen(e)
+    else if(e.name === currentDisplay.name && isWindowOpen) setIsWindowOpen(false)
+    else setCurrentDisplay(e, setIsWindowOpen(true));
   };
 
   const exitAlert = () => {
@@ -47,7 +46,7 @@ const Home = () => {
     const crumb = elem;
     if(breadCrumbs.indexOf(elem) > -1){
       dispatch({ type: "DELETE_CRUMBS", crumb })
-      setIsWindowOpen(false)
+      showWindow(false)
     }
     dispatch({ type: "UPDATE_CRUMBS", crumb })
     setDisplay(search[0].items)
@@ -76,7 +75,11 @@ const Home = () => {
             />
             <RoundFog />
           </div>
-          {isWindowOpen ? <InfoWindow display={currentDisplay} /> : null}
+          {isWindowOpen ? 
+            <ClickAwayListener onClickAway={()=>setIsWindowOpen(false)}>
+              <div><InfoWindow display={currentDisplay}/></div>
+              </ClickAwayListener>
+          :null} 
         </div>
       )}
     </React.Fragment>
@@ -84,11 +87,3 @@ const Home = () => {
 };
 
 export default Home;
-
-{
-  /* {isWindowOpen ? 
-            <ClickAwayListener onClickAway={()=>setIsWindowOpen(false)}>
-              <InfoWindow display={currentDisplay} ref={ref}/>
-              </ClickAwayListener>
-          : null} */
-}

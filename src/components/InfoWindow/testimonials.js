@@ -13,7 +13,7 @@ const Testimonials = () => {
 
   useEffect(() => {
     const play = () => autoPlayRef.current();
-    setInterval(play, 17000);
+    setInterval(play, 20000);
   }, []);
 
   const nextSlide = () => {
