@@ -60,7 +60,7 @@ const ContactDisplay = ({ display }) => {
     <div className="infoWindow-wrapper">
       <img src={display.image} className="contact-image" alt={display.name} />
       <div className="contact-title">
-        <div className="contact-title__t1">Interested</div>
+        <div className="contact-title__t1">Interested in</div>
         <div className="contact-title__t2">Working with me?</div>
       </div>
       <form onSubmit={handleSubmit} className="contact-form">

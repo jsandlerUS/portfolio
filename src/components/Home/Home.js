@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import FireflyCanvas from './FireflyCanvas'
+import FireflyCanvas from './FireflyCanvas'
 import RoundFog from "./RoundFog";
 import PieDisplay from "./PieDisplay";
 import MaxWindow from "./MaxWindow";
@@ -62,7 +62,7 @@ const Home = () => {
           <BreadCrumbs setDisplay={(e) => updateDisplay(e)} breadCrumbs={breadCrumbs} />
           <Fog />
           <TurbulentWater />
-          {/* <FireflyCanvas/> */}
+          <FireflyCanvas/>
           <div className="logo">
             <div className="logo-text" onClick={() => updateDisplay("Home")}>
               JS <br />

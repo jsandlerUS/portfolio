@@ -1,125 +1,123 @@
-// import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState } from "react";
+import useWindowDimensions from '../Reusable/useWindowDimensions'
 
-// const FireflyCanvas = props => {
-//     let [c, setC] = useState()
-//     let [w, setW] = useState()
-//     let [h, setH] = useState()
+const FireflyCanvas = (props) => {
+  const canvasRef = useRef(null);
+  let canvas = null;
+  let ctx = null;
+  const {w, h} = useWindowDimensions()
+  const [height, setHeight] = useState(h);
+  const [width, setWidth] = useState(w);
 
-//     const canvasRef = useRef(null)
+  const [f, setF] = useState([]);
 
-//     let [x, setX] = useState()
-//     let [y, setY] = useState()
-//     let [s, setS] = useState()
-//     let [ang, setAng] = useState()
-//     let [v, setV] = useState()
+  class Firefly extends React.Component {
+    constructor() {
+      super();
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.s = Math.random() * 2;
+      this.ang = Math.random() * 2 * Math.PI;
+      this.v = (this.s * this.s) / 4;
+    }
+    move() {
+      this.x += this.v * Math.cos(this.ang);
+      this.y += this.v * Math.sin(this.ang);
+      this.ang += (Math.random() * 20 * Math.PI) / 180 - (10 * Math.PI) / 180;
+    }
+    show() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.s, 0, 2 * Math.PI);
+      ctx.fillStyle = "#fddba3";
+      ctx.fill();
+    }
+  }
 
+  const draw = () => {
+    if (f.length < 500) {
+      for (let j = 0; j < 80; j++) {
+        setF(f.push(new Firefly()));
+      }
+    }
+    //animation
+    for (let i = 0; i < f.length; i++) {
+      f[i].move();
+      f[i].show();
+      if (f[i].x < 0 || f[i].x > width || f[i].y < 0 || f[i].y > height) {
+        f.splice(i, 1);
+      }
+    }
+  };
 
-//     useEffect = (()=>{
-//         setC(initCanvas())
+  const resizeCanvas = (c) => {
+    if (c.width !== width || c.height !== height) {
+      var scale = window.devicePixelRatio;
+    //   const { devicePixelRatio:scale=1 } = window
+      c.width = width * scale;
+      c.height = height * scale;
+      const context = c.getContext("2d");
+      context.scale(scale, scale);
+    }
+  };
 
-//     },[canvasRef])
+  const initCanvas = () => {
+    canvas = canvasRef.current;
+    ctx = canvas.getContext("2d");
+    resizeCanvas(canvas)
+    ctx.fillStyle = "rgba(30,30,30,1)";
+    ctx.fillRect(0, 0, width, height);
+  };
 
+  useEffect(() => {
+    initCanvas();
+  }, []);
 
+  //   useEffect
+  const getAnimationFrame = () =>{
+    return (
+      window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.oRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      function (callback) {
+        window.setTimeout(callback);
+      }
+    );
+  };
 
-//     const Firefly = () => {
-//         setX(Math.random()*w)
-//         setY(Math.random()*h)
-//         setS(Math.random()*2)
-//         setAng(Math.random()*2*Math.PI)
-//         setV(s*s/4)
-//     const move = () =>{
-//       x += v*Math.cos(ang);
-//       y += v*Math.sin(ang);
-//       ang += Math.random()*20*Math.PI/180-10*Math.PI/180;
-//     }
-//     const show = () => {
-//       c.beginPath();
-//       c.arc(x,y,s,0,2*Math.PI);
-//       c.fillStyle="#fddba3";
-//       c.fill();
-//     }
-//   }
-  
-//   let f = [];
-  
-//   const draw = () => {
-//     if(f.length < 100){
-//       for(let j = 0; j < 10; j++){
-//        f.push(Firefly);
-//     }
-//        }
-//     //animation
-//     for(let i = 0; i < f.length; i++){
-//       f[i].move();
-//       f[i].show();
-//       if(f[i].x < 0 || f[i].x > w || f[i].y < 0 || f[i].y > h){
-//          f.splice(i,1);
-//          }
-//     }
-//   }
-  
-//   let mouse = {};
-//   let last_mouse = {};
-  
-//   canvas.addEventListener(
-//     "mousemove",
-//      (e) => {
-//       last_mouse.x = mouse.x;
-//       last_mouse.y = mouse.y;
-  
-//       mouse.x = e.pageX - e.offsetLeft;
-//       mouse.y = e.pageY - e.offsetTop;
-//     },
-//     false
-//   );
+  useEffect(() => {
+    console.log('resize init')
+    const getWindowDimensions = () => {
+      const { innerWidth, innerHeight } = window;
+      setHeight(innerHeight);
+      setWidth(innerWidth);
+    };
+    window.addEventListener("resize", getWindowDimensions);
+  }, []);
 
-  
-//   window.requestAnimFrame = (() => {
-//     return (
-//       window.requestAnimationFrame ||
-//       window.webkitRequestAnimationFrame ||
-//       window.mozRequestAnimationFrame ||
-//       window.oRequestAnimationFrame ||
-//       window.msRequestAnimationFrame ||
-//       function(callback) {
-//         window.setTimeout(callback);
-//       }
-//     );
-//   });
-  
-//   const loop = () => {
-//     window.requestAnimFrame(loop);
-//     c.clearRect(0, 0, w, h);
-//     draw();
-//   }
-  
-//   window.addEventListener("resize", function() {
-//     (w = canvas.width = window.innerWidth),
-//     (h = canvas.height = window.innerHeight);
-//     loop();
-//   });
-  
-//   loop();
-//   setInterval(loop, 1000 / 60);
+console.log(height, width)
 
+  useEffect(() => {
+      console.log('interval init')
+    const interval = setInterval(() => {
+      let animationFrameId;
+      const loop = () => {
+        ctx.clearRect(0, 0, width, height);
+        resizeCanvas(canvas);
+        draw();
+        animationFrameId = getAnimationFrame();
+      };
 
-//   const initCanvas = () => {
-//     let canvas = canvasRef.current
-//     setC(canvas.getContext("2d"))
-//     w = (canvas.width = window.innerWidth)
-//     h = (canvas.height = window.innerHeight)
-//     setW(w)
-//     setH(h)
-//     c.fillStyle = "rgba(30,30,30,1)"
-//     c.fillRect(0, 0, w, h)
-//     return c;
-// } //done
+      loop();
+      return () => {
+        window.cancelAnimationFrame(animationFrameId);
+      };
+    }, 1000 / 60);
+    return () => clearInterval(interval);
+  }, []);
 
-//     return (
-//         <canvas className='firefly' ref={canvasRef} {...props}></canvas> //done
-//     )
-// }
+  return <canvas className="firefly" ref={canvasRef} {...props} />;
+};
 
-
-
-// export default FireflyCanvas;
+export default FireflyCanvas;

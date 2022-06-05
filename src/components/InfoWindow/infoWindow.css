@@ -42,10 +42,6 @@
     padding: 20px;
 }
 
-.infoWindow-image {
-    width: 100%;
-    height: auto;
-}
 
 .infoWindow-techStack {
     display: flex;
@@ -63,7 +59,7 @@
 }
 
 .infoWindow-description {
-    padding-top: 10px;
+    padding-top: 30px;
     height: 100%;
     position: relative;
 }
@@ -445,4 +441,73 @@
     float: none;
     font-family: "Helvetica", 'Arial';
     white-space: pre-wrap;
+}
+
+.carousel{
+    position: relative;
+    width: 100%;
+}
+
+.carousel-links{
+    position: absolute;
+    top: 5px;
+    right: 0;
+    padding: 3px;
+    background-color: rgb(0 0 0 / 0.4);
+    border-radius: 3px 0 0 3px;
+    display: flex;
+}
+
+.carousel-links > a{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    margin: 0 8px;
+}
+
+.carousel-links > a > svg{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    filter: drop-shadow(1px 0px 5px rgb(0 0 0 / 0.4));
+}
+.carousel-links > a > svg:hover{
+    cursor: pointer;
+    filter: drop-shadow(1px 0px 10px rgb(0 0 0 / 1));
+    border-radius: 50%;
+}
+.carousel-links > a > svg:hover:after {
+    position: absolute;
+    color: red;
+    top: 5px;
+	content: ">> Hovering >>"; /* You can add simple static text in CSS as well. */
+    position: inline-block;
+
+}
+
+.carousel-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.loader__element {
+    position: relative;
+	width: 100%;
+    height: 4px;
+    bottom: 10px;
+/* 	background: var(--back-color); */
+}
+
+.loader__element:before {
+	content: '';
+	display: block;
+	background-color: var(--loader-color);
+	height: 4px;
+	width: 0;
+  animation: getWidth var(--carouseltime) ease-in infinite;
+}
+
+@keyframes getWidth {
+	100% { width: 100%; }
 }

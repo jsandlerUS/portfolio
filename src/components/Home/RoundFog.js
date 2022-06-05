@@ -10,7 +10,7 @@ const RoundFog = () => {
       let rad = Math.PI / 180;
       let bfx, bfy, bf;
 
-      setFrames((frames += 0.2));
+      setFrames((frames + 0.2));
 
       bfx = 0.03;
       bfy = 0.03;

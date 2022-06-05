@@ -3,13 +3,14 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
+import Carousel from "./Carousel";
 
 const ProjectDisplay = ({ display }) => {
   // const onEnd = () => setIsVoicePlaying(false)
   const { speak, cancel, speaking, supported, voices } = useSpeechSynthesis({
     // onEnd,
   });
-
+  const {images, github, viewLink} = display
   const voice = voices[11];
 
   const text = "Hello, this is a test";
@@ -19,11 +20,8 @@ const ProjectDisplay = ({ display }) => {
 
   return (
     <div className="infoWindow-wrapper">
-      <img
-        src={display.image}
-        className="infoWindow-image"
-        alt={display.name}
-      />
+      <Carousel props={{images, github, viewLink}}/>
+
       <div className="infoWindow-techStack">
         {display.techStack.map((tech) => (
           <div key={tech}>{tech}</div>
