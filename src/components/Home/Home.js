@@ -62,7 +62,7 @@ const Home = () => {
           <BreadCrumbs setDisplay={(e) => updateDisplay(e)} breadCrumbs={breadCrumbs} />
           <Fog />
           <TurbulentWater />
-          <FireflyCanvas/>
+          {/* <FireflyCanvas/> */}
           <div className="logo">
             <div className="logo-text" onClick={() => updateDisplay("Home")}>
               JS <br />

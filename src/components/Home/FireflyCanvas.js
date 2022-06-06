@@ -39,7 +39,7 @@ const FireflyCanvas = (props) => {
         setF(f.push(new Firefly()));
       }
     }
-    //animation
+    //implement dynamic positioning of each firefly
     for (let i = 0; i < f.length; i++) {
       f[i].move();
       f[i].show();
