@@ -32,7 +32,7 @@ const MaxWindow = ({ exitAlert }) => {
           </div>
         </div>
       </div>
-      <Fog />
+      <Fog position={'fixed'}/>
     </div>
   );
 };

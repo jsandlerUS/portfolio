@@ -17,6 +17,11 @@
   z-index: 1;
 }
 
+.fogwrapper__fixed{
+  height: 100%;
+  z-index: 5;
+}
+
 #foglayer_01,
 #foglayer_02,
 #foglayer_03 {

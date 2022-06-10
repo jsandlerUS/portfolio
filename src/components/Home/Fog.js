@@ -1,7 +1,8 @@
 import React from "react";
 const Fog = ({position}) => {
 
-  const fogStyle = position === 'front' ? 'fogwrapper fogwrapper__front' : 'fogwrapper fogwrapper__back'
+  const fogStyle = position === 'front' ? 'fogwrapper fogwrapper__front' : 
+  position === 'back' ? 'fogwrapper fogwrapper__back' : 'fogwrapper fogwrapper__fixed'
   // const setFogIndex = () => {
   //   return { zIndex: `${Math.random() * 10}` };
   // };
