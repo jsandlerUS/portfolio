@@ -18,12 +18,12 @@ const MusicPlay = () => {
   const natureList = [dayBirds, nightCrickets];
 
   useEffect(() => {
-    audio.volume = 0.008;
+    audio.volume = 0.025;
     playPause(audio);
   }, []);
 
   useEffect(() => {
-    natureSound.volume = 0.005;
+    natureSound.volume = 0.015;
     natureSound.play();
   }, []);
 
@@ -36,12 +36,10 @@ const MusicPlay = () => {
   }, [audio]);
 
   const nextSong = (musicType) => {
-    // console.log("run next song");
     if (musicType === "background") {
       const index = currentSong === audioList.length - 1 ? 0 : currentSong + 1;
-      // console.log(index, currentSong, audioList[index]);
       const song = new Audio(audioList[index]);
-      song.volume = 0.008;
+      song.volume = 0.025;
       song.play();
       setAudio(song, setCurrentSong(index));
     } else if (musicType === "nature") {
@@ -49,9 +47,8 @@ const MusicPlay = () => {
         currentNatureSound === natureList.length - 1
           ? 0
           : currentNatureSound + 1;
-      // console.log(index, currentNatureSound, natureList[index]);
       const song = new Audio(natureList[index]);
-      song.volume = 0.005;
+      song.volume = 0.015;
       song.play();
       setNatureSound(song, setCurrentNatureSound(index));
     }

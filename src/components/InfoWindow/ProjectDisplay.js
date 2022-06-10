@@ -1,32 +1,50 @@
+import React, {useState} from 'react';
 import { useSpeechSynthesis } from "react-speech-kit";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import Carousel from "./Carousel";
+import { useSelector} from "react-redux";
+
 
 const ProjectDisplay = ({ display }) => {
+  const [currentDisplay, setCurrentDisplay] = useState(display)
+  const { breadCrumbs, flatDataFlow } = useSelector((state) => state);
+  const lastCrumb = breadCrumbs[breadCrumbs.length - 1]
+
   // const onEnd = () => setIsVoicePlaying(false)
   const { speak, cancel, speaking, supported, voices } = useSpeechSynthesis({
     // onEnd,
   });
   const {images, github, viewLink} = display
   const voice = voices[11];
-
   const text = "Hello, this is a test";
 
-  const displayPrevious = () => {};
-  const displayNext = () => {};
+  const getParent = () =>{
+    return flatDataFlow.map(item => {return(item.name === lastCrumb ? item.items : null)})
+    .filter(item => item != null)
+  }
+
+  const updateDisplay = (flow) => {
+    const parent = getParent()
+    const positionInParent = parent[0].findIndex(item => item.name === currentDisplay.name)
+
+    if (flow === 'previous' && positionInParent - 1 >= 0) setCurrentDisplay(parent[0][positionInParent - 1])
+    else if (flow === 'previous') setCurrentDisplay(parent[0][parent[0].length - 1])
+    else if (flow === 'next' && positionInParent + 1 < parent[0].length) setCurrentDisplay(parent[0][positionInParent + 1])
+    else setCurrentDisplay(parent[0][0])
+  };
 
   return (
     <div className="infoWindow-wrapper">
       <Carousel props={{images, github, viewLink}}/>
 
       <div className="infoWindow-techStack">
-        {display.techStack.map((tech) => (
+        {currentDisplay.techStack.map((tech) => (
           <div key={tech}>{tech}</div>
         ))}{" "}
-        <div>{`Team size: ${display.team}`}</div>
+        <div>{`Team size: ${currentDisplay.team}`}</div>
       </div>
       <div className="infoWindow-description">
         {!supported ? <VolumeOffIcon /> : null}
@@ -35,16 +53,16 @@ const ProjectDisplay = ({ display }) => {
         ) : (
           <VolumeUpIcon onClick={() => cancel} />
         )}
-        {display.description}
+        {currentDisplay.description}
       </div>
       <div className="infoWindow-button">
-        <div>
-          <ArrowBackIcon onClick={displayPrevious} />
+        <div onClick={() => updateDisplay('previous')}>
+          <ArrowBackIcon/>
           {"Previous"}
         </div>
-        <div>
+        <div onClick={() => updateDisplay('next')}>
           {"Next"}
-          <ArrowForwardIcon onClick={displayNext} />
+          <ArrowForwardIcon  />
         </div>
       </div>
     </div>

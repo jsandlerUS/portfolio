@@ -9,6 +9,15 @@ const dataFlow = (state = [], action = []) => {
   }
 }
 
+const flatDataFlow = (state = [], action = []) => {
+  switch (action.type) {
+    case 'SET_FLATDATAFLOW':
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
 const testimonials = (state = [], action = []) => {
   switch (action.type) {
     case 'SET_TESTIMONIALS':
@@ -42,7 +51,7 @@ const breadCrumbs = (state = ['Home'], action = []) => {
 
 export default combineReducers({
   testimonials,
-  // filterSelection,
+  flatDataFlow,
   dataFlow,
   breadCrumbs
 })

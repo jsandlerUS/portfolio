@@ -1,6 +1,7 @@
 import { useSpeechSynthesis } from "react-speech-kit";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
+import firework from '../../resources/fireworks.gif'
 
 const AboutDisplay = ({ display }) => {
   // const onEnd = () => setIsVoicePlaying(false)
@@ -20,7 +21,7 @@ const AboutDisplay = ({ display }) => {
       ) : (
         <VolumeUpIcon onClick={() => cancel} />
       )}
-      <div className="about-title"> Welcome!</div>
+      <div className="about-title"> <img src={firework}/>&nbsp;Welcome!&nbsp;<img src={firework} /></div>
       <img src={display.image} className="about-image" alt={display.name} />
       <div className="about-description">{display.description}</div>
     </div>

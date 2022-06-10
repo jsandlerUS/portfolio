@@ -3,7 +3,7 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 const Carousel = ({ props }) => {
-  console.log(props);
+  // console.log(props);
   const { images, github, viewLink } = props;
   const [image, setImage] = useState(images[0]);
   const [current, setCurrent] = useState(0);

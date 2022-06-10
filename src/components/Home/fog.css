@@ -1,12 +1,20 @@
 .fogwrapper {
-  height: 100%;
   position: absolute;
   top: 0;
   width: 100%;
   filter: blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2);
-  z-index: 1;
   overflow: hidden;
+}
+
+.fogwrapper__front {
+  height: 100%;
+  z-index: 5;
   animation: day-and-night 56s linear infinite;
+}
+
+.fogwrapper__back{
+  height: 60%;
+  z-index: 1;
 }
 
 #foglayer_01,

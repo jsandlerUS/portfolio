@@ -34,6 +34,22 @@
     }
 }
 
+.infoWindow-exit{
+    padding: 8px 10px;
+    text-align: center;
+    font-size: 1em;
+    right: 0px;
+    border-radius: 0 0 0 5px;
+    position: absolute;
+    z-index: 10;
+}
+
+.infoWindow-exit:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+
 .infoWindow-wrapper {
     position: relative;
     height: calc(100% - 40px);
@@ -54,19 +70,14 @@
     margin: 4px 8px;
 }
 
-.infoWindow-techStack .infoWindow-description {
-    font-size: 1.2em;
-    width: 100%;
-}
-
 .infoWindow-description {
-    padding-top: 30px;
+    padding-top: 25px;
     height: 100%;
     position: relative;
 }
 
 .infoWindow-description>svg {
-    top: 8px;
+    top: 0px;
     right: 8px;
     height: 25px;
     width: 25px;
@@ -98,6 +109,14 @@
     justify-content: space-between;
     align-items: center;
     min-width: 40px;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.infoWindow-button>div:hover{
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
+    background-color:  rgba(255, 255, 255, 0.2);
 }
 
 .contact-image {
@@ -426,6 +445,10 @@
 }
 
 .about-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 40px;
     text-align: center;
     font-size: 2.2em;
     margin-bottom: 10px;
@@ -448,6 +471,7 @@
 .carousel{
     position: relative;
     width: 100%;
+    max-height: 50%;
 }
 
 .carousel-links{
@@ -489,7 +513,8 @@
 
 .carousel-image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-radius: 5px;
 }
 
@@ -510,6 +535,10 @@
   animation: getWidth var(--carouseltime) ease-in infinite;
 }
 
+.infoWindow-description{
+    overflow: auto;
+}
+
 @keyframes getWidth {
 	100% { width: 100%; }
 }
@@ -525,6 +554,14 @@
     .infoWindow{
         max-width: 600px;
     }
+
+    .infoWindow-techStack>div {
+        margin: 4px 8px;
+    }
+    
+    .infoWindow-techStack, .infoWindow-description {
+        font-size: 1.2em;
+    }
 }
 
 @media (min-width:600px) and (max-width: 799px) and (min-height: 450px) {
@@ -537,6 +574,25 @@
     .contact-reviews{
         font-size: 1em;
     }
+
+    .infoWindow-techStack>div {
+        margin: 4px 8px;
+    }
+    
+    .infoWindow-techStack, .infoWindow-description {
+        font-size: 1em;
+    }
+
+    .carousel-links > a {
+        height: 30px;
+        width: 30px;
+    }
+
+    .infoWindow-description{padding-top: 25px;}
+    .infoWindow-description>svg{
+        height: 25px;
+        width: 25px;
+    }
 }
 
 
@@ -544,6 +600,13 @@
     .infoWindow{
         max-width: 400px;
     }
+
+    .infoWindow-wrapper{
+        padding: 10px;
+        height: calc(100% - 20px);
+        width: calc(100% - 20px);
+    }
+    
     .contact-title{
         font-size: 1.5em;
     }
@@ -565,6 +628,25 @@
     .contact-reviews__current{
         padding: 10px;
     }
+
+    .infoWindow-techStack>div {
+        margin: 4px 8px;
+    }
+    
+    .infoWindow-techStack, .infoWindow-description {
+        font-size: 0.7em;
+    }
+
+    .carousel-links > a {
+        height: 20px;
+        width: 20px;
+    }
+
+    .infoWindow-description{padding-top: 20px;}
+    .infoWindow-description>svg{
+        height: 20px;
+        width: 20px;
+    }
 }
 
 @media (min-width:300px) and (max-width: 599px) and (max-height: 768px) {
@@ -572,10 +654,44 @@
         max-width: 100%;
     }
     .contact-title{
-        font-size: 2em;
-    }
-    .contact-reviews{
         font-size: 1em;
+    }
+    .contact-form>div>input, .contact-form>textarea, .contact-form>span, .contact-info__phone{
+        font-size: 0.8em;
+    }
+    .contact-info__phone>svg, .contact-info__social>a>svg{
+        width: 20px;
+        height: 20px;
+    }
+    .contact-form-send-icon__active, .contact-form-send-icon__inactive{
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .contact-reviews{
+        font-size: 0.6em;
+    }
+    .contact-reviews__current{
+        padding: 10px;
+    }
+
+    .infoWindow-techStack>div {
+        margin: 4px 8px;
+    }
+    
+    .infoWindow-techStack, .infoWindow-description {
+        font-size: 0.9em;
+    }
+
+    .carousel-links > a {
+        height: 25px;
+        width: 25px;
+    }
+
+    .infoWindow-description{padding-top: 20px;}
+    .infoWindow-description>svg{
+        height: 20px;
+        width: 20px;
     }
 }
 
@@ -585,9 +701,43 @@
         max-width: 100%;
     }
     .contact-title{
-        font-size: 2em;
+        font-size: 1.7em;
     }
-    .contact-reviews{
+    .contact-form>div>input, .contact-form>textarea, .contact-form>span, .contact-info__phone{
         font-size: 0.9em;
+    }
+    .contact-info__phone>svg, .contact-info__social>a>svg{
+        width: 25px;
+        height: 25px;
+    }
+    .contact-form-send-icon__active, .contact-form-send-icon__inactive{
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .contact-reviews{
+        font-size: 0.8em;
+    }
+    .contact-reviews__current{
+        padding: 10px;
+    }
+
+    .infoWindow-techStack>div {
+        margin: 4px 8px;
+    }
+    
+    .infoWindow-techStack, .infoWindow-description {
+        font-size: 0.8em;
+    }
+
+    .carousel-links > a {
+        height: 25px;
+        width: 25px;
+    }
+
+    .infoWindow-description{padding-top: 20px;}
+    .infoWindow-description>svg{
+        height: 20px;
+        width: 20px;
     }
 }

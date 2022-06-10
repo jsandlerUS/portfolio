@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FireflyCanvas from './FireflyCanvas'
+import FireflyCanvas from "./FireflyCanvas";
 import RoundFog from "./RoundFog";
 import PieDisplay from "./PieDisplay";
 import MaxWindow from "./MaxWindow";
@@ -8,28 +8,26 @@ import Fog from "./Fog";
 import InfoWindow from "../InfoWindow/InfoWindow";
 import BreadCrumbs from "./BreadCrumbs";
 import MusicPlay from "./MusicPlay";
-import ClickAwayListener from '@mui/base/ClickAwayListener';
+import ClickAwayListener from "@mui/base/ClickAwayListener";
 
 import { useSelector, useDispatch } from "react-redux";
-import { getFlatArray } from "../Reusable/functions";
 
 const getFullScreen = () => {
   return 1 >= window.outerHeight - window.innerHeight;
 };
 
 const Home = () => {
-  const { dataFlow, breadCrumbs } = useSelector((state) => state);
+  const { dataFlow, breadCrumbs, flatDataFlow } = useSelector((state) => state);
   const [display, setDisplay] = useState(dataFlow[0].items.map((item) => item));
   const [isWindowOpen, setIsWindowOpen] = useState(false);
   const [currentDisplay, setCurrentDisplay] = useState([]);
   const [isFullScreen, setIsFullScreen] = useState(getFullScreen());
-  const flatDataFlow = getFlatArray(dataFlow);
   const dispatch = useDispatch();
 
   const showWindow = (e) => {
-    console.log(e, typeof e)
-    if (typeof e === 'boolean') setIsWindowOpen(e)
-    else if(e.name === currentDisplay.name && isWindowOpen) setIsWindowOpen(false)
+    if (typeof e === "boolean") setIsWindowOpen(e);
+    else if (e.name === currentDisplay.name && isWindowOpen)
+      setIsWindowOpen(false);
     else setCurrentDisplay(e, setIsWindowOpen(true));
   };
 
@@ -37,19 +35,17 @@ const Home = () => {
     setIsFullScreen(true);
   };
 
-  // console.log("isWindowOpen", isWindowOpen);
-
   const updateDisplay = (elem) => {
     const search = flatDataFlow
       .map((item) => (item.name === elem ? item : null))
       .filter((item) => item != null);
     const crumb = elem;
-    if(breadCrumbs.indexOf(elem) > -1){
-      dispatch({ type: "DELETE_CRUMBS", crumb })
-      showWindow(false)
+    if (breadCrumbs.indexOf(elem) > -1) {
+      dispatch({ type: "DELETE_CRUMBS", crumb });
+      showWindow(false);
     }
-    dispatch({ type: "UPDATE_CRUMBS", crumb })
-    setDisplay(search[0].items)
+    dispatch({ type: "UPDATE_CRUMBS", crumb });
+    setDisplay(search[0].items);
   };
 
   return (
@@ -58,11 +54,17 @@ const Home = () => {
         <MaxWindow exitAlert={() => exitAlert()} />
       ) : (
         <div className="home-background">
+          <Fog position={"back"}/>
+          <div className="forest-ground"/>
           <MusicPlay />
-          <BreadCrumbs setDisplay={(e) => updateDisplay(e)} breadCrumbs={breadCrumbs} />
-          <Fog />
-          <TurbulentWater />
-          {/* <FireflyCanvas/> */}
+          <BreadCrumbs
+            setDisplay={(e) => updateDisplay(e)}
+            breadCrumbs={breadCrumbs}
+          />
+          <FireflyCanvas/>
+          <div className="forest-trees"/>
+          <TurbulentWater/>
+          <Fog position={"front"}/>
           <div className="logo">
             <div className="logo-text" onClick={() => updateDisplay("Home")}>
               JS <br />
@@ -75,11 +77,16 @@ const Home = () => {
             />
             <RoundFog />
           </div>
-          {isWindowOpen ? 
-            <ClickAwayListener onClickAway={()=>setIsWindowOpen(false)}>
-              <div><InfoWindow display={currentDisplay}/></div>
-              </ClickAwayListener>
-          :null} 
+          {isWindowOpen ? (
+            <ClickAwayListener onClickAway={() => setIsWindowOpen(false)}>
+              <div>
+                <InfoWindow
+                  display={currentDisplay}
+                  showWindow={(e) => showWindow(e)}
+                />
+              </div>
+            </ClickAwayListener>
+          ) : null}
         </div>
       )}
     </React.Fragment>

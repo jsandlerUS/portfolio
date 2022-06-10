@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import useWindowDimensions from '../Reusable/useWindowDimensions'
+import Trees from '../../resources/black-forest-trees.png'
 
 const FireflyCanvas = (props) => {
   const canvasRef = useRef(null);
@@ -51,7 +52,9 @@ const FireflyCanvas = (props) => {
 
   const resizeCanvas = (c) => {
     if (c.width !== width || c.height !== height) {
-      var scale = window.devicePixelRatio;
+      // var scale = window.devicePixelRatio;
+      var scale = 1
+      // console.log('scale', scale)
     //   const { devicePixelRatio:scale=1 } = window
       c.width = width * scale;
       c.height = height * scale;
@@ -87,7 +90,6 @@ const FireflyCanvas = (props) => {
   };
 
   useEffect(() => {
-    console.log('resize init')
     const getWindowDimensions = () => {
       const { innerWidth, innerHeight } = window;
       setHeight(innerHeight);
@@ -96,10 +98,8 @@ const FireflyCanvas = (props) => {
     window.addEventListener("resize", getWindowDimensions);
   }, []);
 
-console.log(height, width)
 
   useEffect(() => {
-      console.log('interval init')
     const interval = setInterval(() => {
       let animationFrameId;
       const loop = () => {
