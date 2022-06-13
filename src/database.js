@@ -1,8 +1,18 @@
-import MyAyurvedaClinic from "./resources/MyAyurvedaClinic.png";
-import EgyptChiropractic from "./resources/EgyptChiropractic.png";
-import SusanaAyurveda from "./resources/SusanaAyurveda.png";
-import JonathanImage from "./resources/face1.png";
-import slicedFace from "./resources/sliced face.png";
+import MyAyurvedaClinic from "./resources/Projects/MyAyurvedaClinic.png";
+import EgyptChiropractic from "./resources/Projects/EgyptChiropractic.png";
+import SusanaAyurveda from "./resources/Projects/SusanaAyurveda.png";
+import JonathanImage from "./resources/Background/face1.png";
+import slicedFace from "./resources/Background/sliced face.png";
+
+import airbnb from "./resources/Logos/airbnb-logo.png";
+import amazon from "./resources/Logos/amazon-logo.png";
+import apple from "./resources/Logos/apple-logo.png";
+import att from "./resources/Logos/att-logo.png";
+import disney from "./resources/Logos/disney-logo.png";
+import microsoft from "./resources/Logos/microsoft-logo.png";
+import nike from "./resources/Logos/nike-logo.png";
+import tesla from "./resources/Logos/tesla-logo.png";
+import uber from "./resources/Logos/uber-logo.png";
 
 
 export const dataFlow = [
@@ -50,12 +60,11 @@ export const dataFlow = [
           },
           {
             name: "Your\nCompany",
-            techStack: "Any tech stack",
+            techStack:[ "Any tech stack"],
             viewLink: "http://jsandlerus.github.io/wholesale-portal",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             github: "https://github.com/jsandlerus/wholesale-portal",
-            team: 5,
-            images: [SusanaAyurveda],
+            images: [airbnb, amazon, apple, att, disney, microsoft, nike, tesla, uber],
           },
           {
             name: "Armada",
@@ -72,7 +81,6 @@ export const dataFlow = [
             viewLink: "http://jsandlerus.github.io/wholesale-portal",
             description: "Front End Team Lead, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             github: "https://github.com/jsandlerus/wholesale-portal",
-            team: 5,
             images: [SusanaAyurveda],
           },
         ],
@@ -94,7 +102,7 @@ export const dataFlow = [
       {
         name: "About",
         image: JonathanImage,
-        description: "Hi! My name is Jonathan Sandler and I’m a Full Stack Software Engineer based in San Francisco, United States. My main area of expertise is Front-End development focused on User Experience and Creative Development.\n\nI found my passion for technology and communication 4 years ago, after attending 42 Silicon Valley Bootcamp. Since then, I had the pleasure to work with very talented people who had empowered me throughout my career.\n\nI get excited at solving really complex problems and I love creating unique user experiences through cutting-edge technology with all my heart! I can’t describe how thankful I am for being part of this incredible community of developers in such amazing times of innovation.\n\nI feel privileged for having the chance to learn something new every day and I look forward to continue sharing all the incredible gifts this career has brought to my life. I believe coding is an essential part of humanity. It's the fuel of the new era and we have a chance to change the Status Quo together.",
+        description: "Hi! My name is Jonathan Sandler and I’m a Full Stack Software Engineer based in San Francisco, United States. My main area of expertise is Front-End development focused on User Experience and Creative Development.\n\nI found my passion for technology and communication 4 years ago, after attending 42 Silicon Valley Bootcamp. Since then, I had the pleasure to work with very talented people who had empowered me throughout my career.\n\nI get excited at solving really complex problems and I love creating unique user experiences through cutting-edge technology with all my heart! I can’t describe how thankful I am for being part of this incredible community of developers in such amazing times of innovation.\n\nI feel privileged for having the chance to learn something new every day and I look forward to continue sharing all the incredible gifts this career has brought to my life. I believe coding is an essential part of humanity and it's the fuel of the new era. We have a chance to change the Status Quo together.",
         techStack: [
           "JavaScript",
           "Redux",
@@ -166,7 +174,6 @@ export const dataFlow = [
             description:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             github: "https://github.com/jsandlerus/wholesale-portal",
-            team: 5,
             images: [SusanaAyurveda],
           },
         ],

@@ -18,21 +18,21 @@
     background-size: cover;
 }
 
-.swamp{background-image: url("../../resources/black-forest.jpg");}
+.swamp{background-image: url("../../resources/Background/black-forest.jpg");}
 
 .swamp-water{
-    background-image: url("../../resources/swamp-water.png");
+    background-image: url("../../resources/Background/swamp-water.png");
     filter: url("#turbulence");
     z-index: 2;
 }
 
 .forest-trees{
-    background-image: url("../../resources/black-forest-trees.png");
+    background-image: url("../../resources/Background/black-forest-trees.png");
     z-index: 3;
 }
 
 .forest-ground{
-    background-image: url("../../resources/black-forest-ground.png");
+    background-image: url("../../resources/Background/black-forest-ground.png");
     z-index: 1;
 }
 

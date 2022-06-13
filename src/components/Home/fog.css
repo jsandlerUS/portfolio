@@ -74,7 +74,7 @@
 
 .foglayer_01 .image01,
 .foglayer_01 .image02 {
-  background: url("../../resources/fog1.png") center center/cover repeat transparent;
+  background: url("../../resources/Background/fog1.png") center center/cover repeat transparent;
 }
 
 .foglayer_02 .image01,
@@ -83,7 +83,7 @@
 .foglayer_03 .image02,
 .foglayer_04 .image01,
 .foglayer_04 .image02 {
-  background: url("../../resources/fog2.png") center center/cover repeat transparent;
+  background: url("../../resources/Background/fog2.png") center center/cover repeat transparent;
 }
 
 

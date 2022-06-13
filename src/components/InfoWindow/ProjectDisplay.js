@@ -38,13 +38,12 @@ const ProjectDisplay = ({ display }) => {
 
   return (
     <div className="infoWindow-wrapper">
-      <Carousel props={{images, github, viewLink}}/>
+      <Carousel props={{images, github, viewLink, name:display.name}}/>
 
       <div className="infoWindow-techStack">
         {currentDisplay.techStack.map((tech) => (
           <div key={tech}>{tech}</div>
-        ))}{" "}
-        <div>{`Team size: ${currentDisplay.team}`}</div>
+        ))}
       </div>
       <div className="infoWindow-description">
         {!supported ? <VolumeOffIcon /> : null}

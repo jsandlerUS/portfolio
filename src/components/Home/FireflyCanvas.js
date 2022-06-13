@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import useWindowDimensions from '../Reusable/useWindowDimensions'
-import Trees from '../../resources/black-forest-trees.png'
+import Trees from '../../resources/Background/black-forest-trees.png'
 
 const FireflyCanvas = (props) => {
   const canvasRef = useRef(null);

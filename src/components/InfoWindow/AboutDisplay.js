@@ -1,7 +1,7 @@
 import { useSpeechSynthesis } from "react-speech-kit";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
-import firework from '../../resources/fireworks.gif'
+import firework from '../../resources/Gifs/fireworks.gif'
 import DownloadIcon from '@mui/icons-material/Download';
 import resume from '../../resources/JonathanSandlerResume.pdf';
 import React from "react";
@@ -28,7 +28,8 @@ const AboutDisplay = ({ display }) => {
       <div className="about-title"> <img src={firework}/>&nbsp;Welcome!&nbsp;<img src={firework} /></div>
       {/* <img src={display.image} className="about-image" alt={display.name} /> */}
       <div className="about-description">{display.description}</div>
-      <a href={resume} download="JonathanSandlerResume.pdf" className="about-resume">Check my Resume <DownloadIcon/></a>
+      <div></div>
+      <a href={resume} download="JonathanSandlerResume.pdf" className="about-resume">Download my Resume <DownloadIcon/></a>
     </div>
   );
 };

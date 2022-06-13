@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import android from '../../resources/android.gif'
+import android from '../../resources/Gifs/android.gif'
 
 const Android = () => {
   const [androidStyle, setAndroidStyle] = useState({ "top": "40%", "left": "10%" });
