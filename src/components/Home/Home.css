@@ -108,7 +108,7 @@ svg {
     font-size: 40px;
     text-align: center;
     padding-bottom: 20px;
-    animation: fadeInFromTop 8s ease-in-out;
+    animation: fadeInFromTop 8s ease;
     animation-fill-mode: forwards;
 }
 
@@ -116,7 +116,7 @@ svg {
 .maxWindow-text {
     margin-top: 12%;
     padding-bottom: 20px;
-    animation: fadeInFromBack 8s ease-in-out;
+    animation: fadeInFromBack 8s ease;
     animation-delay: 2s;
     animation-fill-mode: forwards;
     opacity: 0%;
@@ -291,6 +291,7 @@ svg {
 }
 
 .pie-button-text{
+    color: rgb(197, 197, 197);
     text-align: center;
     transform: scale(var(--scale));
 }
@@ -394,6 +395,19 @@ svg {
 .breadcrumbs>div:hover {
     text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
     cursor: pointer;
+}
+
+.android{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+}
+.android-robot{
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    max-width: 100px;
 }
 
 
@@ -519,7 +533,5 @@ svg {
         height: 30px;
     }
 
-    /* .maxWindow-title{
 
-    } */
 }

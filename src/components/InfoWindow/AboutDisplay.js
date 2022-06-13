@@ -3,7 +3,8 @@ import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import firework from '../../resources/fireworks.gif'
 import DownloadIcon from '@mui/icons-material/Download';
-
+import resume from '../../resources/JonathanSandlerResume.pdf';
+import React from "react";
 
 const AboutDisplay = ({ display }) => {
   // const onEnd = () => setIsVoicePlaying(false)
@@ -15,9 +16,6 @@ const AboutDisplay = ({ display }) => {
 
   const text = "Hello, this is a test";
 
- const downloadResume = () =>{
-
- }
 
   return (
     <div className="about-wrapper">
@@ -28,9 +26,9 @@ const AboutDisplay = ({ display }) => {
         <VolumeUpIcon onClick={() => cancel} />
       )}
       <div className="about-title"> <img src={firework}/>&nbsp;Welcome!&nbsp;<img src={firework} /></div>
-      <img src={display.image} className="about-image" alt={display.name} />
+      {/* <img src={display.image} className="about-image" alt={display.name} /> */}
       <div className="about-description">{display.description}</div>
-      <div className="about-resume" onClick={downloadResume}> Resume <DownloadIcon/></div>
+      <a href={resume} download="JonathanSandlerResume.pdf" className="about-resume">Check my Resume <DownloadIcon/></a>
     </div>
   );
 };

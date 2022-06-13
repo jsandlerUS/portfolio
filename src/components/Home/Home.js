@@ -8,7 +8,9 @@ import Fog from "./Fog";
 import InfoWindow from "../InfoWindow/InfoWindow";
 import BreadCrumbs from "./BreadCrumbs";
 import MusicPlay from "./MusicPlay";
+import Android from "./Android";
 import ClickAwayListener from "@mui/base/ClickAwayListener";
+
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -54,6 +56,7 @@ const Home = () => {
         <MaxWindow exitAlert={() => exitAlert()} />
       ) : (
         <div className="home-background">
+          <Android/>
           <Fog position={"back"}/>
           <div className="forest-ground"/>
           <MusicPlay />

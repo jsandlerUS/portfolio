@@ -3,27 +3,28 @@ import PauseCircleFilledIcon from "@mui/icons-material/PauseCircleFilled";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import frozenHeart from "../../resources/frozen-heart.mp3";
 import adventureIsCalling from "../../resources/adventure-is-calling.mp3";
+import tides from "../../resources/tides.mp3";
 
 import nightCrickets from "../../resources/crickets.mp3";
 import dayBirds from "../../resources/birds.mp3";
 
 const MusicPlay = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [audio, setAudio] = useState(new Audio(adventureIsCalling));
+  const [audio, setAudio] = useState(new Audio(tides));
   const [currentSong, setCurrentSong] = useState(0);
-  const audioList = [adventureIsCalling, frozenHeart];
+  const audioList = [tides, adventureIsCalling, frozenHeart];
 
   const [natureSound, setNatureSound] = useState(new Audio(dayBirds));
   const [currentNatureSound, setCurrentNatureSound] = useState(0);
   const natureList = [dayBirds, nightCrickets];
 
   useEffect(() => {
-    audio.volume = 0.025;
+    audio.volume = 0.04;
     playPause(audio);
   }, []);
 
   useEffect(() => {
-    natureSound.volume = 0.015;
+    natureSound.volume = 0.02;
     natureSound.play();
   }, []);
 
@@ -39,7 +40,7 @@ const MusicPlay = () => {
     if (musicType === "background") {
       const index = currentSong === audioList.length - 1 ? 0 : currentSong + 1;
       const song = new Audio(audioList[index]);
-      song.volume = 0.025;
+      song.volume = 0.04;
       song.play();
       setAudio(song, setCurrentSong(index));
     } else if (musicType === "nature") {
@@ -48,7 +49,7 @@ const MusicPlay = () => {
           ? 0
           : currentNatureSound + 1;
       const song = new Audio(natureList[index]);
-      song.volume = 0.015;
+      song.volume = 0.02;
       song.play();
       setNatureSound(song, setCurrentNatureSound(index));
     }

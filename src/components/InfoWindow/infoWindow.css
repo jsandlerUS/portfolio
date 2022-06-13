@@ -1,4 +1,5 @@
-.infoWindow, .infoWindow_away {
+.infoWindow,
+.infoWindow_away {
     position: absolute;
     top: 0;
     right: -30%;
@@ -12,7 +13,9 @@
     z-index: 1000;
 }
 
-.infoWindow_away{ animation: slideOutToRight 2s ease;}
+.infoWindow_away {
+    animation: slideOutToRight 2s ease-in;
+}
 
 @keyframes slideInFromRight {
     0% {
@@ -34,18 +37,19 @@
     }
 }
 
-.infoWindow-exit{
+.infoWindow-exit {
     padding: 8px 10px;
     text-align: center;
     font-size: 1em;
-    right: 0px;
-    border-radius: 0 0 0 5px;
+    left: 0px;
+    border-radius: 0 0 5px 0px;
     position: absolute;
     z-index: 10;
 }
 
-.infoWindow-exit:hover{
+.infoWindow-exit:hover {
     background-color: rgba(255, 255, 255, 0.2);
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
     cursor: pointer;
 }
 
@@ -114,9 +118,9 @@
     cursor: pointer;
 }
 
-.infoWindow-button>div:hover{
+.infoWindow-button>div:hover {
     text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
-    background-color:  rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .contact-image {
@@ -133,7 +137,7 @@
     width: 100%;
     top: 40%;
     font-size: 2.5em;
-    animation: slideToTop 3s ease;
+    animation: slideToTop 3s ease-in-out;
     animation-delay: 5s;
     animation-fill-mode: forwards;
 }
@@ -154,7 +158,7 @@
     position: relative;
     right: -10%;
     opacity: 0%;
-    animation: slideFromRight 4s ease;
+    animation: slideFromRight 4s linear;
     animation-delay: 2s;
     animation-fill-mode: forwards;
 }
@@ -182,7 +186,7 @@
     position: relative;
     opacity: 0%;
     left: -10%;
-    animation: slideFromLeft 4s ease;
+    animation: slideFromLeft 4s ease-in-out;
     animation-delay: 2s;
     animation-fill-mode: forwards;
 }
@@ -211,7 +215,7 @@
     opacity: 0%;
     height: 100%;
     margin-top: 20px;
-    animation: fadeInFromBack 5s ease;
+    animation: fadeInFromBack 5s linear;
     animation-delay: 9s;
     animation-fill-mode: forwards;
     position: relative;
@@ -288,7 +292,7 @@
 
 .contact-form-input:hover,
 .contact-form-input__error:hover {
-    animation: expandInput 1s ease;
+    animation: expandInput 1s linear;
     animation-fill-mode: forwards;
 }
 
@@ -337,7 +341,7 @@
     justify-content: space-between;
     opacity: 0%;
     margin-top: 15px;
-    animation: fadeInFromBack 5s ease;
+    animation: fadeInFromBack 5s linear;
     animation-delay: 9s;
     animation-fill-mode: forwards;
 }
@@ -373,13 +377,13 @@
     width: 100%;
     opacity: 0%;
     position: relative;
-    animation: fadeInFromBack 5s ease;
+    animation: fadeInFromBack 5s linear;
     animation-delay: 9s;
     animation-fill-mode: forwards;
     overflow: hidden;
 }
 
-.contact-reviews-background{
+.contact-reviews-background {
     position: absolute;
     border-radius: 10px;
     background-color: var(--transparentBlack);
@@ -397,21 +401,54 @@
     z-index: 1;
 }
 
-.contact-reviews__current > pre {
+.contact-reviews__current>pre {
     text-align: right;
 }
 
 
 @keyframes slideInAndOut {
-    0%{right: -100%; transform:scale(0.7);opacity: 1;}
-    /* 5%{right: -100%; transform:scale(0.7);opacity: 1;} */
-    8%{right: 0; transform:scale(0.7);opacity: 1;}
-    45%{right: 0%; transform:scale(1);opacity: 1;}
-    50%{right: 0%; transform:scale(1);opacity: 1;}
-    65%{right: 0%; transform:scale(1);opacity: 1;}
-    92%{right: 0; transform:scale(0.7);opacity: 1;}
+    0% {
+        right: -100%;
+        transform: scale(0.7);
+        opacity: 1;
+    }
+
+    8% {
+        right: 0;
+        transform: scale(0.7);
+        opacity: 1;
+    }
+
+    45% {
+        right: 0%;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        right: 0%;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    65% {
+        right: 0%;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    92% {
+        right: 0;
+        transform: scale(0.7);
+        opacity: 1;
+    }
+
     /* 95%{right: 100%; transform:scale(0.7);opacity: 1;} */
-    100%{right: 100%; transform:scale(0.7);opacity: 1;}
+    100% {
+        right: 100%;
+        transform: scale(0.7);
+        opacity: 1;
+    }
 }
 
 .contact-reviews__left-svg {
@@ -437,6 +474,7 @@
     height: calc(100% - 40px);
     width: calc(100% - 40px);
     padding: 20px;
+    backdrop-filter: blur(5px);
 }
 
 .about-wrapper>svg {
@@ -455,30 +493,78 @@
 }
 
 .about-image {
-    width: 50%;
-    float: left;
-    margin: 8px 8px 8px 0;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50rem;
+    /* float: left;
+    margin: 8px 8px 8px 0; */
 }
 
 .about-description {
-    font-size: 1em;
+    font-size: 1.1em;
     text-align: justify;
     float: none;
     font-family: "Helvetica", 'Arial';
     white-space: pre-wrap;
+    line-height: 1.5;
 }
 
-.about-resume{
-    
+.about-resume {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    max-width: 200px;
+    cursor: pointer;
+    overflow: hidden;
+    animation: backgroundFade 3s linear infinite;
 }
 
-.carousel{
+@keyframes backgroundFade {
+    0% {
+        box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
+    }
+
+    50% {
+        box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.4) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.4);
+    }
+
+    100% {
+        box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
+    }
+}
+
+.about-resume>svg {
+    position: relative !important;
+
+}
+
+
+.about-resume:hover>svg {
+    animation: slideToBottom 2s linear;
+}
+
+@keyframes slideToBottom {
+    0% {top: 0px}
+    10% {top: 40px}
+    20% { opacity: 0;}
+    51% { top: -30px; opacity: 0;}
+    75% {top: 0 }
+    100% { top: 0 }
+}
+
+.carousel {
     position: relative;
     width: 100%;
     max-height: 50%;
 }
 
-.carousel-links{
+.carousel-links {
     position: absolute;
     top: 5px;
     right: 0;
@@ -488,29 +574,32 @@
     display: flex;
 }
 
-.carousel-links > a{
+.carousel-links>a {
     position: relative;
     height: 30px;
     width: 30px;
     margin: 0 8px;
 }
 
-.carousel-links > a > svg{
+.carousel-links>a>svg {
     position: relative;
     height: 100%;
     width: 100%;
     filter: drop-shadow(1px 0px 5px rgb(0 0 0 / 0.4));
 }
-.carousel-links > a > svg:hover{
+
+.carousel-links>a>svg:hover {
     cursor: pointer;
     filter: drop-shadow(1px 0px 10px rgb(0 0 0 / 1));
     border-radius: 50%;
 }
-.carousel-links > a > svg:hover:after {
+
+.carousel-links>a>svg:hover:after {
     position: absolute;
     color: red;
     top: 5px;
-	content: ">> Hovering >>"; /* You can add simple static text in CSS as well. */
+    content: ">> Hovering >>";
+    /* You can add simple static text in CSS as well. */
     position: inline-block;
 
 }
@@ -524,76 +613,75 @@
 
 .loader__element {
     position: relative;
-	width: 100%;
+    width: 100%;
     height: 4px;
     bottom: 10px;
-/* 	background: var(--back-color); */
+    /* 	background: var(--back-color); */
 }
 
 .loader__element:before {
-	content: '';
-	display: block;
-	background-color: var(--loader-color);
-	height: 4px;
-	width: 0;
-  animation: getWidth var(--carouseltime) ease-in infinite;
+    content: '';
+    display: block;
+    background-color: var(--loader-color);
+    height: 4px;
+    width: 0;
+    animation: getWidth var(--carouseltime) linear infinite;
 }
 
-.infoWindow-description{
+.infoWindow-description {
     overflow: auto;
 }
 
 @keyframes getWidth {
-	100% { width: 100%; }
-}
-
-
-@media (min-width:900px) and (max-width: 1200px){
-.infoWindow{
-    max-width: 600px;
-}
-}
-
-@media (min-width:800px) and (max-width: 1200px) and (max-height: 1200px){
-    .infoWindow{
-        max-width: 600px;
+    100% {
+        width: 100%;
     }
+}
+
+
+@media (min-width:900px) and (max-width: 1200px) {
+}
+
+@media (min-width:800px) and (max-width: 1200px) and (max-height: 1200px) {
 
     .infoWindow-techStack>div {
         margin: 4px 8px;
     }
-    
-    .infoWindow-techStack, .infoWindow-description {
+
+    .infoWindow-techStack,
+    .infoWindow-description {
         font-size: 1.2em;
     }
 }
 
 @media (min-width:600px) and (max-width: 799px) and (min-height: 450px) {
-    .infoWindow{
-        max-width: 600px;
-    }
-    .contact-title{
+    .contact-title {
         font-size: 2em;
     }
-    .contact-reviews{
+
+    .contact-reviews {
         font-size: 1em;
     }
 
     .infoWindow-techStack>div {
         margin: 4px 8px;
     }
-    
-    .infoWindow-techStack, .infoWindow-description {
+
+    .infoWindow-techStack,
+    .infoWindow-description {
         font-size: 1em;
     }
 
-    .carousel-links > a {
+    .carousel-links>a {
         height: 30px;
         width: 30px;
     }
 
-    .infoWindow-description{padding-top: 25px;}
-    .infoWindow-description>svg{
+    .infoWindow-description {
+        padding-top: 25px;
+    }
+
+    .infoWindow-description>svg {
         height: 25px;
         width: 25px;
     }
@@ -601,146 +689,183 @@
 
 
 @media (min-width:600px) and (max-width: 950px) and (max-height: 449px) {
-    .infoWindow{
-        max-width: 400px;
-    }
-
-    .infoWindow-wrapper{
+    .infoWindow-wrapper {
         padding: 10px;
         height: calc(100% - 20px);
         width: calc(100% - 20px);
     }
-    
-    .contact-title{
+
+    .contact-title {
         font-size: 1.5em;
     }
-    .contact-form>div>input, .contact-form>textarea, .contact-form>span, .contact-info__phone{
+
+    .contact-form>div>input,
+    .contact-form>textarea,
+    .contact-form>span,
+    .contact-info__phone {
         font-size: 0.8em;
     }
-    .contact-info__phone>svg, .contact-info__social>a>svg{
+
+    .contact-info__phone>svg,
+    .contact-info__social>a>svg {
         width: 20px;
         height: 20px;
     }
-    .contact-form-send-icon__active, .contact-form-send-icon__inactive{
+
+    .contact-form-send-icon__active,
+    .contact-form-send-icon__inactive {
         width: 30px !important;
         height: 30px !important;
     }
 
-    .contact-reviews{
+    .contact-reviews {
         font-size: 0.6em;
     }
-    .contact-reviews__current{
+
+    .contact-reviews__current {
         padding: 10px;
     }
 
     .infoWindow-techStack>div {
         margin: 4px 8px;
     }
-    
-    .infoWindow-techStack, .infoWindow-description {
+
+    .infoWindow-techStack,
+    .infoWindow-description {
         font-size: 0.7em;
     }
 
-    .carousel-links > a {
+    .carousel-links>a {
         height: 20px;
         width: 20px;
     }
 
-    .infoWindow-description{padding-top: 20px;}
-    .infoWindow-description>svg{
+    .infoWindow-description {
+        padding-top: 20px;
+    }
+
+    .infoWindow-description>svg {
         height: 20px;
         width: 20px;
     }
 }
 
 @media (min-width:300px) and (max-width: 599px) and (max-height: 768px) {
-    .infoWindow{
+    .infoWindow {
         max-width: 100%;
     }
-    .contact-title{
+
+    .contact-title {
         font-size: 1em;
     }
-    .contact-form>div>input, .contact-form>textarea, .contact-form>span, .contact-info__phone{
+
+    .contact-form>div>input,
+    .contact-form>textarea,
+    .contact-form>span,
+    .contact-info__phone {
         font-size: 0.8em;
     }
-    .contact-info__phone>svg, .contact-info__social>a>svg{
+
+    .contact-info__phone>svg,
+    .contact-info__social>a>svg {
         width: 20px;
         height: 20px;
     }
-    .contact-form-send-icon__active, .contact-form-send-icon__inactive{
+
+    .contact-form-send-icon__active,
+    .contact-form-send-icon__inactive {
         width: 30px !important;
         height: 30px !important;
     }
 
-    .contact-reviews{
+    .contact-reviews {
         font-size: 0.6em;
     }
-    .contact-reviews__current{
+
+    .contact-reviews__current {
         padding: 10px;
     }
 
     .infoWindow-techStack>div {
         margin: 4px 8px;
     }
-    
-    .infoWindow-techStack, .infoWindow-description {
+
+    .infoWindow-techStack,
+    .infoWindow-description {
         font-size: 0.9em;
     }
 
-    .carousel-links > a {
+    .carousel-links>a {
         height: 25px;
         width: 25px;
     }
 
-    .infoWindow-description{padding-top: 20px;}
-    .infoWindow-description>svg{
+    .infoWindow-description {
+        padding-top: 20px;
+    }
+
+    .infoWindow-description>svg {
         height: 20px;
         width: 20px;
     }
 }
 
 
-@media (min-width:300px) and (max-width: 599px) {
-    .infoWindow{
+@media (min-width:280px) and (max-width: 599px) {
+    .infoWindow {
         max-width: 100%;
     }
-    .contact-title{
+
+    .contact-title {
         font-size: 1.7em;
     }
-    .contact-form>div>input, .contact-form>textarea, .contact-form>span, .contact-info__phone{
+
+    .contact-form>div>input,
+    .contact-form>textarea,
+    .contact-form>span,
+    .contact-info__phone {
         font-size: 0.9em;
     }
-    .contact-info__phone>svg, .contact-info__social>a>svg{
+
+    .contact-info__phone>svg,
+    .contact-info__social>a>svg {
         width: 25px;
         height: 25px;
     }
-    .contact-form-send-icon__active, .contact-form-send-icon__inactive{
+
+    .contact-form-send-icon__active,
+    .contact-form-send-icon__inactive {
         width: 30px !important;
         height: 30px !important;
     }
 
-    .contact-reviews{
+    .contact-reviews {
         font-size: 0.8em;
     }
-    .contact-reviews__current{
+
+    .contact-reviews__current {
         padding: 10px;
     }
 
     .infoWindow-techStack>div {
         margin: 4px 8px;
     }
-    
-    .infoWindow-techStack, .infoWindow-description {
+
+    .infoWindow-techStack,
+    .infoWindow-description {
         font-size: 0.8em;
     }
 
-    .carousel-links > a {
+    .carousel-links>a {
         height: 25px;
         width: 25px;
     }
 
-    .infoWindow-description{padding-top: 20px;}
-    .infoWindow-description>svg{
+    .infoWindow-description {
+        padding-top: 20px;
+    }
+
+    .infoWindow-description>svg {
         height: 20px;
         width: 20px;
     }
