@@ -78,8 +78,13 @@
 .infoWindow-description {
     padding-top: 25px;
     height: 100%;
-    font-family: "Helvetica", 'Arial';
     position: relative;
+    font-size: 1.1em;
+    text-align: justify;
+    float: none;
+    font-family: "Helvetica", 'Arial';
+    white-space: pre-wrap;
+    line-height: 1.5;
 }
 
 .infoWindow-description>svg {

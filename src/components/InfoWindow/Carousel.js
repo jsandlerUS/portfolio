@@ -16,7 +16,7 @@ const Carousel = ({ props }) => {
   useEffect(() => {
     const play = () => autoPlayRef.current();
     name !== "Your\nCompany" ?
-    setInterval(play, 12000) : setInterval(play, 200);
+    setInterval(play, 12000) : setInterval(play, 500);
   }, []);
 
   const nextSlide = () => {
@@ -26,20 +26,21 @@ const Carousel = ({ props }) => {
     );
   };
 
+  console.log(github)
   return (
     <div className="carousel">
-      {name !== "Your\nCompany" ?
+      
         <div className="carousel-links">
-          <a href={github} target="_blank" rel="noreferrer noopener">
+        {github !==  undefined ? <a href={github} target="_blank" rel="noreferrer noopener">
             <GitHubIcon />
-          </a>
-          <a href={viewLink} target="_blank" rel="noreferrer noopener">
+          </a> : null}
+          {viewLink !==  undefined ? <a href={viewLink} target="_blank" rel="noreferrer noopener">
             <OpenInNewIcon />
-          </a>
-        </div> : null}
+          </a> : null}
+        </div> 
 
       <img src={image} className="carousel-image" alt={"carousel Image"} />
-      {name !== "Your\nCompany" ? <div className="loader__element"></div> : null}
+      {images.length > 1 ? <div className="loader__element"></div> : null}
     </div>
   );
 };

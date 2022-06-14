@@ -17,7 +17,7 @@ const ProjectDisplay = ({ display }) => {
   const { speak, cancel, speaking, supported, voices } = useSpeechSynthesis({
     // onEnd,
   });
-  const {images, github, viewLink} = display
+  const {images, github, viewLink} = currentDisplay
   const voice = voices[11];
   const text = "Hello, this is a test";
 
@@ -38,7 +38,7 @@ const ProjectDisplay = ({ display }) => {
 
   return (
     <div className="infoWindow-wrapper">
-      <Carousel props={{images, github, viewLink, name:display.name}}/>
+      <Carousel props={{images, github, viewLink, name:currentDisplay.name}}/>
 
       <div className="infoWindow-techStack">
         {currentDisplay.techStack.map((tech) => (

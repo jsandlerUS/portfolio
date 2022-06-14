@@ -13,7 +13,9 @@ import microsoft from "./resources/Logos/microsoft-logo.png";
 import nike from "./resources/Logos/nike-logo.png";
 import tesla from "./resources/Logos/tesla-logo.png";
 import uber from "./resources/Logos/uber-logo.png";
-
+import armada from "./resources/Logos/armada-logo.png";
+import ECSITE from "./resources/Logos/ECSite-logo.png";
+import simple from "./resources/Logos/simple-logo.png";
 
 export const dataFlow = [
   {
@@ -25,20 +27,11 @@ export const dataFlow = [
           {
             name: "ECSITE",
             techStack: [
-              "JavaScript",
-              "Redux",
-              "React",
-              "Nodejs",
-              "Expressjs",
-              "HTTPS",
-              "OAuth 2.0",
+              'TypeScript', 'JavaScript', 'React', 'Redux', 'Python', 'Flask', 'Selenium', 'Apium', 'Jira', 'Postman', 'Zephyr Squad', 'AWS S3'
             ],
-            // techStack: 'JavaScript Redux React Nodejs Expressjs HTTPS OAuth 2.0',
-            viewLink: "http://jsandlerus.github.io/wholesale-portal",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
-            github: "https://github.com/jsandlerus/wholesale-portal",
-            team: 5,
-            images: [SusanaAyurveda],
+            viewLink: "https://ecsiteapp.com/",
+            description: "ECSITE is an innovative high-grow Cloud-based company disrupting the Construction and Wireless Telecom Infrastructure sectors leading into 5G and beyond. As Quality Assurance Engineer, I had the opportunity to design and build an Agnostic Automation Test Framework to automate over 1000 test cases across 5 platforms working with technologies like AWS S3 services, React, Flask, Python, and JavaScript.\n\nI provide technical support to the engineering team in an Agile Environment and I’m currently improving the productivity of one of the services by designing a 4-8x feature. I weekly participate in App release processes with 10,000 daily customer data entry points.",
+            images: [ECSITE],
           },
           {
             name: "Simple\nBreakthrough",
@@ -51,37 +44,25 @@ export const dataFlow = [
               "HTTPS",
               "OAuth 2.0",
             ],
-            // techStack: 'JavaScript Redux React Nodejs Expressjs HTTPS OAuth 2.0',
             viewLink: "http://jsandlerus.github.io/wholesale-portal",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+            description: "Simple Breakthrough software company creates unique business solutions for industry-specific problems. I had the great pleasure of being picked up by Jackson Felty, one of the co-founders of Simple Breakthrough, to join their lines as a Front-End Software Engineer.\n\nWorking with technologies like React, JavaScript, Redux, NodeJS, and MongoDB, I lead the development of the User Experience for a Wholesale platform with a product management system.",
             github: "https://github.com/jsandlerus/wholesale-portal",
-            team: 5,
-            images: [SusanaAyurveda],
+            images: [simple],
           },
           {
             name: "Your\nCompany",
             techStack:[ "Any tech stack"],
-            viewLink: "http://jsandlerus.github.io/wholesale-portal",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-            github: "https://github.com/jsandlerus/wholesale-portal",
             images: [airbnb, amazon, apple, att, disney, microsoft, nike, tesla, uber],
           },
           {
             name: "Armada",
             techStack: [
-              "JavaScript",
-              "Redux",
-              "React",
-              "Nodejs",
-              "Expressjs",
-              "HTTPS",
-              "OAuth 2.0",
+              'JavaScript', 'Node.js', 'HTML5', 'CSS', 'Bootstrap', 'Jquery', 'Socket.io'
             ],
-            // techStack: 'JavaScript Redux React Nodejs Expressjs HTTPS OAuth 2.0',
-            viewLink: "http://jsandlerus.github.io/wholesale-portal",
-            description: "Front End Team Lead, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
-            github: "https://github.com/jsandlerus/wholesale-portal",
-            images: [SusanaAyurveda],
+            viewLink: "http://armadaaero.com",
+            description: "Armada Aeronautics is a 21st-century transportation company disrupting air travel with new modes of transportation. Armada develops a 0-carbon solution for modern aviation with innovations in software and hardware.\n\nAs a Front-End Engineer and Lead Developer, my work at Armada allows me to lead the development of their first internal flight system, including the Pilot Flying Control UI, Developers Diagnostic View of Engines, and the Blackbox recovery system of the vehicle. I was also honored to present the advances of our technology at a private investors event.",
+            images: [armada],
           },
         ],
       },
@@ -103,17 +84,13 @@ export const dataFlow = [
         name: "About",
         image: JonathanImage,
         description: "Hi! My name is Jonathan Sandler and I’m a Full Stack Software Engineer based in San Francisco, United States. My main area of expertise is Front-End development focused on User Experience and Creative Development.\n\nI found my passion for technology and communication 4 years ago, after attending 42 Silicon Valley Bootcamp. Since then, I had the pleasure to work with very talented people who had empowered me throughout my career.\n\nI get excited at solving really complex problems and I love creating unique user experiences through cutting-edge technology with all my heart! I can’t describe how thankful I am for being part of this incredible community of developers in such amazing times of innovation.\n\nI feel privileged for having the chance to learn something new every day and I look forward to continue sharing all the incredible gifts this career has brought to my life. I believe coding is an essential part of humanity and it's the fuel of the new era. We have a chance to change the Status Quo together.",
-        techStack: [
-          "JavaScript",
-          "Redux",
-          "React",
-          "Nodejs",
-          "Expressjs",
-          "HTTPS",
-          "OAuth 2.0",
+        techStack: [{Languages: [ 'JavaScript (AJAX, JSON)', 'HTML5', 'CSS', 'C', 'Python', 'Java', 'TypeScript']},
+        {Frameworks:['Redux', 'React', 'Express.js', 'Jquery', 'Socket.io', 'Flask','Node.js']},
+        {Databases:['Git', 'GitHub', 'Command Line', 'MongoDB', 'AWS S3']},
+        {Tools:['Postman', 'Jira', 'Zephyr Squad', 'Agile Development', 'Material-ui(MUI)', 'Bootstrap', 'Cucumber', 
+          'Selenium', 'Apium']}
         ],
         github: "https://github.com/jsandlerus",
-        viewLink: "https://github.com/jsandlerus",
       },
       {
         name: "Projects",
@@ -129,7 +106,6 @@ export const dataFlow = [
               "HTTPS",
               "OAuth 2.0",
             ],
-            // techStack:'JavaScript Redux React Nodejs Expressjs HTTPS OAuth 2.0',
             viewLink: "http://jsandlerus.github.io/myayurvedaclinic",
             description:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
@@ -140,22 +116,18 @@ export const dataFlow = [
           {
             name: "Egypt\nChiropractic",
             techStack: ["Wix"],
-            // techStack: 'Wix',
             viewLink: "https://viperayurveda.wixsite.com/egyptchiropractic",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             github: "https://viperayurveda.wixsite.com/egyptchiropractic",
-            team: 5,
             images: [EgyptChiropractic],
           },
           {
             id: 2,
             name: "Susana\nAyurveda",
             techStack: ["Wix"],
-            // techStack: 'Wix',
             viewLink: "https://www.susanaayurveda.com/",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
             github: "https://www.susanaayurveda.com/",
-            team: 1,
             images: [SusanaAyurveda],
           },
           {
@@ -169,7 +141,6 @@ export const dataFlow = [
               "HTTPS",
               "OAuth 2.0",
             ],
-            // techStack: 'JavaScript Redux React Nodejs Expressjs HTTPS OAuth 2.0',
             viewLink: "http://jsandlerus.github.io/wholesale-portal",
             description:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
@@ -195,16 +166,6 @@ export const testimonials = [
   },
   {
     name: "Wendy Sanchez",
-    review:
-      '"I had several opportunities to receive excellent service from the technicians of this website. I liked how professional they are. I give my highest recommendation."',
-  },
-  {
-    name: "Micaela Roncaglia",
-    review:
-      '"Thank you for this profound, restorative and revitalizing experience. I felt so comfortable and careful. You guys are the best!."',
-  },
-  {
-    name: "Lara Sandler",
     review:
       '"I had several opportunities to receive excellent service from the technicians of this website. I liked how professional they are. I give my highest recommendation."',
   },
