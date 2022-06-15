@@ -4,7 +4,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
-import Carousel from "./Carousel";
+import Carousel, {CarouselItem} from "./Carousel";
 import { useSelector} from "react-redux";
 
 
@@ -36,10 +36,12 @@ const ProjectDisplay = ({ display }) => {
     else setCurrentDisplay(parent[0][0])
   };
 
+  // console.log(images, currentDisplay)
   return (
     <div className="infoWindow-wrapper">
-      <Carousel props={{images, github, viewLink, name:currentDisplay.name}}/>
-
+      <Carousel props ={{images, github, viewLink, name:currentDisplay.name}}>
+      {images.map(img => <CarouselItem img={img} key={img}/>)}
+      </Carousel>
       <div className="infoWindow-techStack">
         {currentDisplay.techStack.map((tech) => (
           <div key={tech}>{tech}</div>

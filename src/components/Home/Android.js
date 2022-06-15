@@ -4,7 +4,6 @@ import android from '../../resources/Gifs/android.gif'
 const Android = () => {
   const [androidStyle, setAndroidStyle] = useState({ "top": "40%", "left": "10%" });
 
-  console.log(androidStyle)
   useEffect(() => {
     const interval = setInterval(() => {
         var newTop = Math.random() * 100
@@ -12,7 +11,6 @@ const Android = () => {
         if (newTop > 80) newTop -= 20
         var newLeft = Math.random() * 100
         if (newLeft > 80) newLeft -= 20
-        console.log(newTop, newLeft)
         setAndroidStyle({top: newTop + '%', left: newLeft + '%'})
     }, 15000);
     return () => clearInterval(interval);
@@ -20,7 +18,7 @@ const Android = () => {
 
   return (
     <div className="android">
-      <img src={android} className="android-robot" style={androidStyle} />
+      <img src={android} alt="android" className="android-robot" style={androidStyle} />
     </div>
   );
 };

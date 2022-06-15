@@ -1,35 +1,38 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState, Children, cloneElement } from "react";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-const Carousel = ({ props }) => {
-  // console.log(props);
-  const { images, github, viewLink, name } = props;
-  const [image, setImage] = useState(images[0]);
-  const [current, setCurrent] = useState(0);
-  const autoPlayRef = useRef();
+export const CarouselItem = ({children, width, img}) =>{
+  return (
+    <div className="carousel-item" >
+        <img src={img} className="carousel-image" alt={img} />
+      </div>
+  )
+}
 
-  useEffect(() => {
-    autoPlayRef.current = nextSlide;
-  });
+const Carousel = ({ props, children } ) => {
+  const {images, github, viewLink, name } = props
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const play = () => autoPlayRef.current();
-    name !== "Your\nCompany" ?
-    setInterval(play, 12000) : setInterval(play, 500);
-  }, []);
+useEffect(()=>{
+    const interval = setInterval(() => {
+      updateIndex(activeIndex + 1)
+    }, 1000)
+    return ()=> {if(interval) {clearInterval(interval)}}
+  })
 
-  const nextSlide = () => {
-    setCurrent(
-      current === images.length - 1 ? 0 : current + 1,
-      setImage(images[current])
-    );
+  const updateIndex = (newIndex) => {
+    if (newIndex < 0) {
+      newIndex = Children.count(children) - 1
+    }
+    else if (newIndex >= Children.count(children)){
+      newIndex = 0
+    }
+    setActiveIndex(newIndex)
   };
 
-  console.log(github)
   return (
     <div className="carousel">
-      
         <div className="carousel-links">
         {github !==  undefined ? <a href={github} target="_blank" rel="noreferrer noopener">
             <GitHubIcon />
@@ -38,9 +41,20 @@ const Carousel = ({ props }) => {
             <OpenInNewIcon />
           </a> : null}
         </div> 
-
-      <img src={image} className="carousel-image" alt={"carousel Image"} />
-      {images.length > 1 ? <div className="loader__element"></div> : null}
+        <div className="inner"
+        style={{transform: `translateX(-${activeIndex * 100}%)`}}>
+          {Children.map(children, (child, index)=>{
+            return cloneElement(child, {width:"100%"})
+          })}
+        </div>
+        <div className="indicators">
+          {Children.map(children, (child, index) =>{
+            return <button
+            className={`${index === activeIndex ? 'active' : ""}`} 
+            onClick={()=> updateIndex(index)}/>
+          })}
+        </div>
+      {/* {images.length > 1 ? <div className="loader__element"></div> : null} */}
     </div>
   );
 };
