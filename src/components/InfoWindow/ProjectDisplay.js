@@ -42,12 +42,12 @@ const ProjectDisplay = ({ display }) => {
       <Carousel props ={{images, github, viewLink, name:currentDisplay.name}}>
       {images.map(img => <CarouselItem img={img} key={img}/>)}
       </Carousel>
-      <div className="infoWindow-techStack">
+      <div className="infoWindow-description">
+      {currentDisplay.techStack !== undefined ? <div className="infoWindow-techStack">
         {currentDisplay.techStack.map((tech) => (
           <div key={tech}>{tech}</div>
         ))}
-      </div>
-      <div className="infoWindow-description">
+      </div> : null}
         {!supported ? <VolumeOffIcon /> : null}
         {supported && speaking ? (
           <VolumeOffIcon onClick={() => speak({ text, voice })} />

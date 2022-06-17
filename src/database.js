@@ -30,7 +30,7 @@ export const dataFlow = [
               'TypeScript', 'JavaScript', 'React', 'Redux', 'Python', 'Flask', 'Selenium', 'Apium', 'Jira', 'Postman', 'Zephyr Squad', 'AWS S3'
             ],
             viewLink: "https://ecsiteapp.com/",
-            description: "ECSITE is an innovative high-grow Cloud-based company disrupting the Construction and Wireless Telecom Infrastructure sectors leading into 5G and beyond. As Quality Assurance Engineer, I had the opportunity to design and build an Agnostic Automation Test Framework to automate over 1000 test cases across 5 platforms working with technologies like AWS S3 services, React, Flask, Python, and JavaScript.\n\nI provide technical support to the engineering team in an Agile Environment and I’m currently improving the productivity of one of the services by designing a 4-8x feature. I weekly participate in App release processes with 10,000 daily customer data entry points.",
+            description: "ECSITE is an innovative high-grow Cloud-based company disrupting the Construction and Wireless Telecom Infrastructure leading into 5G and beyond. As Quality Assurance Engineer, I had the opportunity to design and build an Agnostic Automation Test Framework to automate over 1000 test cases across 5 platforms working with technologies like AWS S3 services, React, Flask, Python, and JavaScript.\n\nI provide technical support to the engineering team in an Agile Environment and I’m currently improving the productivity of one of the services by designing a 4-8x feature. I weekly participate in App release processes with 10,000 daily customer data entry points.",
             images: [ECSITE],
           },
           {
@@ -51,8 +51,7 @@ export const dataFlow = [
           },
           {
             name: "Your\nCompany",
-            techStack:[ "Any tech stack"],
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
             images: [airbnb, amazon, apple, att, disney, microsoft, nike, tesla, uber],
           },
           {

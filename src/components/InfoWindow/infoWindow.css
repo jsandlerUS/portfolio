@@ -60,6 +60,7 @@
     width: calc(100% - 40px);
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     padding: 20px;
 }
 
@@ -75,6 +76,7 @@
     margin: 4px 8px;
 }
 
+
 .infoWindow-description {
     padding-top: 25px;
     position: relative;
@@ -84,6 +86,7 @@
     font-family: "Helvetica", 'Arial';
     white-space: pre-wrap;
     line-height: 1.5;
+    /* max-height: 60%; */
 }
 
 .infoWindow-description>svg {
@@ -102,12 +105,16 @@
 
 
 .infoWindow-button {
-    display: flex;
+    position:absolute;
+    bottom: 0;
+margin-bottom: 10px;
+display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: calc(100% - 40px);
     height: 40px;
 }
+
 
 .infoWindow-button>div>svg {
     position: relative !important;
@@ -574,10 +581,10 @@
 .carousel {
     position: relative;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 5px;
     overflow: hidden;
-    /* height: 500px; */
+    /* background-color: rgba(255, 255, 255, 0.6); */
+    border-radius: 5px;
+    height: 325px;
 }
 
 .inner{
@@ -595,6 +602,11 @@
 .indicators{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    height: 100%;
 }
 
 .indicators > button{
@@ -608,11 +620,13 @@
 }
 
 .carousel-image {
-    width: calc(100% - 20px);
+    width: 100%;
     height: 300px;
     object-fit:contain;
     border-radius: 5px;
+    filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.5));
 }
+/* 0px 0px 1px 3px rgba(255, 255, 255, 0.2) inset */
 
 .carousel-links {
     position: absolute;
@@ -696,7 +710,11 @@
 
     .infoWindow-techStack,
     .infoWindow-description {
-        font-size: 1.2em;
+        font-size: 1.3em;
+    }
+
+    .infoWindow-button {
+        width: calc(100% - 40px);
     }
 }
 
@@ -715,9 +733,11 @@
 
     .infoWindow-techStack,
     .infoWindow-description {
-        font-size: 1em;
+        font-size: 1.2em;
     }
-
+    .carousel-image{
+        height: 200px;
+    }
     .carousel-links>a {
         height: 30px;
         width: 30px;
@@ -730,6 +750,10 @@
     .infoWindow-description>svg {
         height: 25px;
         width: 25px;
+    }
+
+    .infoWindow-button {
+        width: calc(100% - 40px);
     }
 }
 
@@ -780,7 +804,9 @@
     .infoWindow-description {
         font-size: 0.7em;
     }
-
+    .carousel-image{
+        height: 200px;
+    }
     .carousel-links>a {
         height: 20px;
         width: 20px;
@@ -793,6 +819,11 @@
     .infoWindow-description>svg {
         height: 20px;
         width: 20px;
+    }
+
+    .infoWindow-button {
+        position:relative;
+        width: 100%;
     }
 }
 
@@ -854,6 +885,11 @@
         height: 20px;
         width: 20px;
     }
+    .infoWindow-button {
+        position:relative !important;
+        width: 100% !important;
+        margin-bottom: 0;
+    }
 }
 
 
@@ -899,8 +935,9 @@
 
     .infoWindow-techStack,
     .infoWindow-description {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
+
 
     .carousel-links>a {
         height: 25px;
@@ -914,5 +951,10 @@
     .infoWindow-description>svg {
         height: 20px;
         width: 20px;
+    }
+
+    .infoWindow-button {
+        position:absolute;
+        width: calc(100% - 40px);
     }
 }

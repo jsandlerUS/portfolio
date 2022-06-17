@@ -4,9 +4,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 
 export const CarouselItem = ({children, width, img}) =>{
   return (
-    <div className="carousel-item" >
-        <img src={img} className="carousel-image" alt={img} />
-      </div>
+    <img src={img} className="carousel-item carousel-image" alt={img}/>
   )
 }
 
@@ -22,6 +20,7 @@ useEffect(()=>{
   })
 
   const updateIndex = (newIndex) => {
+    console.log(Children.count(children))
     if (newIndex < 0) {
       newIndex = Children.count(children) - 1
     }
@@ -32,7 +31,7 @@ useEffect(()=>{
   };
 
   return (
-    <div className="carousel">
+    <div className="carousel" >
         <div className="carousel-links">
         {github !==  undefined ? <a href={github} target="_blank" rel="noreferrer noopener">
             <GitHubIcon />

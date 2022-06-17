@@ -72,4 +72,34 @@ const MusicPlay = () => {
   );
 };
 
+
+// const playSound = (arraybuffer) => {
+//   var context	= new AudioContext();
+
+//   var source = context.createBufferSource();
+//   context.decodeAudioData(arraybuffer, function (buffer) {
+//       source.buffer = buffer;
+//   });
+
+//   var analyser = context.createAnalyser();
+//   analyser.smoothingTimeConstant = 0.3;
+//   analyser.fftSize = 1024;
+
+//   var jsNode = context.createScriptProcessor(2048, 1, 1);
+//   jsNode.onaudioprocess = function() {
+//       var array = new Uint8Array(analyser.frequencyBinCount);
+//       analyser.getByteFrequencyData(array);
+//       volumeBars.mono.style.height = Math.average(array) * 2 + "px";
+//       volumeBars.mono.innerHTML = Math.floor(Math.average(array));
+//   }
+
+//   source.connect(analyser);
+//   source.connect(context.destination);
+//   jsNode.connect(context.destination);
+//   analyser.connect(jsNode);
+
+//   source.start();
+// }
+
+
 export default MusicPlay;
