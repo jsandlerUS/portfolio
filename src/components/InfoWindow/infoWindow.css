@@ -68,12 +68,14 @@
 .infoWindow-techStack {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
     font-family: "Helvetica", 'Arial';
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .infoWindow-techStack>div {
-    margin: 4px 8px;
+    margin: 4px 4px;
 }
 
 
@@ -704,13 +706,9 @@ display: flex;
 
 @media (min-width:800px) and (max-width: 1200px) and (max-height: 1200px) {
 
-    .infoWindow-techStack>div {
-        margin: 4px 8px;
-    }
-
     .infoWindow-techStack,
     .infoWindow-description {
-        font-size: 1.3em;
+        font-size: 1em;
     }
 
     .infoWindow-button {
@@ -725,10 +723,6 @@ display: flex;
 
     .contact-reviews {
         font-size: 1em;
-    }
-
-    .infoWindow-techStack>div {
-        margin: 4px 8px;
     }
 
     .infoWindow-techStack,
@@ -796,10 +790,6 @@ display: flex;
         padding: 10px;
     }
 
-    .infoWindow-techStack>div {
-        margin: 4px 8px;
-    }
-
     .infoWindow-techStack,
     .infoWindow-description {
         font-size: 0.7em;
@@ -863,10 +853,6 @@ display: flex;
         padding: 10px;
     }
 
-    .infoWindow-techStack>div {
-        margin: 4px 8px;
-    }
-
     .infoWindow-techStack,
     .infoWindow-description {
         font-size: 0.9em;
@@ -927,10 +913,6 @@ display: flex;
 
     .contact-reviews__current {
         padding: 10px;
-    }
-
-    .infoWindow-techStack>div {
-        margin: 4px 8px;
     }
 
     .infoWindow-techStack,
