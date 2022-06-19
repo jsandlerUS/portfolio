@@ -4,7 +4,7 @@
     top: 0;
     right: -30%;
     width: 100%;
-    max-width: 480px;
+    max-width: 550px;
     height: 100%;
     background-color: rgba(28, 28, 28, 0.4);
     backdrop-filter: blur(5px);
@@ -68,14 +68,42 @@
 .infoWindow-techStack {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    font-family: "Helvetica", 'Arial';
+    justify-content: space-around;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.infoWindow-techStack>div {
-    margin: 4px 4px;
+.infoWindow-techStack>img{
+    max-width: 80px;
+    height: 50px;
+    object-fit: contain;
+    margin: 4px 5px;
+    filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8));
+
+}
+
+.infoWindow-techStack-resume-container{
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+}
+
+.infoWindow-techStack-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+}
+
+.infoWindow-techStack-container-img {
+    max-width: 80px;
+    height: 45px;
+    object-fit: contain;
+    margin: 4px 5px;
+    filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8));
 }
 
 
@@ -524,22 +552,23 @@ display: flex;
     float: none;
     font-family: "Helvetica", 'Arial';
     white-space: pre-wrap;
-    line-height: 1.5;
+    line-height: 1.3;
 }
 
 .about-resume {
-    position: relative;
+    position: absolute;
+    right: 0;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
-    padding: 8px 10px;
+    padding: 5px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.2);
-    max-width: 250px;
-    cursor: pointer;
-    overflow: hidden;
     animation: backgroundFade 3s linear infinite;
+    overflow: hidden;
+    z-index: 1;
 }
+
 
 @keyframes backgroundFade {
     0% {
@@ -557,7 +586,7 @@ display: flex;
 
 .about-resume>svg {
     position: relative !important;
-
+    margin-left: 5px;
 }
 
 /* 
@@ -614,11 +643,14 @@ display: flex;
 .indicators > button{
     padding: 2px;
     border-radius: 50%;
+    border: 0px;
     margin: 5px;
+    padding: 3px;
+    background-color: var(--transparentBlack);
 }
 
 .indicators > button.active{
-    background-color: black;
+    background-color: var(--white);
 }
 
 .carousel-image {
@@ -628,15 +660,14 @@ display: flex;
     border-radius: 5px;
     filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.5));
 }
-/* 0px 0px 1px 3px rgba(255, 255, 255, 0.2) inset */
 
 .carousel-links {
     position: absolute;
-    top: 5px;
+    top: 0px;
     right: 0;
     padding: 3px;
     background-color: rgb(0 0 0 / 0.4);
-    border-radius: 3px 0 0 3px;
+    border-radius: 3px;
     display: flex;
     z-index: 1;
 }

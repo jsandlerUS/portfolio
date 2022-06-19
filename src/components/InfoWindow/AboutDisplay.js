@@ -16,7 +16,6 @@ const AboutDisplay = ({ display }) => {
 
   const text = "Hello, this is a test";
 
-
   return (
     <div className="about-wrapper">
       {!supported ? <VolumeOffIcon /> : null}
@@ -25,11 +24,22 @@ const AboutDisplay = ({ display }) => {
       ) : (
         <VolumeUpIcon onClick={() => cancel} />
       )}
-      <div className="about-title"> <img src={firework}/>&nbsp;Welcome!&nbsp;<img src={firework} /></div>
+      <div className="about-title"> About</div>
       {/* <img src={display.image} className="about-image" alt={display.name} /> */}
       <div className="about-description">{display.description}</div>
-      <div></div>
-      <a href={resume} download="JonathanSandlerResume.pdf" className="about-resume">Download my Resume <DownloadIcon/></a>
+        <div className="infoWindow-techStack-resume-container">
+        <a href={resume} download="JonathanSandlerResume.pdf" className="about-resume">Download my Resume <DownloadIcon/></a>
+        </div>
+        <div className="infoWindow-techStack-container">
+        {display.techStack.map(key => (
+          <div key={key.name}>
+            {key.name+':'} <br/>
+          {key.tech.map(tech =>(
+          <img src={tech} alt={tech} key={tech} className="infoWindow-techStack-container-img"/>
+          ))}
+            </div>
+        ))}
+        </div>
     </div>
   );
 };

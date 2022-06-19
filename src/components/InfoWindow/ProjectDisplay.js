@@ -45,7 +45,7 @@ const ProjectDisplay = ({ display }) => {
       <div className="infoWindow-description">
       {currentDisplay.techStack !== undefined ? <div className="infoWindow-techStack">
         {currentDisplay.techStack.map((tech) => (
-          <div key={tech}>{tech}</div>
+          <img src={tech} alt={tech}/>
         ))}
       </div> : null}
         {!supported ? <VolumeOffIcon /> : null}

@@ -56,6 +56,13 @@ const Home = () => {
         <MaxWindow exitAlert={() => exitAlert()} />
       ) : (
         <div className="home-background">
+          {/* Add Portfolio to the list of projects and remove both wix sites */}
+          {/* add support to browsers */}
+          {/* finish projects texts, take pictures, fix gifme and wholesale */}
+          {/* maybe remove the android */}
+          {/* add audio-reactive wrapper to affect everything except InfoWindow and audio controlers */}
+          {/* add upload of music too */}
+          {/* connect the github portfolio to the URL */}
           <Android/>
           <Fog position={"back"}/>
           <div className="forest-ground"/>

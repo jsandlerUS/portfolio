@@ -15,12 +15,15 @@ const Carousel = ({ props, children } ) => {
 useEffect(()=>{
     const interval = setInterval(() => {
       updateIndex(activeIndex + 1)
-    }, 1000)
+    }, 2000)
     return ()=> {if(interval) {clearInterval(interval)}}
   })
 
+  useEffect(()=>{
+    updateIndex(0)
+  }, [name])
+
   const updateIndex = (newIndex) => {
-    console.log(Children.count(children))
     if (newIndex < 0) {
       newIndex = Children.count(children) - 1
     }
@@ -29,7 +32,6 @@ useEffect(()=>{
     }
     setActiveIndex(newIndex)
   };
-
   return (
     <div className="carousel" >
         <div className="carousel-links">
@@ -46,13 +48,14 @@ useEffect(()=>{
             return cloneElement(child, {width:"100%"})
           })}
         </div>
+        {Children.count(children) !== 1 ?
         <div className="indicators">
           {Children.map(children, (child, index) =>{
             return <button
             className={`${index === activeIndex ? 'active' : ""}`} 
             onClick={()=> updateIndex(index)}/>
           })}
-        </div>
+        </div> : null}
       {/* {images.length > 1 ? <div className="loader__element"></div> : null} */}
     </div>
   );
