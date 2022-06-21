@@ -18,15 +18,6 @@ import myayurvedaclinicSearch from "./resources/Projects/myayurvedaclinic-search
 import wholesaleAccount from "./resources/Projects/wholesale-account.png";
 import wholesaleLogin from "./resources/Projects/wholesale-login.png";
 
-import airbnb from "./resources/Logos/airbnb-logo.png";
-import amazon from "./resources/Logos/amazon-logo.png";
-import apple from "./resources/Logos/apple-logo.png";
-import att from "./resources/Logos/att-logo.png";
-import disney from "./resources/Logos/disney-logo.png";
-import microsoft from "./resources/Logos/microsoft-logo.png";
-import nike from "./resources/Logos/nike-logo.png";
-import tesla from "./resources/Logos/tesla-logo.png";
-import uber from "./resources/Logos/uber-logo.png";
 import armada from "./resources/Logos/armada-logo.png";
 import ECSITE from "./resources/Logos/ECSite-logo.png";
 import simple from "./resources/Logos/simplebreakthrough-logo.png";
@@ -91,11 +82,6 @@ export const dataFlow = [
             description: "Simple Breakthrough software company creates unique business solutions for industry-specific problems. I had the great pleasure of being picked up by Jackson Felty, one of the co-founders of Simple Breakthrough, to join their lines as a Front-End Software Engineer.\n\nWorking with technologies like React, JavaScript, Redux, NodeJS, and MongoDB, I lead the development of the User Experience for a Wholesale platform with a product management system.",
             github: "https://github.com/jsandlerus/wholesale-portal",
             images: [simple],
-          },
-          {
-            name: "Your\nCompany",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
-            images: [airbnb, amazon, apple, att, disney, microsoft, nike, tesla, uber],
           },
           {
             name: "Armada",

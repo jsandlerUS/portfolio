@@ -9,7 +9,7 @@ export const CarouselItem = ({children, width, img}) =>{
 }
 
 const Carousel = ({ props, children } ) => {
-  const {images, github, viewLink, name } = props
+  const {github, viewLink, name } = props
   const [activeIndex, setActiveIndex] = useState(0);
 
 useEffect(()=>{
@@ -56,7 +56,6 @@ useEffect(()=>{
             onClick={()=> updateIndex(index)}/>
           })}
         </div> : null}
-      {/* {images.length > 1 ? <div className="loader__element"></div> : null} */}
     </div>
   );
 };

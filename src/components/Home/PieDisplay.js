@@ -28,7 +28,6 @@ const PieDisplay = ({ showWindow, display, updateDisplay }) => {
       "--skewY": "",
       "--scale": "1",
       "--rotY": "",
-      "--index": `${Math.random() * 10}`,
     };
     //invert/flip text for elements that are over 180 deg.
     const skewY = 5 * display.length;
@@ -76,6 +75,7 @@ const PieDisplay = ({ showWindow, display, updateDisplay }) => {
             elem.items ? () => updateDisplay(elem.name) : () => showWindow(elem)
           }
         >
+          <div className="pie-button-loading" style={getPieWrapperTextStyle()}/>
           <div className="pie-button-wrapper-text" style={getPieWrapperTextStyle()}>
             <pre className="pie-button-text" style={getPieTextStyle((i))}>{elem.name}</pre>
           </div>

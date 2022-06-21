@@ -270,7 +270,6 @@ svg {
 }
 
 .pie-button {
-    overflow: hidden;
     position: absolute;
     top: 0;
     right: 0;
@@ -281,6 +280,30 @@ svg {
     animation-delay: 1s;
     animation-fill-mode: forwards;
     opacity: 0%;
+    overflow: hidden;
+}
+
+
+.pie-button:hover::after{
+    position: absolute;
+    content: "";
+    height: 160%;
+    width: 160%;
+    bottom: -50%;
+    left: -50%;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.1) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.1);
+    border-radius: 40%;
+    animation: spin 16s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0%{transform: translateY(-20%) translateX(20%) rotate(0deg);}
+    50%{transform: translateY(-60%) translateX(60%) rotate(400deg)}
+    100%{transform: translateY(-20%) translateX(20%) rotate(0deg);}
+
 }
 
 .pie-button-wrapper-text {
@@ -301,15 +324,11 @@ svg {
     transform: scale(var(--scale));
 }
 
-.pie-button:hover {
-    /* box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2); */
-    /* background-color: rgba(255, 255, 255, .15); */
-    backdrop-filter: blur(5px);
-    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
-    background-image: radial-gradient(farthest-corner at 0% 100%, transparent 0 30%, rgba(255, 255, 255, .15) 25% 100%);
-    cursor: pointer;
-}
 
+@keyframes fillUpBackground {
+    0%{background-image: radial-gradient(farthest-corner at 0% 100%, transparent 0 100%);}
+    100%{background-image: radial-gradient(farthest-corner at 0% 100%, rgba(255, 255, 255, .15) 0 100%);}
+}
 
 @keyframes open-pie {
     0% {
