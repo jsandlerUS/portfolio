@@ -48,7 +48,7 @@ const Fog = ({position}) => {
             </div>
           </div> : null} */}
           {position === 'back' ?
-            <div className="fogwrapper fogwrapper__back">
+            <div className={fogStyle}>
             <div   className="fog foglayer_01">
               <div className="image01"></div>
               <div className="image02"></div>

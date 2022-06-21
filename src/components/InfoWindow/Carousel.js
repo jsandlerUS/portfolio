@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Children, cloneElement } from "react";
+import React, { useEffect, useState, Children, cloneElement, useCallback } from "react";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
@@ -12,6 +12,16 @@ const Carousel = ({ props, children } ) => {
   const {github, viewLink, name } = props
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const updateIndex = useCallback((newIndex) => {
+    if (newIndex < 0) {
+      newIndex = Children.count(children) - 1
+    }
+    else if (newIndex >= Children.count(children)){
+      newIndex = 0
+    }
+    setActiveIndex(newIndex)
+  },[children]);
+  
 useEffect(()=>{
     const interval = setInterval(() => {
       updateIndex(activeIndex + 1)
@@ -21,17 +31,9 @@ useEffect(()=>{
 
   useEffect(()=>{
     updateIndex(0)
-  }, [name])
+  }, [name, updateIndex])
 
-  const updateIndex = (newIndex) => {
-    if (newIndex < 0) {
-      newIndex = Children.count(children) - 1
-    }
-    else if (newIndex >= Children.count(children)){
-      newIndex = 0
-    }
-    setActiveIndex(newIndex)
-  };
+
   return (
     <div className="carousel" >
         <div className="carousel-links">

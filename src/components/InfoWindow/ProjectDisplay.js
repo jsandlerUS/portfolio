@@ -36,7 +36,6 @@ const ProjectDisplay = ({ display }) => {
     else setCurrentDisplay(parent[0][0])
   };
 
-  // console.log(images, currentDisplay)
   return (
     <div className="infoWindow-wrapper">
       <Carousel props ={{images, github, viewLink, name:currentDisplay.name}}>

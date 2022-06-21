@@ -8,7 +8,6 @@ import Fog from "./Fog";
 import InfoWindow from "../InfoWindow/InfoWindow";
 import BreadCrumbs from "./BreadCrumbs";
 import MusicPlay from "./MusicPlay";
-import Android from "./Android";
 import ClickAwayListener from "@mui/base/ClickAwayListener";
 
 
@@ -61,10 +60,8 @@ const Home = () => {
           {/* maybe remove the android */}
           {/* connect the github portfolio to the domain */}
           {/* add audio-reactive wrapper to affect everything except InfoWindow and audio controlers */}
-          {/* add upload of music too */}
           {/* move all pictures to a database */}
           {/* convert using Nextjs */}
-          <Android/>
           <Fog position={"back"}/>
           <div className="forest-ground"/>
           <MusicPlay />

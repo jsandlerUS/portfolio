@@ -1,7 +1,6 @@
 import { useSpeechSynthesis } from "react-speech-kit";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
-import firework from '../../resources/Gifs/fireworks.gif'
 import DownloadIcon from '@mui/icons-material/Download';
 import resume from '../../resources/JonathanSandlerResume.pdf';
 import React from "react";
@@ -25,7 +24,6 @@ const AboutDisplay = ({ display }) => {
         <VolumeUpIcon onClick={() => cancel} />
       )}
       <div className="about-title"> About</div>
-      {/* <img src={display.image} className="about-image" alt={display.name} /> */}
       <div className="about-description">{display.description}</div>
         <div className="infoWindow-techStack-resume-container">
         <a href={resume} download="JonathanSandlerResume.pdf" className="about-resume">Download my Resume <DownloadIcon/></a>

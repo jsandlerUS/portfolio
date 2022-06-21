@@ -29,7 +29,6 @@ const PieDisplay = ({ showWindow, display, updateDisplay }) => {
       "--scale": "1",
       "--rotY": "",
     };
-    //invert/flip text for elements that are over 180 deg.
     const skewY = 5 * display.length;
     const rotX = 30 / (skewY / 30);
     if (display.length === 3) {
@@ -63,7 +62,6 @@ const PieDisplay = ({ showWindow, display, updateDisplay }) => {
 
   let i = -1;
 
-  //UPDATE CODE FROM STACKOVERFLOW
   return (
     <div className="pie-parent">
       {display.map((elem) => (

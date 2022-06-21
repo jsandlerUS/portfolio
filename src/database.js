@@ -49,7 +49,6 @@ import selenium from "./resources/Logos/selenium-logo.png";
 import appium from "./resources/Logos/appium-logo.png";
 import java from "./resources/Logos/java-logo.png";
 import jira from "./resources/Logos/jira-logo.png";
-import { Javascript } from "@mui/icons-material";
 
 export const dataFlow = [
   {
