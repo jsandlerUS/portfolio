@@ -78,7 +78,7 @@ export const dataFlow = [
               git
             ],
             viewLink: "http://jsandlerus.github.io/wholesale-portal",
-            description: "Simple Breakthrough software company creates unique business solutions for industry-specific problems. I had the great pleasure of being picked up by Jackson Felty, one of the co-founders of Simple Breakthrough, to join their lines as a Front-End Software Engineer.\n\nWorking with technologies like React, JavaScript, Redux, NodeJS, and MongoDB, I lead the development of the User Experience for a Wholesale platform with a product management system.",
+            description: "Simple Breakthrough is a software company that creates unique business solutions for industry-specific problems. Guided by their experienced founders, they help to tackle down very difficult tasks by merging blazing-fast platforms with great user experience designs.\n\nI had the great pleasure of being picked up by Jackson Felty, one of the co-founders of Simple Breakthrough, to join their lines as a Front-End Software Engineer. Working with technologies like React, JavaScript, Redux, NodeJS, and MongoDB, I am part of the development of the CBDDY international e-commerce platform.\n\nApart from developing the User Interface of the site, I was also involved in the development of the product management system, allowing authenticated users to create, edit, update, and delete products from the database.",
             github: "https://github.com/jsandlerus/wholesale-portal",
             images: [simple],
           },
@@ -88,7 +88,7 @@ export const dataFlow = [
               javascript, nodejs, html5, css3, bootstrap, jquery, socketio, git
             ],
             viewLink: "http://armadaaero.com",
-            description: "Armada Aeronautics is a 21st-century transportation company disrupting air travel with new modes of transportation. Armada develops a 0-carbon solution for modern aviation with innovations in software and hardware.\n\nAs a Front-End Engineer and Lead Developer, my work at Armada allows me to lead the development of their first internal flight system, including the Pilot Flying Control UI, Developers Diagnostic View of Engines, and the Blackbox recovery system of the vehicle. I was also honored to present the advances of our technology at a private investors event.",
+            description: "Armada Aeronautics is a 21st-century transportation company disrupting air travel with new modes of transportation. Armada develops a 0-carbon solution for modern aviation with innovations in software and hardware.\n\nAs a Front-End Engineer and Lead Developer, my work at Armada allows me to lead the development of their first internal flight system. By using technologies like JavaScript, jQuery, and Socketio I was able to develop the Flying Control User Interface for Pilots, the Developers Diagnostic View of Engines, and the crash-survivable Blackbox recovery system of the vehicle.\n\nI also had the opportunity to develop the first version of the Manual Hardware Control of the Vehicle, like the stirring wheel and gearbox. I was honored to present the advances of our technology at a private investors event of the company, helping to achieve one of the several seed rounds.",
             images: [armada],
           },
         ],
@@ -134,7 +134,7 @@ export const dataFlow = [
             ],
             viewLink: "http://jsandlerus.github.io/myayurvedaclinic",
             description:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+              "My Ayurveda Clinic (currently in progress) is an e-commerce platform for Ayurvedic Medical Professionals, that features a booking system, and a live video chat between patients and doctors. It is powered by a smart search engine that filters results based on multiple databases like illnesses, medical products, and clinicians.\n\nIt also allows to filter results based on multiple categories simultaneously based on price, availability, languages spoken, and dates. Patient reviews are displayed using infinite scrolling at the bottom of the page. Medical Professionals are featured with location, price, a rating system based on customer reviews, and the last highest rating they received from their patients. Technologies used: React + Redux (Front-end), NodeJS + ExpressJS (Back-end), MongoDB (Database), and JavaScript.\n\nThis project is meant to accelerate the growth and implementation of natural medicine in society. I am making it from my endless gratitude towards natural medicine and for how much it has helped me in my life and my health.",
             github: "https://github.com/jsandlerus/myayurvedaclinic",
             team: 1,
             images: [myayurvedaclinicMenu,myayurvedaclinicSearch, myayurvedaclinicProfessionals, myayurvedaclinicResults,myayurvedaclinicReviews],
@@ -143,7 +143,7 @@ export const dataFlow = [
             name: "Gifme",
             techStack: [redux, react, javascript, css3, mongodb, git],
             viewLink: "https://reaction-gifme.herokuapp.com/",
-            description: "A personalized gif making and sharing platform using the Giffy API. Users can take photos and/or gifs, apply filters and stickers over them, and post them publicly. Photos and gifs can be rated, commented on, and sorted. Additionally, they can be exported to different social media platforms.\n\nFeatures: Management system of gifs, user preferences system, gif preview for unauthenticated users. Technologies used: React + JavaScript (front-end), NodeJS + Express (back-end), and MongoDB (database).",
+            description: "A fun and personalized gif-making and sharing platform for day-to-day sharing of gifs on social media platforms. Users can take photos and/or gifs, apply filters and stickers over them, and post them publicly across multiple social media channels.\n\nPhotos and gifs can be rated, commented on, and sorted. Gifme is enriched by the powerful Giffy API, allowing users access to thousands of gifs completely free of use. The platform also features a personalized, token-secured management system of gifs. Users can add or remove their favorite gifs all from one single page.\n\nGifme platform also provides a user preferences system to manage email and account details, and a gif preview tool for unauthenticated users to use gifme features before creating an account. Technologies used: React (Front-end), NodeJS + ExpressJS (Back-end), MongoDB (database), all powered with JavaScript.",
             github: "https://github.com/jsandlerus/gifme",
             images: [gifmeHome,gifmeFavorites, gifmeLogin, gifmePictures, gifmeSettings],
           },
@@ -157,7 +157,7 @@ export const dataFlow = [
             images: [portfolioHome, portfolioAbout, portfolioContact, portfolioDisplay],
           },
           {
-            name: "Wholesale\nPortal",
+            name: "CBDDY\nE-commerce",
             techStack: [
               javascript,
               redux,
@@ -169,7 +169,7 @@ export const dataFlow = [
             ],
             viewLink: "http://jsandlerus.github.io/wholesale-portal",
             description:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+              "CBDDY E-commerce is an international wholesale platform for selling top-shelf, lab-tested hemp products. It provides a very clean and simple user-friendly experience for customers, featuring category filtering, and a review rating system for products. Customers can “like” products and have them displayed as part of their personalized Home Page.\n\nCBDDY also provides a product management system for administrators only. Users can create, edit, update, and soft or hard delete products from the products database system. The E-commerce platform also provides a product featuring page with carousel images, a product star review system, description, and add-to shopping cart action buttons. Lastly, the platform enjoys a secure checkout system using GoCardless API and an account management system for payment methods and email preferences.\n\nThe technologies used for this project were React + Redux (Front-end), NodeJS + ExpressJS (Back-end), OAuth2.0, HTTPS, and GoCardless API (security), MongoDB (Database), and JavaScript as language.",
             github: "https://github.com/jsandlerus/wholesale-portal",
             images: [wholesaleLogin, wholesaleAccount],
           },
