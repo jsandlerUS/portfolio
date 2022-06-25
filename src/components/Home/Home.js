@@ -55,7 +55,7 @@ const Home = () => {
         <MaxWindow exitAlert={() => exitAlert()} />
       ) : (
         <div className="home-background">
-          {/* finish projects texts, fix wholesale */}
+          {/* fix wholesale */}
           {/* add support to browsers */}
           {/* maybe remove the android */}
           {/* connect the github portfolio to the domain */}
