@@ -57,8 +57,6 @@ const Home = () => {
         <div className="home-background">
           {/* fix wholesale */}
           {/* add support to browsers */}
-          {/* maybe remove the android */}
-          {/* connect the github portfolio to the domain */}
           {/* add audio-reactive wrapper to affect everything except InfoWindow and audio controlers */}
           {/* move all pictures to a database */}
           {/* convert using Nextjs */}

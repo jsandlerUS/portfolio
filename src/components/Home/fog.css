@@ -45,6 +45,18 @@
   width: 50%;
 }
 
+.fogwrapper__fixed > .foglayer_01 {
+  animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 50s linear infinite;
+}
+
+.fogwrapper__fixed > .foglayer_02, .fogwrapper__fixed > .foglayer_03{
+  animation: foglayer_02_opacity 21s linear infinite, foglayer_moveme 46s linear infinite;
+}
+.fogwrapper__fixed > .foglayer_04{
+  animation: foglayer_02_opacity 10s linear infinite, foglayer_moveme_forward 50s linear infinite;
+}
+
+
 .foglayer_01 {
   animation: foglayer_01_opacity 10s linear infinite, foglayer_moveme 25s linear infinite;
 }
@@ -97,12 +109,12 @@
   100% { opacity: .4;}
 }
 @-moz-keyframes foglayer_01_opacity {
-  0% {opacity: .4;}
-  22% {opacity: 2;}
-  40% {opacity: 1;}
-  58% {opacity: 1.6;}
-  80% { opacity: .64;}
-  100% { opacity: .4;}
+  0% {-moz-opacity: .4;}
+  22% {-moz-opacity: 2;}
+  40% {-moz-opacity: 1;}
+  58% {-moz-opacity: 1.6;}
+  80% { -moz-opacity: .64;}
+  100% { -moz-opacity: .4;}
 }
 @-o-keyframes foglayer_01_opacity {
   0% {opacity: .4;}
@@ -131,11 +143,11 @@
   100% { opacity: 2;}
 }
 @-moz-keyframes foglayer_02_opacity {
-  0% {opacity: 2;}
-  25% {opacity: .8; }
-  50% {opacity: .4;}
-  80% {opacity: 1.2;}
-  100% { opacity: 2;}
+  0% {-moz-opacity: 2;}
+  25% {-moz-opacity: .8; }
+  50% {-moz-opacity: .4;}
+  80% {-moz-opacity: 1.2;}
+  100% { -moz-opacity: 2;}
 }
 @-o-keyframes foglayer_02_opacity {
   0% {opacity: 2;}
@@ -161,11 +173,11 @@
   100% {opacity: 3; }
 }
 @-moz-keyframes foglayer_03_opacity {
-  0% {opacity: 3;}
-  27% {opacity: .8;}
-  52% {opacity: 2.4;}
-  68% {opacity: 1.2;}
-  100% {opacity: 3; }
+  0% {-moz-opacity: 3;}
+  27% {-moz-opacity: .8;}
+  52% {-moz-opacity: 2.4;}
+  68% {-moz-opacity: 1.2;}
+  100% {-moz-opacity: 3; }
 }
 @-o-keyframes foglayer_03_opacity {
   0% {opacity: 3;}
@@ -199,6 +211,24 @@
   0% { left: 0; }
   100% { left: -100%; }
 }
+
+/* @-webkit-keyframes foglayer_moveme {
+  0% { transform: translate(100%) }
+  100% { transform: translate(0%)}
+}
+@-moz-keyframes foglayer_moveme {
+  0% { transform: translate(100%) }
+  100% { transform: translate(0%)}
+}
+@-o-keyframes foglayer_moveme {
+  0% { transform: translate(100%) }
+  100% { transform: translate(0%)}
+}
+@keyframes foglayer_moveme {
+  0% { transform: translate(100%) }
+  100% { transform: translate(0%)}
+} */
+
 
   /* ---------- Keyframe moveMe ---------- */
   @-webkit-keyframes foglayer_moveme_forward {

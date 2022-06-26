@@ -18,28 +18,44 @@
 }
 
 @keyframes slideInFromRight {
-    0% {
-        right: -100%;
-    }
-
-    100% {
-        right: 0%;
-    }
+    0% {transform: translateX(100vw);}
+    100% {transform: translateX(-30vw);}
 }
+@-webkit-keyframes slideInFromRight {
+    0% {transform: translateX(100vw);}
+    100% {transform: translateX(-30vw);}
+  }
+  @-moz-keyframes slideInFromRight {
+    0% {transform: translateX(100vw);}
+    100% {transform: translateX(-30vw);}
+  }
+  @-o-keyframes slideInFromRight {
+    0% {transform: translateX(100vw);}
+    100% {transform: translateX(-30vw);}
+  }
+
 
 @keyframes slideOutToRight {
-    0% {
-        right: 0%;
-    }
-
-    100% {
-        right: -30%;
-    }
+    0% {transform: translateX(-30vw);}
+    100% {transform: translateX(100vw);}
 }
+@-webkit-keyframes slideOutToRight {
+    0% {transform: translateX(-30vw);}
+    100% {transform: translateX(100vw);}
+  }
+  @-moz-keyframes slideOutToRight {
+    0% {transform: translateX(-30vw);}
+    100% {transform: translateX(100vw);}
+  }
+  @-o-keyframes slideOutToRight {
+    0% {transform: translateX(-30vw);}
+    100% {transform: translateX(100vw);}
+  }
 
 .infoWindow-exit {
     padding: 8px 10px;
     text-align: center;
+    text-align: -moz-center;
     font-size: 1em;
     left: 0px;
     border-radius: 0 0 5px 0px;
@@ -119,9 +135,10 @@
     line-height: 1.5;
 }
 
-.about-description, .infoWindow-description{
+.about-description, .infoWindow-description, .about-wrapper{
     -ms-overflow-style: none;
     scrollbar-width: none;
+    overflow: -moz-scrollbars-none;
 }
 .infoWindow-description::-webkit-scrollbar{display: none;}
 .about-description::-webkit-scrollbar{display: none;}
@@ -191,48 +208,72 @@
 }
 
 @keyframes slideToTop {
-    0% {
-        top: 40%;
-        position: relative;
-    }
-
-    100% {
-        top: 0;
-        position: relative;
-    }
+    0% {transform: translateY(0vh);position: relative;}
+    100% {transform: translateY(-38vh); position: relative;}
 }
+
+@-webkit-keyframes slideToTop {
+    0% {transform: translateY(40%);position: relative;}
+    100% {transform: translateY(0%); position: relative;}
+  }
+  @-moz-keyframes slideToTop {
+    0% {transform: translateY(40%);position: relative;}
+    100% {transform: translateY(0%); position: relative;}
+  }
+  @-o-keyframes slideToTop {
+    0% {transform: translateY(40%);position: relative;}
+    100% {transform: translateY(0%); position: relative;}
+  }
 
 .contact-title__t1 {
     position: relative;
     right: -10%;
     opacity: 0%;
+    -moz-opacity:0%;
     animation: slideFromRight 4s linear;
     animation-delay: 2s;
     animation-fill-mode: forwards;
 }
-
+/* 0% {transform: translateX(-30vw);}
+100% {transform: translateX(100vw);} */
 @keyframes slideFromRight {
-    0% {
-        right: -10%;
-        opacity: 0%;
-    }
-
-    22% {
-        opacity: 100%;
-    }
-
+    0% {transform: translateX(0%); opacity: 0%;}
+    22% {opacity: 100%;}
     44%,
     66%,
     88%,
-    100% {
-        right: 0;
-        opacity: 100%;
-    }
+    100% {transform: translateX(-10%);opacity: 100%;}
 }
+@-webkit-keyframes slideFromRight {
+    0% {transform: translateX(0%); opacity: 0%;}
+    22% {opacity: 100%;}
+    44%,
+    66%,
+    88%,
+    100% {transform: translateX(-10%);opacity: 100%;}
+  }
+  @-moz-keyframes slideFromRight {
+    0% {transform: translateX(0%); opacity: 0%;}
+    22% {opacity: 100%;}
+    44%,
+    66%,
+    88%,
+    100% {transform: translateX(-10%);opacity: 100%;}
+  }
+  @-o-keyframes slideFromRight {
+    0% {transform: translateX(0%); opacity: 0%;}
+    22% {opacity: 100%;}
+    44%,
+    66%,
+    88%,
+    100% {transform: translateX(-10%);opacity: 100%;}
+  }
+
 
 .contact-title__t2 {
     position: relative;
     opacity: 0%;
+    -moz-opacity:0%;
     left: -10%;
     animation: slideFromLeft 4s ease-in-out;
     animation-delay: 2s;
@@ -240,27 +281,42 @@
 }
 
 @keyframes slideFromLeft {
-    0% {
-        left: 0%;
-        opacity: 0%;
-    }
-
-    22% {
-        opacity: 100%;
-    }
-
+    0% {transform: translateX(10%); opacity: 0%;}
+    22% {opacity: 100%;}
     44%,
     66%,
     88%,
-
-    100% {
-        left: 10%;
-        opacity: 100%;
-    }
+    100% { transform: translateX(20%);opacity: 100%;}
 }
+
+@-webkit-keyframes slideFromLeft {
+    0% {transform: translateX(10%); opacity: 0%;}
+    22% {opacity: 100%;}
+    44%,
+    66%,
+    88%,
+    100% { transform: translateX(20%);opacity: 100%;}
+  }
+  @-moz-keyframes slideFromLeft {
+    0% {transform: translateX(10%); opacity: 0%;}
+    22% {opacity: 100%;}
+    44%,
+    66%,
+    88%,
+    100% { transform: translateX(20%);opacity: 100%;}
+  }
+  @-o-keyframes slideFromLeft {
+    0% {transform: translateX(10%); opacity: 0%;}
+    22% {opacity: 100%;}
+    44%,
+    66%,
+    88%,
+    100% { transform: translateX(20%);opacity: 100%;}
+  }
 
 .contact-form {
     opacity: 0%;
+    -moz-opacity:0%;
     height: 100%;
     margin-top: 20px;
     animation: fadeInFromBack 5s linear;
@@ -314,6 +370,7 @@
 .contact-form>div>input:focus,
 .contact-form>textarea:focus {
     outline: none;
+    -moz-outline:none;
     box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
 
 }
@@ -349,14 +406,21 @@
 }
 
 @keyframes expandInput {
-    0% {
-        width: 50%;
-    }
-
-    100% {
-        width: 80%;
-    }
+    0% {width: 50%;}
+    100% { width: 80%;}
 }
+@-webkit-keyframes expandInput {
+    0% {width: 50%;}
+    100% { width: 80%;}
+  }
+  @-moz-keyframes expandInput {
+    0% {width: 50%;}
+    100% { width: 80%;}
+  }
+  @-o-keyframes expandInput {
+    0% {width: 50%;}
+    100% { width: 80%;}
+  }
 
 .contact-form-textarea {
     height: 100%;
@@ -424,6 +488,7 @@
     height: 100%;
     width: 100%;
     opacity: 0%;
+    -moz-opacity:0%;
     position: relative;
     animation: fadeInFromBack 5s linear;
     animation-delay: 9s;
@@ -441,63 +506,60 @@
 
 .contact-reviews__current {
     position: relative;
+    /* width: 100%;
+height: 100%; */
     padding: 20px;
     box-shadow: 0px 0px 1px 3px rgba(255, 255, 255, 0.2) inset;
     border-radius: 10px;
     opacity: 0;
+    -moz-opacity:0%;
     animation: slideInAndOut 20s infinite;
     z-index: 1;
 }
 
 .contact-reviews__current>pre {
     text-align: right;
+    text-align: -moz-right;
 }
 
 
 @keyframes slideInAndOut {
-    0% {
-        right: -100%;
-        transform: scale(0.7);
-        opacity: 1;
-    }
-
-    8% {
-        right: 0;
-        transform: scale(0.7);
-        opacity: 1;
-    }
-
-    45% {
-        right: 0%;
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    50% {
-        right: 0%;
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    65% {
-        right: 0%;
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    92% {
-        right: 0;
-        transform: scale(0.7);
-        opacity: 1;
-    }
-
-    /* 95%{right: 100%; transform:scale(0.7);opacity: 1;} */
-    100% {
-        right: 100%;
-        transform: scale(0.7);
-        opacity: 1;
-    }
+    0% {transform: translate(100%) scale(0.7);opacity: 1;}
+    8% {transform: translate(0%) scale(0.7);opacity: 1;}
+    45% {transform: translate(0%) scale(1);opacity: 1;}
+    50% {transform: translate(0%) scale(1);opacity: 1;}
+    65% {transform: translate(0%) scale(1);opacity: 1;}
+    92% {transform: translate(0%) scale(0.7);opacity: 1;}
+    100% {transform: translate(-100%) scale(0.7); opacity: 1;}
 }
+
+@-webkit-keyframes slideInAndOut {
+    0% {transform: translate(100%) scale(0.7);opacity: 1;}
+    8% {transform: translate(0%) scale(0.7);opacity: 1;}
+    45% {transform: translate(0%) scale(1);opacity: 1;}
+    50% {transform: translate(0%) scale(1);opacity: 1;}
+    65% {transform: translate(0%) scale(1);opacity: 1;}
+    92% {transform: translate(0%) scale(0.7);opacity: 1;}
+    100% {transform: translate(-100%) scale(0.7); opacity: 1;}
+  }
+  @-moz-keyframes slideInAndOut {
+    0% {transform: translate(100%) scale(0.7);opacity: 1;}
+    8% {transform: translate(0%) scale(0.7);opacity: 1;}
+    45% {transform: translate(0%) scale(1);opacity: 1;}
+    50% {transform: translate(0%) scale(1);opacity: 1;}
+    65% {transform: translate(0%) scale(1);opacity: 1;}
+    92% {transform: translate(0%) scale(0.7);opacity: 1;}
+    100% {transform: translate(-100%) scale(0.7); opacity: 1;}
+  }
+  @-o-keyframes slideInAndOut {
+    0% {transform: translate(100%) scale(0.7);opacity: 1;}
+    8% {transform: translate(0%) scale(0.7);opacity: 1;}
+    45% {transform: translate(0%) scale(1);opacity: 1;}
+    50% {transform: translate(0%) scale(1);opacity: 1;}
+    65% {transform: translate(0%) scale(1);opacity: 1;}
+    92% {transform: translate(0%) scale(0.7);opacity: 1;}
+    100% {transform: translate(-100%) scale(0.7); opacity: 1;}
+  }
 
 .contact-reviews__left-svg {
     transform: scale(-1, 1);
@@ -537,6 +599,7 @@
     justify-content: center;
     height: 40px;
     text-align: center;
+    text-align: -moz-center;
     font-size: 2.2em;
     margin-bottom: 10px;
 }
@@ -578,28 +641,33 @@
 
 
 @keyframes backgroundFade {
-    0% {
-        box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
-    }
-
-    50% {
-        box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.4) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.4);
-    }
-
-    100% {
-        box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
-    }
+    0% { box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);}
+    50% { box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.4) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.4);}
+    100% {box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);}
 }
+
+@-webkit-keyframes backgroundFade {
+    0% { box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);}
+    50% { box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.4) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.4);}
+    100% {box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);}
+  }
+  @-moz-keyframes backgroundFade {
+    0% { box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);}
+    50% { box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.4) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.4);}
+    100% {box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);}
+  }
+  @-o-keyframes backgroundFade {
+    0% { box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);}
+    50% { box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.4) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.4);}
+    100% {box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);}
+  }
+
 
 .about-resume>svg {
     position: relative !important;
     margin-left: 5px;
 }
 
-/* 
-.about-resume:hover{
-    box-shadow: -1px 0 1px 1px rgba(255, 255, 255), inset -1px 0 0 1px rgba(255, 255, 255);
-} */
 
 .about-resume:hover>svg {
     animation: slideToBottom 2s linear;
@@ -613,7 +681,30 @@
     75% {top: 0 }
     100% { top: 0 }
 }
-
+@-webkit-keyframes slideToBottom {
+    0% {top: 0px}
+    10% {top: 40px}
+    20% { opacity: 0;}
+    51% { top: -30px; opacity: 0;}
+    75% {top: 0 }
+    100% { top: 0 }  
+}
+  @-moz-keyframes slideToBottom {
+    0% {top: 0px}
+    10% {top: 40px}
+    20% { -moz-opacity: 0;}
+    51% { top: -30px; -moz-opacity: 0;}
+    75% {top: 0 }
+    100% { top: 0 }  
+}
+  @-o-keyframes slideToBottom {
+    0% {top: 0px}
+    10% {top: 40px}
+    20% { opacity: 0;}
+    51% { top: -30px; opacity: 0;}
+    75% {top: 0 }
+    100% { top: 0 }  
+}
 
 
 .carousel {
@@ -629,7 +720,6 @@
 
 .inner{
     white-space: nowrap;
-
     transition: transform 0.3s;
 }
 
@@ -740,11 +830,17 @@
 }
 
 @keyframes getWidth {
-    100% {
-        width: 100%;
-    }
+    100% {width: 100%;}
 }
-
+@-webkit-keyframes getWidth {
+    100% {width: 100%;}
+}
+  @-moz-keyframes getWidth {
+    100% {width: 100%;}
+}
+  @-o-keyframes getWidth {
+    100% {width: 100%;}
+}
 
 
 
