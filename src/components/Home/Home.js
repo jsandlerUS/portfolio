@@ -72,15 +72,15 @@ const Home = () => {
           <TurbulentWater/>
           <Fog position={"front"}/>
           <div className="logo">
-            <div className="logo-text" onClick={() => updateDisplay("Home")}>
-              JS <br />
-              DESIGNS
-            </div>
-            <PieDisplay
+          <PieDisplay
               updateDisplay={(e) => updateDisplay(e)}
               showWindow={(e) => showWindow(e)}
               display={display}
             />
+            <div className="logo-text" onClick={() => updateDisplay("Home")}>
+              JS <br />
+              DESIGNS
+            </div>
             <RoundFog />
           </div>
           {isWindowOpen ? (

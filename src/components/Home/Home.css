@@ -28,12 +28,12 @@
 .swamp-water{
     background-image: url("../../resources/Background/swamp-water.png");
     filter: url("#turbulence");
-    z-index: 2;
+    z-index: 1;
 }
 
 .forest-trees{
     background-image: url("../../resources/Background/black-forest-trees.png");
-    z-index: 3;
+    z-index: 2;
 }
 
 .forest-ground{
@@ -167,33 +167,33 @@ svg {
 }
 
 @keyframes fadeInFromTop {
-    0% {opacity: 0%; top: 0%;}
+    0% {opacity: 0%; transform: translateY(-30%);}
     30%,
     70%,
     90%,
-    100% { opacity: 100%; top: 5%}
+    100% { opacity: 100%; transform: translateY(5%)}
 }
 
 @-webkit-keyframes fadeInFromTop {
-    0% {opacity: 0%; top: 0%;}
+    0% {opacity: 0%; transform: translateY(-30%);}
     30%,
     70%,
     90%,
-    100% { opacity: 100%; top: 5%}
+    100% { opacity: 100%; transform: translateY(5%)}
   }
   @-moz-keyframes fadeInFromTop {
-    0% {-moz-opacity: 0%; top: 0%;}
+    0% {opacity: 0%; transform: translateY(-30%);}
     30%,
     70%,
     90%,
-    100% { -moz-opacity: 100%; top: 5%}
+    100% { opacity: 100%; transform: translateY(5%)}
   }
   @-o-keyframes fadeInFromTop {
-    0% {opacity: 0%; top: 0%;}
+    0% {opacity: 0%; transform: translateY(-30%);}
     30%,
     70%,
     90%,
-    100% { opacity: 100%; top: 5%}
+    100% { opacity: 100%; transform: translateY(5%)}
   }
 
 
@@ -277,7 +277,7 @@ svg {
     transform: translate(-50%, -50%);
     border: 2px black solid;
     border-radius: 50%; */
-    z-index: 101;
+    z-index: 10;
 }
 
 .logo-text:hover{
@@ -290,9 +290,10 @@ svg {
     display: flex;
     width: 100%;
     height: 100%;
+    border-radius: 50%;
     filter: url('#fog-filter');
     position: absolute;
-    z-index: 100;
+    z-index: 5;
 }
 
 .round-fog>div {
@@ -305,12 +306,11 @@ svg {
     border-radius: 50rem;
     filter: blur(6px) contrast(160%);
     background-color: transparent;
-    /* overflow: hidden; */
 }
 
 .firefly {
     filter: blur(1px);
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     /* animation: day-and-night 56s linear infinite; */
 }
@@ -323,10 +323,7 @@ svg {
     height: 20em;
     border-radius: 50%;
     overflow: hidden;
-    animation: fadeInFromBack 3s ease-in-out;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    z-index: 10;
+    z-index: 3;
 }
 
 .pie-button {
@@ -336,14 +333,11 @@ svg {
     width: 50%;
     height: 50%;
     transform-origin: 0% 100%;
-    animation: open-pie 8s cubic-bezier(0.4, 0.0, 0.2, 1), fadeInFromBack 3s ease-in-out;
+    animation: open-pie 8s cubic-bezier(0.4, 0.0, 0.2, 1);
     animation-delay: 1s;
     animation-fill-mode: forwards;
-    opacity: 0%;
-    -moz-opacity:0%;
     overflow: hidden;
 }
-
 
 .pie-button:hover::after{
     position: absolute;
@@ -353,11 +347,16 @@ svg {
     bottom: -50%;
     left: -50%;
     background-color: rgba(255, 255, 255, .15);
-    backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); */
     text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
     box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.1) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.1);
     border-radius: 40%;
     animation: spin 16s ease-in-out infinite;
+}
+
+.pie-button:hover::after{
+    overflow: hidden;
 }
 
 @keyframes spin {
@@ -393,10 +392,22 @@ svg {
     animation-fill-mode: forwards;
     opacity: 0%;
     -moz-opacity:0%;
+    z-index: 10;
+}
+
+@keyframes fadeWithTransparency {
+    0% {color: rgb(197, 197, 197, 0%);}
+    30%,
+    70%,
+    90%,
+    100% {
+        color: rgb(197, 197, 197, 100%);
+    }
 }
 
 .pie-button-text{
-    color: rgb(197, 197, 197);
+    animation: fadeWithTransparency 3s ease-in-out;
+    animation-fill-mode: forwards;
     text-align: center;
     text-align: -moz-center;
     transform: scale(var(--scale));
@@ -429,7 +440,7 @@ svg {
     }
     30%,
     70%,
-    100% {transform: rotate(var(--rotX)) skewY(var(--skewY)) scale(var(--scale));}
+    100% { transform: rotate(var(--rotX)) skewY(var(--skewY)) scale(var(--scale));}
 }
 
 @-webkit-keyframes open-pie {
@@ -549,7 +560,7 @@ svg {
     align-items: center;
     top: 30px;
     left: 85px;
-    z-index: 10;
+    z-index: 5;
     font-size: 1.5em;
 }
 
@@ -562,7 +573,7 @@ svg {
     cursor: pointer;
 }
 
-.android{
+/* .android{
     width: 100%;
     height: 100%;
     position: absolute;
@@ -573,7 +584,7 @@ svg {
     top: 40%;
     left: 10%;
     max-width: 100px;
-}
+} */
 
 
 @media (min-width:900px) and (max-width: 1200px){
