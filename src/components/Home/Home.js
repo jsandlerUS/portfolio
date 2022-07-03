@@ -9,7 +9,7 @@ import InfoWindow from "../InfoWindow/InfoWindow";
 import BreadCrumbs from "./BreadCrumbs";
 import MusicPlay from "./MusicPlay";
 import ClickAwayListener from "@mui/base/ClickAwayListener";
-
+import LoadPage from './LoadPage';
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -18,6 +18,7 @@ const getFullScreen = () => {
 };
 
 const Home = () => {
+  const [isLoaded, setIsLoaded] = useState(false)
   const { dataFlow, breadCrumbs, flatDataFlow } = useSelector((state) => state);
   const [display, setDisplay] = useState(dataFlow[0].items.map((item) => item));
   const [isWindowOpen, setIsWindowOpen] = useState(false);
@@ -51,15 +52,15 @@ const Home = () => {
 
   return (
     <React.Fragment>
-      {!isFullScreen ? (
+      {!isFullScreen ? 
         <MaxWindow exitAlert={() => exitAlert()} />
-      ) : (
+       : null}
+      {!isLoaded ? <LoadPage isLoaded={() => setIsLoaded(true)}/> : (
         <div className="home-background">
           {/* fix wholesale */}
-          {/* add support to browsers */}
           {/* add audio-reactive wrapper to affect everything except InfoWindow and audio controlers */}
           {/* move all pictures to a database */}
-          {/* convert using Nextjs */}
+          {/* convert using Nextjs && TypeScript*/}
           <Fog position={"back"}/>
           <div className="forest-ground"/>
           <MusicPlay />

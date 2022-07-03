@@ -268,15 +268,6 @@ svg {
 
 
 .logo-text{
-    /* position: absolute;
-    z-index: 1;
-    width: 30%;
-    height: 30%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 2px black solid;
-    border-radius: 50%; */
     z-index: 10;
 }
 
@@ -572,6 +563,325 @@ svg {
     text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
     cursor: pointer;
 }
+
+
+.load-container{ 
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.load-logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-align: -moz-center;
+    color: white;
+    font-size: 2.7em;
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    padding: 20px;
+    border-radius: 50rem;
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(34, 147, 222, 0.2);
+    background-color:rgb(34, 147, 222);
+}
+
+.logo-text > p{
+    line-height: 1rem;
+}
+.logo-text > p:nth-child(3){
+    font-size: 1.7rem;
+}
+
+.waves > div{
+	position: absolute;
+	top:0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	border-radius: 50%;
+    animation-name: spread;
+	animation-duration: var(--duration);
+	animation-delay: var(--delay);
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+	animation-fill-mode: backwards;
+    background-color:rgb(34, 147, 222);
+}
+
+.waves > div:nth-child(2){
+	animation-delay: calc( 1.2s + 0.4s);
+	animation-timing-function: linear;
+}
+.waves > div:nth-child(3){
+	animation-delay: calc( 1.2s + 1s);
+	animation-timing-function: linear;
+}
+
+@keyframes spread{
+	0%{transform: scale(0);opacity: 1;color: white;}
+	40%{transform: scale(0);opacity: 1;}
+	100%{transform: scale(2);opacity: 0;}
+}
+
+@-webkit-keyframes spread {
+	0%{transform: scale(0);opacity: 1;color: white;}
+	40%{transform: scale(0);opacity: 1;}
+	100%{transform: scale(2);opacity: 0;}
+  }
+  @-moz-keyframes spread {
+	0%{transform: scale(0);opacity: 1;color: white;}
+	40%{transform: scale(0);opacity: 1;}
+	100%{transform: scale(2);opacity: 0;}
+  }
+  @-o-keyframes spread {
+	0%{transform: scale(0);opacity: 1;color: white;}
+	40%{transform: scale(0);opacity: 1;}
+	100%{transform: scale(2);opacity: 0;}
+  }
+
+
+.worm{
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    right: calc(50px + 100px);
+    background-color: aquamarine;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: move-worm 3s ease-in-out, move-worm2 3s ease-in-out;
+    animation-delay: 0s, 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move-worm {
+        0% {
+          left: 50px;
+          right: calc(100vw - 50px - 100px);
+          height: 100px;
+        }
+        50% {
+          left: 50px;
+          right: calc(100vw - 50px - 100px - 20vw);
+          height: 100px;
+        }
+        100% {
+          left: calc(20vw + 50px);
+          right: calc(100vw - 50px - 100px - 20vw);
+          height: 100px;
+        }
+      }
+
+      @keyframes move-worm2 {
+        0% {
+          top: 30px;
+          bottom: calc(100vh - 30px - 100px);
+          width: 100px;
+        }
+        50% {
+            top: 30px;
+            bottom: calc(100vh - 30px - 100px - 20vh);
+            width: 100px;
+        }
+        100% {
+            top: calc(20vh + 30px);
+            bottom: calc(100vh - 30px - 100px - 20vh);
+            width: 100px;
+        }
+      }
+
+
+
+
+@-webkit-keyframes move-worm {
+    0%{max-width: 100px;}
+    50%{max-width: calc(20vw + 100px);}
+    90%{max-width: 100px;}
+    100%{left: calc(20vw + 100px);}
+  }
+  @-moz-keyframes move-worm {
+    0%{max-width: 100px;}
+    50%{max-width: calc(20vw + 100px);}
+    90%{max-width: 100px;}
+    100%{left: calc(20vw + 100px);}
+  }
+  @-o-keyframes move-worm {
+    0%{max-width: 100px;}
+    50%{max-width: calc(20vw + 100px);}
+    90%{max-width: 100px;}
+    100%{left: calc(20vw + 100px);}
+  }
+
+.worm-eye{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 30px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.worm-lid{
+    position: absolute;
+    width: 63px;
+    height: 63px;
+    border-radius:30px 0;
+    top: 0px;
+    left: 0px;
+    transition: .2s;
+    border: 2px solid black;
+    z-index: 2;
+    background-color: aquamarine;
+    animation: close-eye 5s ease-in-out infinite;
+}
+
+.worm-iris{
+    background-color: black;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    position: absolute;
+    transition: 1s;
+    transform: translateY(var(--preYaxis)) translateX(var(--preXaxis));
+    animation-fill-mode: forwards;
+}
+
+.worm-iris-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.worm-iris-glow{
+    position: absolute;
+    bottom: 40%;
+    right: 40%;
+    background-color: rgba(255, 255, 255, 0.602);
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+    transition: 1s;
+    transform: translateY(var(--preYaxis)) translateX(var(--preXaxis));
+    animation-fill-mode: backwards;
+}
+
+
+@keyframes close-eye {
+    0%{ transform: translate(-80%, -80%);}
+    45%{transform: translate(-80%, -80%);}
+    50%{ transform: translate(-40%, -40%);}
+    55%{transform: translate(-80%, -80%);}
+    100%{ transform: translate(-80%, -80%);}
+}
+
+@-webkit-keyframes close-eye {
+    0%{ transform: translate(-80%, -80%);}
+    45%{transform: translate(-80%, -80%);}
+    50%{ transform: translate(-40%, -40%);}
+    55%{transform: translate(-80%, -80%);}
+    100%{ transform: translate(-80%, -80%);}
+  }
+  @-moz-keyframes close-eye {
+    0%{ transform: translate(-80%, -80%);}
+    45%{transform: translate(-80%, -80%);}
+    50%{ transform: translate(-40%, -40%);}
+    55%{transform: translate(-80%, -80%);}
+    100%{ transform: translate(-80%, -80%);}
+  }
+  @-o-keyframes close-eye {
+    0%{ transform: translate(-80%, -80%);}
+    45%{transform: translate(-80%, -80%);}
+    50%{ transform: translate(-40%, -40%);}
+    55%{transform: translate(-80%, -80%);}
+    100%{ transform: translate(-80%, -80%);}
+  }
+
+
+.load-cube{
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    width: 10vw;
+    height: 10vw;
+    background-color: white;
+    animation: rotate 8s infinite linear;
+}
+
+@keyframes rotate {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+@-webkit-keyframes rotate {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+  }
+  @-moz-keyframes rotate {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+  }
+  @-o-keyframes rotate {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+  }
+
+
+.load-cube:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 30px 10px rgba(0, 0, 0, 0.2) inset, 2px 2px 30px 20px rgb(157, 158, 157);
+    animation: oppositeRotate 8s infinite linear;
+}
+@keyframes oppositeRotate {
+    0%{transform: rotate(90deg);}
+    100%{transform: rotate(-360deg);}
+}
+
+.load-cube:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
+
+
+
+.load-frame{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background-color: rgb(60, 119, 207);
+}
+
+.frame-top{
+    top: 0;
+    right: 0;
+    transform: rotate(45deg) translate(30%, -100%);
+}
+
+.frame-bottom{
+    bottom: 0;
+    left: 0;
+    transform: rotate(45deg) translate(-30%, 100%);
+}
+
+
 
 /* .android{
     width: 100%;
