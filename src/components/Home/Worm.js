@@ -1,56 +1,65 @@
-import React, {useEffect, useState} from 'react'
-
+import React, { useEffect, useState } from "react";
 
 const Worm = () => {
   const [irisStyle, setIrisStyle] = useState({
-    "--Yaxis": "0%",
-    "--Xaxis": "0%",
-    "--preYaxis": "0%",
-    "--preXaxis": "0%",
+    "--irisYaxis": "0px",
+    "--irisXaxis": "0px",
+  })
+  const [prevIrisStyle, setPrevIrisStyle] = useState({
+    "--prevIrisYaxis": "30px",
+    "--prevIrisXaxis": "10px",
   });
-  const [preIrisStyle, setPreIrisStyle] = useState({
-    "--preYaxis": "0%",
-    "--preXaxis": "0%",
-  });
-  const [axis, setAxis] = useState({ Yaxis: "0%", Xaxis: "0%" });
-
-  useEffect(() => {
-    setIrisStyle({
-      "--Yaxis": axis["Yaxis"],
-      "--Xaxis": axis["Xaxis"],
-      "--preYaxis": preIrisStyle["--preYaxis"],
-      "--preXaxis": preIrisStyle["--preXaxis"],
-    });
-    setPreIrisStyle({
-      "--preYaxis": axis["Yaxis"],
-      "--preXaxis": axis["Xaxis"],
-    });
-  }, [axis]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       var Yaxis = Math.random() * 100;
-      // if (Yaxis < 40) Yaxis += 40
       if (Yaxis > 60) Yaxis -= 20;
       var Xaxis = Math.random() * 100;
-      // if (Xaxis > 40) Xaxis -= 20
-      setAxis({ Yaxis: Yaxis + "%", Xaxis: Xaxis + "%" });
+      setPrevIrisStyle({
+        "--irisYprevIrisYaxisxis": Yaxis + "%",
+        "--prevIrisXaxis": Xaxis + "%",
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      var Yaxis = Math.random() * 100;
+      if (Yaxis > 60) Yaxis -= 20;
+      var Xaxis = Math.random() * 100;
+      setIrisStyle({
+        "--irisYaxis": Yaxis + "%",
+        "--irisXaxis": Xaxis + "%",
+      });
     }, 1000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="worm">
-      <div className="worm-eye">
-        <div className="worm-lid" />
-        <div className="worm-iris" style={irisStyle}>
-          <div className="worm-iris-container">
-            <div className="worm-iris-glow" />
+    <React.Fragment>
+      <div className="worm">
+        <div className="worm-eye">
+          <div className="worm-lid" />
+          <div className="worm-iris" style={irisStyle}>
+            <div className="worm-iris-container">
+              <div className="worm-iris-glow" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <div className="worm2">
+        <div className="worm-eye">
+          <div className="worm-lid" />
+          <div className="worm-iris" style={prevIrisStyle}>
+            <div className="worm-iris-container">
+              <div className="worm-iris-glow" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
   );
 };
 
-export default Worm
+export default Worm;

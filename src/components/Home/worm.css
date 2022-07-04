@@ -1,0 +1,1072 @@
+.worm {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    right: calc(50px + 100px);
+    background-color: aquamarine;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: move-worm 30s ease-in-out infinite;
+    animation-fill-mode: forwards;
+}
+
+.worm-eye {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 30px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.worm-lid {
+    position: absolute;
+    width: 63px;
+    height: 63px;
+    border-radius: 30px 0;
+    top: 0px;
+    left: 0px;
+    transition: .2s;
+    border: 2px solid black;
+    z-index: 2;
+    background-color: aquamarine;
+    animation: close-eye 5s ease-in-out infinite;
+}
+
+.worm-iris {
+    background-color: black;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    position: absolute;
+    transition: 1s;
+    transform: translateY(var(--irisYaxis)) translateX(var(--irisXaxis));
+    animation-fill-mode: forwards;
+}
+
+.worm-iris-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.worm-iris-glow {
+    position: absolute;
+    bottom: 40%;
+    right: 40%;
+    background-color: rgba(255, 255, 255, 0.602);
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+    transition: 1s;
+    transform: translateY(var(--irisYaxis)) translateX(var(--irisXaxis));
+    animation-fill-mode: backwards;
+}
+
+.worm2 {
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(222, 161, 48);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.worm2 > .worm-eye{
+    width: 60px;
+    height: 60px;
+    border-radius: 60px 0;
+}
+
+.worm2 > .worm-eye > .worm-lid{
+    width: 125px;
+    height: 125px;
+    border-radius: 60px 0;
+    background-color: rgb(187, 132, 31);
+
+}
+.worm2 > .worm-eye > .worm-iris{
+    background-color: rgb(0, 0, 0) !important;
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    transition: 1s;
+    transform: translateY(var(--prevIrisYaxis)) translateX(var(--prevIrisXaxis));
+    animation-fill-mode: forwards;
+}
+
+@keyframes close-eye {
+    0% {
+        transform: translate(-80%, -80%);
+    }
+
+    45% {
+        transform: translate(-80%, -80%);
+    }
+
+    50% {
+        transform: translate(-40%, -40%);
+    }
+
+    55% {
+        transform: translate(-80%, -80%);
+    }
+
+    100% {
+        transform: translate(-80%, -80%);
+    }
+}
+
+@-webkit-keyframes close-eye {
+    0% {
+        transform: translate(-80%, -80%);
+    }
+
+    45% {
+        transform: translate(-80%, -80%);
+    }
+
+    50% {
+        transform: translate(-40%, -40%);
+    }
+
+    55% {
+        transform: translate(-80%, -80%);
+    }
+
+    100% {
+        transform: translate(-80%, -80%);
+    }
+}
+
+@-moz-keyframes close-eye {
+    0% {
+        transform: translate(-80%, -80%);
+    }
+
+    45% {
+        transform: translate(-80%, -80%);
+    }
+
+    50% {
+        transform: translate(-40%, -40%);
+    }
+
+    55% {
+        transform: translate(-80%, -80%);
+    }
+
+    100% {
+        transform: translate(-80%, -80%);
+    }
+}
+
+@-o-keyframes close-eye {
+    0% {
+        transform: translate(-80%, -80%);
+    }
+
+    45% {
+        transform: translate(-80%, -80%);
+    }
+
+    50% {
+        transform: translate(-40%, -40%);
+    }
+
+    55% {
+        transform: translate(-80%, -80%);
+    }
+
+    100% {
+        transform: translate(-80%, -80%);
+    }
+}
+
+@keyframes move-worm {
+    0% {
+        left: 50px;
+        right: calc(100vw - 50px - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    4% {
+        left: 50px;
+        right: calc(100vw - 50px - 100px - 20vw);
+        height: 100px;
+        width: auto;
+    }
+
+    9% {
+        left: calc(20vw + 50px);
+        right: calc(100vw - 50px - 100px - 20vw);
+        height: 100px;
+        width: auto;
+    }
+
+    10% {
+        top: 30px;
+        bottom: calc(100vh - 30px - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    14% {
+        top: 30px;
+        bottom: calc(100vh - 30px - 100px - 20vh);
+        width: 100px;
+        height: auto;
+    }
+
+    19% {
+        top: calc(20vh + 30px);
+        bottom: calc(100vh - 30px - 100px - 20vh);
+        width: 100px;
+        height: auto;
+    }
+
+    20% {
+        left: calc(20vw + 50px);
+        right: calc(100vw - calc(20vw + 50px) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    24% {
+        left: calc(20vw + 50px);
+        right: calc(100vw - calc(20vw + 50px) - 100px - 25vw);
+        height: 100px;
+        width: auto;
+    }
+
+    29% {
+        left: calc(20vw + 50px + 25vw);
+        right: calc(100vw - calc(20vw + 50px) - 100px - 25vw);
+        height: 100px;
+        width: auto;
+    }
+
+    30% {
+        top: calc(20vh + 30px);
+        bottom: calc(100vh - calc(20vh + 30px) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    34% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px) - 100px);
+        width: 100px;
+        height: auto;
+    }
+
+    39% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px) - 100px + 15vh);
+        width: 100px;
+        height: auto;
+    }
+
+    40% {
+        left: calc(20vw + 50px + 25vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    44% {
+        left: calc(20vw + 50px + 25vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw) - 100px - 10vw);
+        height: 100px;
+        width: auto;
+    }
+
+    49% {
+        left: calc(20vw + 50px + 25vw + 10vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw) - 100px - 10vw);
+        height: 100px;
+        width: auto;
+    }
+
+    50% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    54% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh) - 100px - 60vh);
+        width: 100px;
+        height: auto;
+    }
+
+    59% {
+        top: calc(20vh + 30px - 15vh + 60vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh) - 100px - 60vh);
+        width: 100px;
+        height: auto;
+    }
+
+    60% {
+        left: calc(20vw + 50px + 25vw + 10vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw + 10vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    64% {
+        left: calc(20vw + 50px + 25vw + 10vw - 30vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw + 10vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    69% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw + 10vw) - 100px + 30vw);
+        height: 100px;
+        width: auto;
+    }
+
+    70% {
+        top: calc(20vh + 30px - 15vh + 60vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    74% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh) - 100px);
+        width: 100px;
+        height: auto;
+    }
+
+    79% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh) - 100px + 15vh);
+        width: 100px;
+        height: auto;
+    }
+
+    80% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw);
+        right: calc(100vw - calc(20vw + 50px + 10vw + 25vw - 30vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    84% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw - 25vw);
+        right: calc(100vw - calc(20vw + 50px + 10vw + 25vw - 30vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    89% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw - 25vw);
+        right: calc(100vw - calc(20vw + 50px + 10vw + 25vw - 30vw) - 100px + 25vw);
+        height: 100px;
+        width: auto;
+    }
+
+    90% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh - 15vh) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    94% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh - 50vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh - 15vh) - 100px);
+        width: 100px;
+        height: auto;
+    }
+
+    99% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh - 50vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh - 15vh) - 100px + 50vh);
+        width: 100px;
+        height: auto;
+    }
+
+    100% {
+        top: 30px;
+        left: 50px;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+
+
+
+
+@-webkit-keyframes move-worm {
+    0% {
+        left: 50px;
+        right: calc(100vw - 50px - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    4% {
+        left: 50px;
+        right: calc(100vw - 50px - 100px - 20vw);
+        height: 100px;
+        width: auto;
+    }
+
+    9% {
+        left: calc(20vw + 50px);
+        right: calc(100vw - 50px - 100px - 20vw);
+        height: 100px;
+        width: auto;
+    }
+
+    10% {
+        top: 30px;
+        bottom: calc(100vh - 30px - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    14% {
+        top: 30px;
+        bottom: calc(100vh - 30px - 100px - 20vh);
+        width: 100px;
+        height: auto;
+    }
+
+    19% {
+        top: calc(20vh + 30px);
+        bottom: calc(100vh - 30px - 100px - 20vh);
+        width: 100px;
+        height: auto;
+    }
+
+    20% {
+        left: calc(20vw + 50px);
+        right: calc(100vw - calc(20vw + 50px) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    24% {
+        left: calc(20vw + 50px);
+        right: calc(100vw - calc(20vw + 50px) - 100px - 25vw);
+        height: 100px;
+        width: auto;
+    }
+
+    29% {
+        left: calc(20vw + 50px + 25vw);
+        right: calc(100vw - calc(20vw + 50px) - 100px - 25vw);
+        height: 100px;
+        width: auto;
+    }
+
+    30% {
+        top: calc(20vh + 30px);
+        bottom: calc(100vh - calc(20vh + 30px) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    34% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px) - 100px);
+        width: 100px;
+        height: auto;
+    }
+
+    39% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px) - 100px + 15vh);
+        width: 100px;
+        height: auto;
+    }
+
+    40% {
+        left: calc(20vw + 50px + 25vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    44% {
+        left: calc(20vw + 50px + 25vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw) - 100px - 10vw);
+        height: 100px;
+        width: auto;
+    }
+
+    49% {
+        left: calc(20vw + 50px + 25vw + 10vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw) - 100px - 10vw);
+        height: 100px;
+        width: auto;
+    }
+
+    50% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    54% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh) - 100px - 60vh);
+        width: 100px;
+        height: auto;
+    }
+
+    59% {
+        top: calc(20vh + 30px - 15vh + 60vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh) - 100px - 60vh);
+        width: 100px;
+        height: auto;
+    }
+
+    60% {
+        left: calc(20vw + 50px + 25vw + 10vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw + 10vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    64% {
+        left: calc(20vw + 50px + 25vw + 10vw - 30vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw + 10vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    69% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw + 10vw) - 100px + 30vw);
+        height: 100px;
+        width: auto;
+    }
+
+    70% {
+        top: calc(20vh + 30px - 15vh + 60vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    74% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh) - 100px);
+        width: 100px;
+        height: auto;
+    }
+
+    79% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh) - 100px + 15vh);
+        width: 100px;
+        height: auto;
+    }
+
+    80% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw);
+        right: calc(100vw - calc(20vw + 50px + 10vw + 25vw - 30vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    84% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw - 25vw);
+        right: calc(100vw - calc(20vw + 50px + 10vw + 25vw - 30vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    89% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw - 25vw);
+        right: calc(100vw - calc(20vw + 50px + 10vw + 25vw - 30vw) - 100px + 25vw);
+        height: 100px;
+        width: auto;
+    }
+
+    90% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh - 15vh) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    94% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh - 50vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh - 15vh) - 100px);
+        width: 100px;
+        height: auto;
+    }
+
+    99% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh - 50vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh - 15vh) - 100px + 50vh);
+        width: 100px;
+        height: auto;
+    }
+
+    100% {
+        top: 30px;
+        left: 50px;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@-moz-keyframes move-worm {
+    0% {
+        left: 50px;
+        right: calc(100vw - 50px - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    4% {
+        left: 50px;
+        right: calc(100vw - 50px - 100px - 20vw);
+        height: 100px;
+        width: auto;
+    }
+
+    9% {
+        left: calc(20vw + 50px);
+        right: calc(100vw - 50px - 100px - 20vw);
+        height: 100px;
+        width: auto;
+    }
+
+    10% {
+        top: 30px;
+        bottom: calc(100vh - 30px - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    14% {
+        top: 30px;
+        bottom: calc(100vh - 30px - 100px - 20vh);
+        width: 100px;
+        height: auto;
+    }
+
+    19% {
+        top: calc(20vh + 30px);
+        bottom: calc(100vh - 30px - 100px - 20vh);
+        width: 100px;
+        height: auto;
+    }
+
+    20% {
+        left: calc(20vw + 50px);
+        right: calc(100vw - calc(20vw + 50px) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    24% {
+        left: calc(20vw + 50px);
+        right: calc(100vw - calc(20vw + 50px) - 100px - 25vw);
+        height: 100px;
+        width: auto;
+    }
+
+    29% {
+        left: calc(20vw + 50px + 25vw);
+        right: calc(100vw - calc(20vw + 50px) - 100px - 25vw);
+        height: 100px;
+        width: auto;
+    }
+
+    30% {
+        top: calc(20vh + 30px);
+        bottom: calc(100vh - calc(20vh + 30px) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    34% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px) - 100px);
+        width: 100px;
+        height: auto;
+    }
+
+    39% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px) - 100px + 15vh);
+        width: 100px;
+        height: auto;
+    }
+
+    40% {
+        left: calc(20vw + 50px + 25vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    44% {
+        left: calc(20vw + 50px + 25vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw) - 100px - 10vw);
+        height: 100px;
+        width: auto;
+    }
+
+    49% {
+        left: calc(20vw + 50px + 25vw + 10vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw) - 100px - 10vw);
+        height: 100px;
+        width: auto;
+    }
+
+    50% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    54% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh) - 100px - 60vh);
+        width: 100px;
+        height: auto;
+    }
+
+    59% {
+        top: calc(20vh + 30px - 15vh + 60vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh) - 100px - 60vh);
+        width: 100px;
+        height: auto;
+    }
+
+    60% {
+        left: calc(20vw + 50px + 25vw + 10vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw + 10vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    64% {
+        left: calc(20vw + 50px + 25vw + 10vw - 30vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw + 10vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    69% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw + 10vw) - 100px + 30vw);
+        height: 100px;
+        width: auto;
+    }
+
+    70% {
+        top: calc(20vh + 30px - 15vh + 60vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    74% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh) - 100px);
+        width: 100px;
+        height: auto;
+    }
+
+    79% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh) - 100px + 15vh);
+        width: 100px;
+        height: auto;
+    }
+
+    80% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw);
+        right: calc(100vw - calc(20vw + 50px + 10vw + 25vw - 30vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    84% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw - 25vw);
+        right: calc(100vw - calc(20vw + 50px + 10vw + 25vw - 30vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    89% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw - 25vw);
+        right: calc(100vw - calc(20vw + 50px + 10vw + 25vw - 30vw) - 100px + 25vw);
+        height: 100px;
+        width: auto;
+    }
+
+    90% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh - 15vh) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    94% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh - 50vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh - 15vh) - 100px);
+        width: 100px;
+        height: auto;
+    }
+
+    99% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh - 50vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh - 15vh) - 100px + 50vh);
+        width: 100px;
+        height: auto;
+    }
+
+    100% {
+        top: 30px;
+        left: 50px;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@-o-keyframes move-worm {
+    0% {
+        left: 50px;
+        right: calc(100vw - 50px - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    4% {
+        left: 50px;
+        right: calc(100vw - 50px - 100px - 20vw);
+        height: 100px;
+        width: auto;
+    }
+
+    9% {
+        left: calc(20vw + 50px);
+        right: calc(100vw - 50px - 100px - 20vw);
+        height: 100px;
+        width: auto;
+    }
+
+    10% {
+        top: 30px;
+        bottom: calc(100vh - 30px - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    14% {
+        top: 30px;
+        bottom: calc(100vh - 30px - 100px - 20vh);
+        width: 100px;
+        height: auto;
+    }
+
+    19% {
+        top: calc(20vh + 30px);
+        bottom: calc(100vh - 30px - 100px - 20vh);
+        width: 100px;
+        height: auto;
+    }
+
+    20% {
+        left: calc(20vw + 50px);
+        right: calc(100vw - calc(20vw + 50px) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    24% {
+        left: calc(20vw + 50px);
+        right: calc(100vw - calc(20vw + 50px) - 100px - 25vw);
+        height: 100px;
+        width: auto;
+    }
+
+    29% {
+        left: calc(20vw + 50px + 25vw);
+        right: calc(100vw - calc(20vw + 50px) - 100px - 25vw);
+        height: 100px;
+        width: auto;
+    }
+
+    30% {
+        top: calc(20vh + 30px);
+        bottom: calc(100vh - calc(20vh + 30px) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    34% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px) - 100px);
+        width: 100px;
+        height: auto;
+    }
+
+    39% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px) - 100px + 15vh);
+        width: 100px;
+        height: auto;
+    }
+
+    40% {
+        left: calc(20vw + 50px + 25vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    44% {
+        left: calc(20vw + 50px + 25vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw) - 100px - 10vw);
+        height: 100px;
+        width: auto;
+    }
+
+    49% {
+        left: calc(20vw + 50px + 25vw + 10vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw) - 100px - 10vw);
+        height: 100px;
+        width: auto;
+    }
+
+    50% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    54% {
+        top: calc(20vh + 30px - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh) - 100px - 60vh);
+        width: 100px;
+        height: auto;
+    }
+
+    59% {
+        top: calc(20vh + 30px - 15vh + 60vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh) - 100px - 60vh);
+        width: 100px;
+        height: auto;
+    }
+
+    60% {
+        left: calc(20vw + 50px + 25vw + 10vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw + 10vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    64% {
+        left: calc(20vw + 50px + 25vw + 10vw - 30vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw + 10vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    69% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw);
+        right: calc(100vw - calc(20vw + 50px + 25vw + 10vw) - 100px + 30vw);
+        height: 100px;
+        width: auto;
+    }
+
+    70% {
+        top: calc(20vh + 30px - 15vh + 60vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    74% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh) - 100px);
+        width: 100px;
+        height: auto;
+    }
+
+    79% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh) - 100px + 15vh);
+        width: 100px;
+        height: auto;
+    }
+
+    80% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw);
+        right: calc(100vw - calc(20vw + 50px + 10vw + 25vw - 30vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    84% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw - 25vw);
+        right: calc(100vw - calc(20vw + 50px + 10vw + 25vw - 30vw) - 100px);
+        height: 100px;
+        width: auto;
+    }
+
+    89% {
+        left: calc(20vw + 50px + 10vw + 25vw - 30vw - 25vw);
+        right: calc(100vw - calc(20vw + 50px + 10vw + 25vw - 30vw) - 100px + 25vw);
+        height: 100px;
+        width: auto;
+    }
+
+    90% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh - 15vh) - 100px);
+        height: auto;
+        width: 100px;
+    }
+
+    94% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh - 50vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh - 15vh) - 100px);
+        width: 100px;
+        height: auto;
+    }
+
+    99% {
+        top: calc(20vh + 30px - 15vh + 60vh - 15vh - 50vh);
+        bottom: calc(100vh - calc(20vh + 30px - 15vh + 60vh - 15vh) - 100px + 50vh);
+        width: 100px;
+        height: auto;
+    }
+
+    100% {
+        top: 30px;
+        left: 50px;
+        width: 100px;
+        height: 100px;
+    }
+}

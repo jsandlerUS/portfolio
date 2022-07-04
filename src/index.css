@@ -26,10 +26,11 @@
 --delay: 1.2s;
 
 
---preYaxis:0px;
---preXaxis:0px;
---Yaxis:0px;
---Xaxis:0px;
+--irisYaxis: 0px;
+--irisXaxis: 0px;
+--prevIrisYaxis: 30px;
+--prevIrisXaxis: 10px;
+
 /* --num: 4;
 --deg: 0;
 --angle:0;
@@ -42,8 +43,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  overflow-x: hidden;
   caret-color: transparent;
+  overflow: hidden;
+
 }
 a{text-decoration: none; color: inherit;}
 pre{
@@ -56,4 +58,5 @@ pre{
 
 @import './components/Home/Home.css';
 @import './components/Home/fog.css';
+@import './components/Home/worm.css';
 @import './components/InfoWindow/infoWindow.css';

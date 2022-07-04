@@ -19,6 +19,11 @@ const getFullScreen = () => {
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [closeLoadPage, setCloseLoadPage] = useState(false)
+
+  const [closeFrameTop, setCloseFrameTop] = useState(null);
+  const [closeFrameBottom, setCloseFrameBottom] = useState(null);
+
   const { dataFlow, breadCrumbs, flatDataFlow } = useSelector((state) => state);
   const [display, setDisplay] = useState(dataFlow[0].items.map((item) => item));
   const [isWindowOpen, setIsWindowOpen] = useState(false);
@@ -50,52 +55,79 @@ const Home = () => {
     setDisplay(search[0].items);
   };
 
+
+
+  const closeFrames = () => {
+    setCloseFrameTop({
+        'animation': "closeFramesTop 4s linear",
+        "animationFillMode": "forwards",
+      },
+      setCloseFrameBottom({
+        'animation': "closeFramesBottom 4s linear",
+        "animationFillMode": "forwards",
+      })
+    );
+    setTimeout(() => {
+      setCloseFrameTop({'display': "none"},
+      setCloseFrameBottom({'display': "none"})
+    )
+    }, 4000);
+    
+    setTimeout(() => setIsLoaded(true), 3000);
+
+    setTimeout(() => setCloseLoadPage(true), 2000);
+  };
+
+
   return (
     <React.Fragment>
-      {!isFullScreen ? 
-        <MaxWindow exitAlert={() => exitAlert()} />
-       : null}
-      {!isLoaded ? <LoadPage isLoaded={() => setIsLoaded(true)}/> : (
-        <div className="home-background">
-          {/* fix wholesale */}
-          {/* add audio-reactive wrapper to affect everything except InfoWindow and audio controlers */}
-          {/* move all pictures to a database */}
-          {/* convert using Nextjs && TypeScript*/}
-          <Fog position={"back"}/>
-          <div className="forest-ground"/>
-          <MusicPlay />
-          <BreadCrumbs
-            setDisplay={(e) => updateDisplay(e)}
-            breadCrumbs={breadCrumbs}
-          />
-          <FireflyCanvas/>
-          <div className="forest-trees"/>
-          <TurbulentWater/>
-          <Fog position={"front"}/>
-          <div className="logo">
-          <PieDisplay
-              updateDisplay={(e) => updateDisplay(e)}
-              showWindow={(e) => showWindow(e)}
-              display={display}
-            />
-            <div className="logo-text" onClick={() => updateDisplay("Home")}>
-              JS <br />
-              DESIGNS
-            </div>
-            <RoundFog />
-          </div>
-          {isWindowOpen ? (
-            <ClickAwayListener onClickAway={() => setIsWindowOpen(false)}>
-              <div>
-                <InfoWindow
-                  display={currentDisplay}
-                  showWindow={(e) => showWindow(e)}
-                />
+      {!isFullScreen ? <MaxWindow exitAlert={() => exitAlert()} /> : null}
+
+      <div className="load-container">
+      <div className="load-frame frame-top" style={closeFrameTop} />
+        <div className="load-frame frame-bottom" style={closeFrameBottom} />
+
+        {!closeLoadPage ? ( <LoadPage closeFrames={() => closeFrames()}/> ) : null}
+
+        {!isLoaded ? null : (
+          <div className="home-background">
+            {/* fix wholesale */}
+            {/* add audio-reactive wrapper to affect everything except InfoWindow and audio controlers */}
+            {/* move all pictures to a database */}
+            {/* convert using Nextjs && TypeScript*/}
+            <Fog position={"back"}/>
+            <div className="forest-ground"/>
+            <MusicPlay/>
+            <BreadCrumbs setDisplay={(e) => updateDisplay(e)} breadCrumbs={breadCrumbs}/>
+            <FireflyCanvas/>
+            <div className="forest-trees"/>
+            <TurbulentWater />
+            <Fog position={"front"}/>
+            <div className="logo">
+              <PieDisplay
+                updateDisplay={(e) => updateDisplay(e)}
+                showWindow={(e) => showWindow(e)}
+                display={display}
+              />
+              <div className="logo-text" onClick={() => updateDisplay("Home")}>
+                JS <br />
+                DESIGNS
               </div>
-            </ClickAwayListener>
-          ) : null}
-        </div>
-      )}
+              <RoundFog />
+            </div>
+            {isWindowOpen ? (
+              <ClickAwayListener onClickAway={() => setIsWindowOpen(false)}>
+                <div>
+                  <InfoWindow
+                    display={currentDisplay}
+                    showWindow={(e) => showWindow(e)}
+                  />
+                </div>
+              </ClickAwayListener>
+            ) : null}
+          </div>
+        )}
+      </div>
     </React.Fragment>
   );
 };
