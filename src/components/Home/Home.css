@@ -317,6 +317,7 @@ svg {
 
 .firefly {
     filter: blur(1px);
+    transition: 0.2s;
     z-index: 2;
     position: absolute;
     /* animation: day-and-night 56s linear infinite; */

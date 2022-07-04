@@ -181,18 +181,13 @@ export const dataFlow = [
 
 export const testimonials = [
   {
-    name: "Brent Smith\nSenior Software Engineer",
+    name: "Name\nSenior Software Engineer",
     review:
-      "“Working with Jonathan has been one of the best experience in my life. His professionalism and coding skills helped us move out from a very difficult problem the company was facing”",
+      "“I need to get some testimonies..”",
   },
   {
-    name: "Matthew \nSenior Software Engineer",
+    name: "Name \nSenior Software Engineer",
     review:
-      '"Thank you for this profound, restorative and revitalizing experience. I felt so comfortable and careful. You guys are the best!."',
-  },
-  {
-    name: "Wendy Sanchez",
-    review:
-      '"I had several opportunities to receive excellent service from the technicians of this website. I liked how professional they are. I give my highest recommendation."',
+      '"Still no testimonies!!"',
   },
 ];
