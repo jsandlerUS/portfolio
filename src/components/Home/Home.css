@@ -23,13 +23,17 @@
     background-size: cover;
 }
 
-.swamp{background-image: url("../../resources/Background/black-forest.jpg");}
+.swamp{
+    background-image: url("../../resources/Background/black-forest.jpg");
+}
 
 .swamp-water{
     background-image: url("../../resources/Background/swamp-water.png");
-    filter: url("#turbulence");
+    filter: url("#turbulence") brightness(2);
     z-index: 1;
 }
+
+
 
 .forest-trees{
     background-image: url("../../resources/Background/black-forest-trees.png");
@@ -48,6 +52,18 @@
     animation: day-and-night 56s linear infinite;
     background-color: rgba(28, 28, 28);
     z-index: 3;
+}
+
+.moon{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(-70deg);
+    box-shadow: -30px 30px 0 5px rgba(165, 165, 165, 0.6);
+    filter: blur(0.5rem);
+    bottom: 0%;
+    right: 20%;
+    border-radius: 50%;
 }
 
 @keyframes day-and-night {
@@ -936,6 +952,6 @@ svg {
         width: 30px;
         height: 30px;
     }
-
+    .moon{right: 0%; bottom: 0%; }
 
 }
