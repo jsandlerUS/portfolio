@@ -6,7 +6,7 @@ import Download from "./components/Reusable/download";
 const App = () => (
   <Router>
     <Routes>
-      <Route exact path="/portfolio" element={<Home/>} />
+      <Route exact path="/" element={<Home/>} />
       <Route exact path="/download" element={<Download/>} />
     </Routes>
   </Router>
