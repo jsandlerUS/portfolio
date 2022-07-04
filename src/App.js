@@ -8,6 +8,7 @@ const App = () => (
     <Routes>
       <Route exact path="/" element={<Home/>} />
       <Route exact path="/download" element={<Download/>} />
+      <Redirect to="/" element={<Home/>}/>
     </Routes>
   </Router>
 );
