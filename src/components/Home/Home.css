@@ -697,6 +697,19 @@ svg {
     100%{transform: rotate(-360deg);}
 }
 
+@-webkit-keyframes oppositeRotate {
+    0%{transform: rotate(90deg);}
+    100%{transform: rotate(-360deg);}
+  }
+  @-moz-keyframes oppositeRotate {
+    0%{transform: rotate(90deg);}
+    100%{transform: rotate(-360deg);}
+  }
+  @-o-keyframes oppositeRotate {
+    0%{transform: rotate(90deg);}
+    100%{transform: rotate(-360deg);}
+  }
+
 .load-cube:after{
     content: '';
     position: absolute;
@@ -745,7 +758,47 @@ svg {
     100%{transform: rotate(45deg) translate(-20%, 300%) scale(1);}
 }
 
+@-webkit-keyframes closeFramesTop {
+    0%{transform: rotate(45deg) translate(20%, -100%) scale(1);}
+    10%{transform: rotate(45deg) translate(20%, -100%) scale(2.7);}
+    90%{transform: rotate(45deg) translate(20%, -100%) scale(2.7);}
+    100%{transform: rotate(45deg) translate(20%, -300%) scale(1);}
+  }
 
+  @-webkit-keyframes closeFramesBottom {
+    0%{transform: rotate(45deg) translate(-20%, 100%) scale(1);}
+    10%{transform: rotate(45deg) translate(-20%, 100%) scale(2.7);}
+    90%{transform: rotate(45deg) translate(-20%, 100%) scale(2.7);}
+    100%{transform: rotate(45deg) translate(-20%, 300%) scale(1);}
+  }
+
+  @-moz-keyframes closeFramesTop {
+    0%{transform: rotate(45deg) translate(20%, -100%) scale(1);}
+    10%{transform: rotate(45deg) translate(20%, -100%) scale(2.7);}
+    90%{transform: rotate(45deg) translate(20%, -100%) scale(2.7);}
+    100%{transform: rotate(45deg) translate(20%, -300%) scale(1);}
+  }
+
+  @-moz-keyframes closeFramesBottom {
+    0%{transform: rotate(45deg) translate(-20%, 100%) scale(1);}
+    10%{transform: rotate(45deg) translate(-20%, 100%) scale(2.7);}
+    90%{transform: rotate(45deg) translate(-20%, 100%) scale(2.7);}
+    100%{transform: rotate(45deg) translate(-20%, 300%) scale(1);}
+  }
+
+  @-o-keyframes closeFramesTop {
+    0%{transform: rotate(45deg) translate(20%, -100%) scale(1);}
+    10%{transform: rotate(45deg) translate(20%, -100%) scale(2.7);}
+    90%{transform: rotate(45deg) translate(20%, -100%) scale(2.7);}
+    100%{transform: rotate(45deg) translate(20%, -300%) scale(1);}
+  }
+
+  @-o-keyframes closeFramesBottom {
+    0%{transform: rotate(45deg) translate(-20%, 100%) scale(1);}
+    10%{transform: rotate(45deg) translate(-20%, 100%) scale(2.7);}
+    90%{transform: rotate(45deg) translate(-20%, 100%) scale(2.7);}
+    100%{transform: rotate(45deg) translate(-20%, 300%) scale(1);}
+  }
 
 
 /* .android{
