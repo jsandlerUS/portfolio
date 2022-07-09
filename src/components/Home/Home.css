@@ -541,6 +541,19 @@ svg {
     }
 } */
 
+.waves-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-align: -moz-center;
+    color: white;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(34, 147, 222, 0.2);
+}
+
 
 
 .audioWrapper {
@@ -554,6 +567,7 @@ svg {
     width: 40px;
     height: 40px;
     border-radius: 50rem;
+    z-index: 1;
 }
 
 .audioWrapper>svg:hover {
@@ -561,7 +575,44 @@ svg {
     box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
 }
 
+.hideButton{
+    position: absolute;
+    font-size: 1rem;
+    width: 250px;
+    padding: 5px 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    top: 50px;
+    left: -5px;
+    animation: displayButton 5s ease-in-out;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
 
+.hideButton_triangle{
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    color: inherit;
+}
+
+@keyframes displayButton {
+    0%{transform: translateY(-20px); opacity: 0;}
+    10%{transform: translateY(0px);opacity: 1;}
+    90%{transform: translateY(0px);opacity: 1;}
+    100%{transform: translateY(-20px);opacity: 0;}
+}
+
+.hideButton>span{
+    color: white;
+}
 .breadcrumbs {
     position: absolute;
     display: flex;
@@ -630,38 +681,46 @@ svg {
 	animation-duration: var(--duration);
 	animation-delay: var(--delay);
 	animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
 	animation-timing-function: ease-out;
 	animation-fill-mode: backwards;
-    background-color:rgb(34, 147, 222);
+    background-color: rgb(34, 147, 222);
+    color: white;
 }
 
 .waves > div:nth-child(2){
 	animation-delay: calc( 1.2s + 0.4s);
+    -moz-animation-delay: calc( 1.2s + 0.4s);
 	animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
 }
 .waves > div:nth-child(3){
 	animation-delay: calc( 1.2s + 1s);
 	animation-timing-function: linear;
 }
 
+
+
+
 @keyframes spread{
-	0%{transform: scale(0);opacity: 1;color: white;}
+	0%{transform: scale(0);opacity: 1; }
 	40%{transform: scale(0);opacity: 1;}
 	100%{transform: scale(2);opacity: 0;}
 }
 
 @-webkit-keyframes spread {
-	0%{transform: scale(0);opacity: 1;color: white;}
+	0%{transform: scale(0);opacity: 1;}
 	40%{transform: scale(0);opacity: 1;}
 	100%{transform: scale(2);opacity: 0;}
   }
   @-moz-keyframes spread {
-	0%{transform: scale(0);opacity: 1;color: white;}
+	0%{transform: scale(0);opacity: 1;}
 	40%{transform: scale(0);opacity: 1;}
 	100%{transform: scale(2);opacity: 0;}
   }
   @-o-keyframes spread {
-	0%{transform: scale(0);opacity: 1;color: white;}
+	0%{transform: scale(0);opacity: 1;}
 	40%{transform: scale(0);opacity: 1;}
 	100%{transform: scale(2);opacity: 0;}
   }

@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import {useWindowDimensions} from '../Reusable/useWindowDimensions'
+import {isMobile} from 'react-device-detect';
+
 import Trees from '../../resources/Background/black-forest-trees.png'
 
 const FireflyCanvas = (props) => {
@@ -11,6 +13,8 @@ const FireflyCanvas = (props) => {
   const [width, setWidth] = useState(w);
 
   const [f, setF] = useState([]);
+
+  var fireflyNumber = isMobile ? 30 : 80
 
   class Firefly extends React.Component {
     constructor() {
@@ -35,8 +39,8 @@ const FireflyCanvas = (props) => {
   }
 
   const draw = () => {
-    if (f.length < 500) {
-      for (let j = 0; j < 80; j++) {
+    if (f.length < 100) {
+      for (let j = 0; j < fireflyNumber; j++) {
         setF(f.push(new Firefly()));
       }
     }

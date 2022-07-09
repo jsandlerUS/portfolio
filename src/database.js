@@ -150,9 +150,9 @@ export const dataFlow = [
           {
             id: 2,
             name: "JS Designs",
-            techStack: [react, redux, javascript, css3, nextjs, git],
+            techStack: [react, redux, javascript, css3, git],
             viewLink: "https://www.jsdesigns.us/",
-            description: "JS Designs is a tool I created to show cast my personal portfolio while creating an extraordinary immersive user experience. It combines cutting edge technologies like React, Redux, ECMA2018 JavaScript, and Nextjs to enhance its user interface at a super low rendering cost.\n\nThe website transports the user to a live black forest, it provides a day and night experience, moving water, fog, and beautiful fireflies. All enhanced with nature sound and background music.\n\nIt is 100% mobile-first, fully responsive, cross-browser consistent. It can render blazing fast on any smartphone browser, achieving a high and smooth frame rate (60 frames per second). Tested on Android and iOS devices.\n\n Features: Counts with a carousel gallery for each project (that can be used on the same manner for products), a really cool navigation system, contact form and email system, and breadcrumbs for a flawless user interaction. It also provides a text-to-speech for all texts displayed as a disability feature",
+            description: "JS Designs is a tool I created to show cast my personal portfolio while creating an extraordinary immersive user experience. It combines cutting edge technologies like React, Redux, and ECMA2018 JavaScript, to enhance its user interface at a super low rendering cost.\n\nThe website transports the user to a live black forest, it provides a day and night experience, moving water, fog, and beautiful fireflies. All enhanced with nature sound and background music.\n\nIt is 100% mobile-first, fully responsive, cross-browser consistent. It can render blazing fast on any smartphone browser, achieving a high and smooth frame rate (60 frames per second). Tested on Android and iOS devices.\n\n Features: Counts with a carousel gallery for each project (that can be used on the same manner for products), a very intuitive navigation system, contact form and email system, and breadcrumbs for a flawless user interaction.",
             github: "https://github.com/jsandlerus/portfolio",
             images: [portfolioHome, portfolioAbout, portfolioContact, portfolioDisplay],
           },
@@ -181,13 +181,8 @@ export const dataFlow = [
 
 export const testimonials = [
   {
-    name: "Name\nSenior Software Engineer",
+    name: "Brent Smith\nSenior Software Engineer",
     review:
-      "“I need to get some testimonies..”",
-  },
-  {
-    name: "Name \nSenior Software Engineer",
-    review:
-      '"Still no testimonies!!"',
+      "“Jonathan would be a great addition to any team. His drive to improve himself, the team, and the company is an asset that pays huge dividends. His ability to pair design and coding skills together is exactly what you want in a frontend developer.”",
   },
 ];

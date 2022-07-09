@@ -33,14 +33,16 @@ const Home = () => {
 
   const showWindow = (e) => {
     if (typeof e === "boolean") setIsWindowOpen(e);
-    else if (e.name === currentDisplay.name && isWindowOpen)
+    else if (e.name === currentDisplay.name && isWindowOpen){
       setIsWindowOpen(false);
+    }
     else setCurrentDisplay(e, setIsWindowOpen(true));
   };
 
   const exitAlert = () => {
     setIsFullScreen(true);
   };
+
 
   const updateDisplay = (elem) => {
     const search = flatDataFlow
@@ -52,7 +54,7 @@ const Home = () => {
       showWindow(false);
     }
     dispatch({ type: "UPDATE_CRUMBS", crumb });
-    setDisplay(search[0].items);
+    setDisplay(search[0].items, setIsWindowOpen(false));
   };
 
 
@@ -95,13 +97,13 @@ const Home = () => {
             {/* add audio-reactive wrapper to affect everything except InfoWindow and audio controlers */}
             {/* move all pictures to a database */}
             {/* convert using Nextjs && TypeScript*/}
-            <Fog position={"back"}/>
+            <Fog position={"back"} />
             <div className="forest-ground"/>
             <MusicPlay/>
             <BreadCrumbs setDisplay={(e) => updateDisplay(e)} breadCrumbs={breadCrumbs}/>
             <FireflyCanvas/>
             <div className="forest-trees"/>
-            <TurbulentWater />
+            <TurbulentWater setIsWindowOpen={() => setIsWindowOpen(false)}/>
             <Fog position={"front"}/>
             <div className="logo">
               <PieDisplay
@@ -116,14 +118,14 @@ const Home = () => {
               <RoundFog />
             </div>
             {isWindowOpen ? (
-              <ClickAwayListener onClickAway={() => setIsWindowOpen(false)}>
+              // <ClickAwayListener onClickAway={() => setIsWindowOpen(false)}>
                 <div>
                   <InfoWindow
                     display={currentDisplay}
                     showWindow={(e) => showWindow(e)}
                   />
                 </div>
-              </ClickAwayListener>
+              //  </ClickAwayListener>
             ) : null}
           </div>
         )}

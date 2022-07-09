@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useSpeechSynthesis } from "react-speech-kit";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -12,6 +12,11 @@ const ProjectDisplay = ({ display }) => {
   const [currentDisplay, setCurrentDisplay] = useState(display)
   const { breadCrumbs, flatDataFlow } = useSelector((state) => state);
   const lastCrumb = breadCrumbs[breadCrumbs.length - 1]
+
+
+  useEffect(()=> {
+    setCurrentDisplay(display);
+  }, [display])
 
   // const onEnd = () => setIsVoicePlaying(false)
   const { speak, cancel, speaking, supported, voices } = useSpeechSynthesis({
@@ -39,20 +44,20 @@ const ProjectDisplay = ({ display }) => {
   return (
     <div className="infoWindow-wrapper">
       <Carousel props ={{images, github, viewLink, name:currentDisplay.name}}>
-      {images.map(img => <CarouselItem img={img} key={img}/>)}
+      {images.map(img => <CarouselItem img={img} alt={img} key={img}/>)}
       </Carousel>
             {currentDisplay.techStack !== undefined ? <div className="infoWindow-techStack">
         {currentDisplay.techStack.map((tech) => (
-          <img src={tech} alt={tech}/>
+          <img src={tech} alt={tech} key={tech}/>
         ))}
       </div> : null}
       <div className="infoWindow-description">
-        {!supported ? <VolumeOffIcon /> : null}
+        {/* {!supported ? <VolumeOffIcon /> : null}
         {supported && speaking ? (
           <VolumeOffIcon onClick={() => speak({ text, voice })} />
         ) : (
           <VolumeUpIcon onClick={() => cancel} />
-        )}
+        )} */}
         {currentDisplay.description}
       </div>
       <div className="infoWindow-button">

@@ -17,12 +17,12 @@ const AboutDisplay = ({ display }) => {
 
   return (
     <div className="about-wrapper">
-      {!supported ? <VolumeOffIcon /> : null}
+      {/* {!supported ? <VolumeOffIcon /> : null}
       {supported && speaking ? (
         <VolumeOffIcon onClick={() => speak({ text, voice })} />
       ) : (
         <VolumeUpIcon onClick={() => cancel} />
-      )}
+      )} */}
       <div className="about-title"> About</div>
       <div className="about-description">{display.description}</div>
         <div className="infoWindow-techStack-resume-container">

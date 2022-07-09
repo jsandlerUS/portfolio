@@ -12,19 +12,18 @@ const MusicPlay = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audio, setAudio] = useState(new Audio(tides));
   const [currentSong, setCurrentSong] = useState(0);
+  const [firefoxRerenderBug, setFirefoxRerenderBug] = useState(false);
   const audioList = [tides, adventureIsCalling, frozenHeart];
 
   const [natureSound, setNatureSound] = useState(new Audio(dayBirds));
   const [currentNatureSound, setCurrentNatureSound] = useState(0);
   const natureList = [dayBirds, nightCrickets];
 
-  useEffect(() => {
-    audio.volume = 0.05;
-    playPause(audio);
-  }, []);
+
+  useEffect(() => setFirefoxRerenderBug(true), []);
 
   useEffect(() => {
-    natureSound.volume = 0.025;
+    natureSound.volume = 0;
     natureSound.play();
   }, []);
 
@@ -49,15 +48,16 @@ const MusicPlay = () => {
           ? 0
           : currentNatureSound + 1;
       const song = new Audio(natureList[index]);
-      song.volume = 0.025;
+      song.volume = isPlaying ? 0.025 : 0;
       song.play();
       setNatureSound(song, setCurrentNatureSound(index));
     }
   };
 
   const playPause = (song) => {
+    song.volume = 0.05;
     isPlaying ? song.pause() : song.play();
-    isPlaying ? natureSound.pause() : natureSound.play();
+    natureSound.volume = isPlaying ? 0 : 0.025;
     setIsPlaying(!isPlaying);
   };
 
@@ -68,10 +68,40 @@ const MusicPlay = () => {
       ) : (
         <PlayCircleIcon onClick={() => playPause(audio)} />
       )}
+      {firefoxRerenderBug? 
+      <div className="waves-container">
+        <div className="waves">
+          <div
+            style={
+              isPlaying
+                ? { "backgroundColor": "transparent" }
+                : { "backgroundColor": "white" }
+            }
+          />
+          <div
+            style={
+              isPlaying
+                ? { "backgroundColor": "transparent" }
+                : { "backgroundColor": "white" }
+            }
+          />
+          <div
+            style={
+              isPlaying
+                ? { "backgroundColor": "transparent" }
+                : { "backgroundColor": "white" }
+            }
+          />
+        </div>
+      </div>
+            : null}
+      <div className="hideButton">
+        <div className="hideButton_triangle" />
+        <span>Enjoy the full experience 😉</span>
+      </div>
     </div>
   );
 };
-
 
 // const playSound = (arraybuffer) => {
 //   var context	= new AudioContext();
@@ -100,6 +130,5 @@ const MusicPlay = () => {
 
 //   source.start();
 // }
-
 
 export default MusicPlay;
