@@ -12,6 +12,7 @@
     animation: slideInFromRight 1s ease;
     animation-fill-mode: forwards;
     z-index: 10;
+    overflow: auto;
 }
 
 .infoWindow_away {
@@ -134,15 +135,16 @@
     font-family: "Helvetica", 'Arial';
     white-space: pre-wrap;
     line-height: 1.5;
+    /* overflow: auto; */
 }
 
-.about-description, .infoWindow-description, .about-wrapper{
+.infoWindow{
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow: -moz-scrollbars-none;
 }
-.infoWindow-description::-webkit-scrollbar{display: none;}
-.about-description::-webkit-scrollbar{display: none;}
+.infoWindow::-webkit-scrollbar{display: none;}
+/* .about-description::-webkit-scrollbar{display: none;} */
 
 
 .infoWindow-description>svg {
@@ -165,7 +167,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 40px;
+    padding: 10px 0;
 }
 
 
@@ -713,7 +715,7 @@ height: 100%; */
 .carousel {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -828,9 +830,7 @@ height: 100%; */
     animation: getWidth var(--carouseltime) linear infinite;
 }
 
-.infoWindow-description {
-    overflow: auto;
-}
+
 
 @keyframes getWidth {
     100% {width: 100%;}
