@@ -1,5 +1,5 @@
 import React from "react";
-import Worm from "./Worm.js";
+import Worm from "../Landing/Worm.js";
 
 const LoadPage = ({ closeFrames }) => {
 

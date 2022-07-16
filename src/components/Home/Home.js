@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import FireflyCanvas from "./FireflyCanvas";
+import FireflyCanvas from "../Decorations/FireflyCanvas";
 import RoundFog from "./RoundFog";
 import PieDisplay from "./PieDisplay";
 import MaxWindow from "./MaxWindow";
 import TurbulentWater from "./TurbulentWater";
-import Fog from "./Fog";
+import Fog from "../Decorations/Fog";
 import InfoWindow from "../InfoWindow/InfoWindow";
 import BreadCrumbs from "./BreadCrumbs";
 import MusicPlay from "./MusicPlay";
-import ClickAwayListener from "@mui/base/ClickAwayListener";
+// import ClickAwayListener from "@mui/base/ClickAwayListener";
 import LoadPage from './LoadPage';
 import {isMobile} from 'react-device-detect';
 

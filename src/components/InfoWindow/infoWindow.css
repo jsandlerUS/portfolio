@@ -1,5 +1,4 @@
-.infoWindow,
-.infoWindow_away {
+.infoWindow {
     position: absolute;
     top: 0;
     right: -30%;
@@ -13,10 +12,6 @@
     animation-fill-mode: forwards;
     z-index: 10;
     overflow: auto;
-}
-
-.infoWindow_away {
-    animation: slideOutToRight 2s ease-in;
 }
 
 @keyframes slideInFromRight {
@@ -36,23 +31,6 @@
     100% {transform: translateX(-30vw);}
   }
 
-
-@keyframes slideOutToRight {
-    0% {transform: translateX(-30vw);}
-    100% {transform: translateX(100vw);}
-}
-@-webkit-keyframes slideOutToRight {
-    0% {transform: translateX(-30vw);}
-    100% {transform: translateX(100vw);}
-  }
-  @-moz-keyframes slideOutToRight {
-    0% {transform: translateX(-30vw);}
-    100% {transform: translateX(100vw);}
-  }
-  @-o-keyframes slideOutToRight {
-    0% {transform: translateX(-30vw);}
-    100% {transform: translateX(100vw);}
-  }
 
 .infoWindow-exit {
     padding: 8px 10px;
@@ -144,7 +122,7 @@
     overflow: -moz-scrollbars-none;
 }
 .infoWindow::-webkit-scrollbar{display: none;}
-/* .about-description::-webkit-scrollbar{display: none;} */
+.about-wrapper::-webkit-scrollbar{display: none;}
 
 
 .infoWindow-description>svg {

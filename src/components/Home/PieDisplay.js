@@ -64,7 +64,8 @@ const PieDisplay = ({ showWindow, display, updateDisplay }) => {
 
   return (
     <div className="pie-parent">
-      {display.map((elem) => (
+      {display.map((elem) => 
+      (
         <div
           className="pie-button"
           style={getPieStyle((i += 1))}
@@ -78,7 +79,8 @@ const PieDisplay = ({ showWindow, display, updateDisplay }) => {
             <pre className="pie-button-text" style={getPieTextStyle((i))}>{elem.name}</pre>
           </div>
         </div>
-      ))}
+      )
+      )}
     </div>
   );
 };

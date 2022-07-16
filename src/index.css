@@ -57,6 +57,9 @@ pre{
 
 
 @import './components/Home/Home.css';
-@import './components/Home/fog.css';
-@import './components/Home/worm.css';
+@import './components/Decorations/fog.css';
+@import './components/Landing/worm.css';
+@import './components/Landing/landing.css';
+@import './components/Home/breadcrumbs.css';
+@import './components/Home/pie.css';
 @import './components/InfoWindow/infoWindow.css';

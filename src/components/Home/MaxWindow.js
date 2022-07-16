@@ -1,4 +1,4 @@
-import Fog from "./Fog";
+import Fog from "../Decorations/Fog";
 
 const MaxWindow = ({ exitAlert }) => {
   var elem = document.documentElement;

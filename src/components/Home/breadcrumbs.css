@@ -1,0 +1,76 @@
+.audioWrapper {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 9;
+}
+
+.audioWrapper>svg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50rem;
+    z-index: 1;
+}
+
+.audioWrapper>svg:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.2) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.2);
+}
+
+.hideButton{
+    position: absolute;
+    font-size: 1rem;
+    width: 250px;
+    padding: 5px 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    top: 50px;
+    left: -5px;
+    animation: displayButton 5s ease-in-out;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.hideButton_triangle{
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    color: inherit;
+}
+
+@keyframes displayButton {
+    0%{transform: translateY(-20px); opacity: 0;}
+    10%{transform: translateY(0px);opacity: 1;}
+    90%{transform: translateY(0px);opacity: 1;}
+    100%{transform: translateY(-20px);opacity: 0;}
+}
+
+.hideButton>span{
+    color: white;
+}
+
+.breadcrumbs {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 30px;
+    left: 85px;
+    z-index: 5;
+    font-size: 1.5em;
+}
+
+.breadcrumbs>div {
+    margin: 0 6px;
+}
+
+.breadcrumbs>div:hover {
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
