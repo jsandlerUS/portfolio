@@ -10,6 +10,7 @@ import BreadCrumbs from "./BreadCrumbs";
 import MusicPlay from "./MusicPlay";
 import ClickAwayListener from "@mui/base/ClickAwayListener";
 import LoadPage from './LoadPage';
+import {isMobile} from 'react-device-detect';
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -83,7 +84,7 @@ const Home = () => {
 
   return (
     <React.Fragment>
-      {!isFullScreen ? <MaxWindow exitAlert={() => exitAlert()} /> : null}
+      {!isFullScreen && !isMobile ? <MaxWindow exitAlert={() => exitAlert()} /> : null}
 
       <div className="load-container">
       <div className="load-frame frame-top" style={closeFrameTop} />
