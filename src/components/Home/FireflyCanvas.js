@@ -14,7 +14,7 @@ const FireflyCanvas = (props) => {
 
   const [f, setF] = useState([]);
 
-  var fireflyNumber = isMobile ? 10 : 80
+  var fireflyNumber = isMobile ? 20 : 80
 
   class Firefly extends React.Component {
     constructor() {

@@ -6,6 +6,7 @@ import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import Carousel, {CarouselItem} from "./Carousel";
 import { useSelector} from "react-redux";
+import {isMobile} from 'react-device-detect';
 
 
 const ProjectDisplay = ({ display }) => {
@@ -60,7 +61,7 @@ const ProjectDisplay = ({ display }) => {
         )} */}
         {currentDisplay.description}
       </div>
-      <div className="infoWindow-button">
+      <div className={isMobile ? "infoWindow-button_mobile" : "infoWindow-button"}>
         <div onClick={() => updateDisplay('previous')}>
           <ArrowBackIcon/>
           {"Previous"}
