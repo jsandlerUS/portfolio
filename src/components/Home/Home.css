@@ -944,15 +944,16 @@ svg {
         left: 10px;
     }
     .breadcrumbs{
-        top: 12px;
-        left: 45px;
+        top: 15px;
+        left: 55px;
         font-size: 1.2em;
     }
 
     .audioWrapper>svg{
-        width: 30px;
-        height: 30px;
+        width: 38px;
+        height: 38px;
     }
+    .waves-container {padding: 19px;}
 
 
 }
@@ -974,14 +975,15 @@ svg {
     }
     .breadcrumbs{
         top: 15px;
-        left: 45px;
-        font-size: 1em;
+        left: 55px;
+        font-size: 1.2em;
     }
 
     .audioWrapper>svg{
-        width: 30px;
-        height: 30px;
+        width: 38px;
+        height: 38px;
     }
+    .waves-container {padding: 19px;}
     .maxWindow-alert{font-size: 1.5rem;}
     .maxWindow-title{font-size: 1.8rem;}
 
@@ -1006,15 +1008,16 @@ svg {
     .breadcrumbs{
         top: 15px;
         left: 55px;
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
 
     .audioWrapper>svg{
         width: 38px;
         height: 38px;
     }
+    .waves-container {padding: 19px;}
+
     .moon{right: 0%; bottom: -10%;}
     .maxWindow-alert{font-size: 1.5rem;}
     .maxWindow-title{font-size: 1.8rem;}
-    .waves-container {padding: 19px;}
 }
