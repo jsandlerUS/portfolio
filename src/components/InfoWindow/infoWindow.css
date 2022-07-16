@@ -178,11 +178,11 @@
 }
 
 
-.infoWindow-button>div>svg {
+.infoWindow-button>div>svg, .infoWindow-button_mobile>div>svg {
     position: relative !important;
 }
 
-.infoWindow-button>div {
+.infoWindow-button>div, .infoWindow-button_mobile>div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -192,7 +192,7 @@
     cursor: pointer;
 }
 
-.infoWindow-button>div:hover {
+.infoWindow-button>div:hover, .infoWindow-button_mobile>div:hover {
     text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
     background-color: rgba(255, 255, 255, 0.2);
 }
