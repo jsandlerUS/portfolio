@@ -116,7 +116,7 @@ const Home = () => {
                 JS <br />
                 DESIGNS
               </div>
-              <RoundFog />
+              {/* <RoundFog /> */}
             </div>
             {isWindowOpen ? (
               // <ClickAwayListener onClickAway={() => setIsWindowOpen(false)}>
