@@ -9,7 +9,7 @@ import InfoWindow from "../InfoWindow/InfoWindow";
 import BreadCrumbs from "./BreadCrumbs";
 import MusicPlay from "./MusicPlay";
 // import ClickAwayListener from "@mui/base/ClickAwayListener";
-import LoadPage from './LoadPage';
+import LoadPage from '../Landing/LoadPage';
 import {isMobile} from 'react-device-detect';
 
 import { useSelector, useDispatch } from "react-redux";
