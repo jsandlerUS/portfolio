@@ -252,7 +252,7 @@
     100% {transform: scale(1)}
   }
 
-  @media (min-width:900px) and (max-width: 1200px){
+  /* @media (min-width:900px) and (max-width: 1200px){
     .foglayer_01 .image01,
     .foglayer_01 .image02,
     .foglayer_02 .image01,
@@ -316,5 +316,5 @@
   .foglayer_04 .image01,
   .foglayer_04 .image02 {
     width: 100%;
-  }
-}
+  } */
+/* } */

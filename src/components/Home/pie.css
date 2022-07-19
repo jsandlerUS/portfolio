@@ -21,7 +21,6 @@
     animation-fill-mode: forwards;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.1) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.1);
 }
 
 .pie-button:hover::after{
@@ -38,10 +37,12 @@
     box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.1) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.1);
     border-radius: 40%;
     animation: spin 16s ease-in-out infinite;
+    overflow: hidden;
 }
 
-.pie-button:hover::after{
-    overflow: hidden;
+.pie-button:hover{
+      box-shadow: 0px 0px 30px 10px rgba(255, 255, 255, 0.1) inset, 0px 0px 30px 10px rgba(255, 255, 255, 0.1);
+
 }
 
 @keyframes spin {
