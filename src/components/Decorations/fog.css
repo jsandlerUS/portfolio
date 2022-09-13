@@ -42,6 +42,7 @@
 .foglayer_04 .image02 {
   float: left;
   height: 100%;
+  object-fit: cover;
   width: 50%;
 }
 
@@ -315,6 +316,6 @@
   .foglayer_03 .image02,
   .foglayer_04 .image01,
   .foglayer_04 .image02 {
-    width: 200%;
+    width: 50%;
   }
 }
