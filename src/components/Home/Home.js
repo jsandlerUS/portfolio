@@ -32,6 +32,8 @@ const Home = () => {
   const [isFullScreen, setIsFullScreen] = useState(getFullScreen());
   const dispatch = useDispatch();
 
+  window.onbeforeunload = () => {return false;}
+
   const showWindow = (e) => {
     if (typeof e === "boolean") setIsWindowOpen(e);
     else if (e.name === currentDisplay.name && isWindowOpen){
